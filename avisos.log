@@ -1,0 +1,114 @@
+[2022-06-13 15:05:32] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-13 15:05:33] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-13 15:06:16] [ DEBUG] [DomicilioDAOH2:33] Buscando paciente por id...
+[2022-06-13 15:06:16] [ DEBUG] [DomicilioDAOH2:26] Buscando domicilio...
+[2022-06-13 15:06:16] [ INFO ] [DomicilioDAOH2:38] --Domicilio encontrado--
+[2022-06-13 15:06:16] [ INFO ] [DomicilioDAOH2:39] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-13 15:06:16] [ DEBUG] [DomicilioDAOH2:28] Buscando odontologo...
+[2022-06-13 15:06:16] [ INFO ] [DomicilioDAOH2:39] --Odontologo encontrado--
+[2022-06-13 15:06:16] [ INFO ] [DomicilioDAOH2:40] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-13 15:06:16] [ INFO ] [DomicilioDAOH2:52] --Paciente encontrado--
+[2022-06-13 15:06:16] [ INFO ] [DomicilioDAOH2:53] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-13 15:06:21] [ DEBUG] [DomicilioDAOH2:33] Buscando paciente por id...
+[2022-06-13 15:06:21] [ DEBUG] [DomicilioDAOH2:26] Buscando domicilio...
+[2022-06-13 15:06:21] [ INFO ] [DomicilioDAOH2:38] --Domicilio encontrado--
+[2022-06-13 15:06:21] [ INFO ] [DomicilioDAOH2:39] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-13 15:06:21] [ DEBUG] [DomicilioDAOH2:28] Buscando odontologo...
+[2022-06-13 15:06:21] [ INFO ] [DomicilioDAOH2:39] --Odontologo encontrado--
+[2022-06-13 15:06:21] [ INFO ] [DomicilioDAOH2:40] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-13 15:06:21] [ INFO ] [DomicilioDAOH2:52] --Paciente encontrado--
+[2022-06-13 15:06:21] [ INFO ] [DomicilioDAOH2:53] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-13 15:06:25] [ DEBUG] [DomicilioDAOH2:33] Buscando paciente por id...
+[2022-06-13 15:06:25] [ DEBUG] [DomicilioDAOH2:26] Buscando domicilio...
+[2022-06-13 15:06:25] [ INFO ] [DomicilioDAOH2:38] --Domicilio encontrado--
+[2022-06-13 15:06:25] [ INFO ] [DomicilioDAOH2:39] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-13 15:06:25] [ DEBUG] [DomicilioDAOH2:28] Buscando odontologo...
+[2022-06-13 15:06:25] [ INFO ] [DomicilioDAOH2:39] --Odontologo encontrado--
+[2022-06-13 15:06:25] [ INFO ] [DomicilioDAOH2:40] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-13 15:06:25] [ INFO ] [DomicilioDAOH2:52] --Paciente encontrado--
+[2022-06-13 15:06:25] [ INFO ] [DomicilioDAOH2:53] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-13 15:06:28] [ DEBUG] [DomicilioDAOH2:33] Buscando paciente por id...
+[2022-06-13 15:06:28] [ DEBUG] [DomicilioDAOH2:26] Buscando domicilio...
+[2022-06-13 15:06:28] [ INFO ] [DomicilioDAOH2:38] --Domicilio encontrado--
+[2022-06-13 15:06:28] [ INFO ] [DomicilioDAOH2:39] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-13 15:06:28] [ DEBUG] [DomicilioDAOH2:28] Buscando odontologo...
+[2022-06-13 15:06:28] [ INFO ] [DomicilioDAOH2:39] --Odontologo encontrado--
+[2022-06-13 15:06:28] [ INFO ] [DomicilioDAOH2:40] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-13 15:06:28] [ INFO ] [DomicilioDAOH2:52] --Paciente encontrado--
+[2022-06-13 15:06:28] [ INFO ] [DomicilioDAOH2:53] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
