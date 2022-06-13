@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface IPacienteService {
 
+    Paciente guardar(Paciente p) throws SQLException;
     Paciente buscar(int id) throws SQLException;
     Paciente buscarPorEmail(String email) throws SQLException;
     List<Paciente> listar();

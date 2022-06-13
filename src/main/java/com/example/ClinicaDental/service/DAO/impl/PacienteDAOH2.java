@@ -24,6 +24,24 @@ public class PacienteDAOH2 implements IPacienteService {
     }
 
     @Override
+    public Paciente guardar(Paciente p) throws SQLException {
+        PreparedStatement preparedStatement = null;
+        try (Connection con = getConnection()){
+            logger.debug("Guardando paciente...");
+            DomicilioDAOH2 d = new DomicilioDAOH2();
+            OdontologoDAOH2 o = new OdontologoDAOH2();
+
+        } catch (Exception e){
+            logger.error("Error al guardar paciente", e);
+            e.printStackTrace();
+        }
+
+        return p;
+    }
+
+
+
+    @Override
     public Paciente buscar(int id) throws SQLException {
         PreparedStatement preparedStatement = null;
         Paciente p = null;

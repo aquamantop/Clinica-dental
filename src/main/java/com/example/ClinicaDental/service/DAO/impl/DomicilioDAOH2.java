@@ -19,6 +19,16 @@ public class DomicilioDAOH2 implements IDAO<Domicilio> {
     }
 
     @Override
+    public Domicilio guardar(Domicilio domicilio) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Domicilio eliminar(int id) throws SQLException {
+        return null;
+    }
+
+    @Override
     public Domicilio buscar(int id) throws SQLException {
         PreparedStatement preparedStatement = null;
         Domicilio d = null;

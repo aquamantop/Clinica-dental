@@ -20,6 +20,11 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
+    public Paciente guardar(Paciente p) throws SQLException {
+        return pacienteIDAO.guardar(p);
+    }
+
+    @Override
     public Paciente buscar(int id) throws SQLException {
         return pacienteIDAO.buscar(id);
     }

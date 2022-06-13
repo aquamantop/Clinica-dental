@@ -21,6 +21,16 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
     }
 
     @Override
+    public Odontologo guardar(Odontologo odontologo) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Odontologo eliminar(int id) throws SQLException {
+        return null;
+    }
+
+    @Override
     public Odontologo buscar(int id) throws SQLException {
         PreparedStatement preparedStatement = null;
         Odontologo o = null;
