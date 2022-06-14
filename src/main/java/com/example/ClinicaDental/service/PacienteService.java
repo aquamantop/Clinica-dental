@@ -7,7 +7,7 @@ import java.util.List;
 @Service
 public class PacienteService implements IPacienteService {
 
-    private IPacienteService pacienteIDAO;
+    private final IPacienteService pacienteIDAO;
 
     public PacienteService(IPacienteService pacienteIDAO) {
         this.pacienteIDAO = pacienteIDAO;

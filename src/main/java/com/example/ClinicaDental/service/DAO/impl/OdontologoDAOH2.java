@@ -22,10 +22,9 @@ public class OdontologoDAOH2 implements IOdontologoService {
 
     @Override
     public Odontologo guardar(Odontologo o){
-        PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()) {
             logger.debug("Guardando odontologo...");
-            preparedStatement = con.prepareStatement("INSERT INTO odontologos (APELLIDO, NOMBRE, MATRICULA) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO odontologos (APELLIDO, NOMBRE, MATRICULA) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, o.getApellido());
             preparedStatement.setString(2, o.getNombre());
             preparedStatement.setInt(3, o.getMatricula());
@@ -45,14 +44,12 @@ public class OdontologoDAOH2 implements IOdontologoService {
 
     @Override
     public Odontologo eliminar(int id){
-        PreparedStatement preparedStatement1 = null;
-        PreparedStatement preparedStatement2 = null;
         Odontologo o = null;
         try (Connection con = getConnection()){
             logger.debug("Eliminando odontologo...");
-            preparedStatement1 = con.prepareStatement("SELECT * FROM odontologos WHERE ID=?");
+            PreparedStatement preparedStatement1 = con.prepareStatement("SELECT * FROM odontologos WHERE ID=?");
             preparedStatement1.setInt(1, id);
-            preparedStatement2 = con.prepareStatement("DELETE FROM odontologos WHERE ID=?");
+            PreparedStatement preparedStatement2 = con.prepareStatement("DELETE FROM odontologos WHERE ID=?");
             preparedStatement2.setInt(1, id);
             ResultSet rs = preparedStatement1.executeQuery();
             while(rs.next()){
@@ -75,11 +72,10 @@ public class OdontologoDAOH2 implements IOdontologoService {
 
     @Override
     public Odontologo buscar(int id){
-        PreparedStatement preparedStatement = null;
         Odontologo o = null;
         try (Connection con = getConnection()) {
             logger.debug("Buscando odontologo...");
-            preparedStatement = con.prepareStatement("SELECT * FROM odontologos WHERE ID=?");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM odontologos WHERE ID=?");
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -101,11 +97,10 @@ public class OdontologoDAOH2 implements IOdontologoService {
 
     @Override
     public List<Odontologo> listar() {
-        PreparedStatement preparedStatement = null;
         List<Odontologo> lista = new ArrayList<>();
         try (Connection con = getConnection()){
             logger.debug("Listando odontologos...");
-            preparedStatement = con.prepareStatement("SELECT * FROM odontologos");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM odontologos");
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
                 int id = rs.getInt("ID");
@@ -126,10 +121,9 @@ public class OdontologoDAOH2 implements IOdontologoService {
 
     @Override
     public Odontologo actualizar(Odontologo o) {
-        PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()) {
             logger.debug("Actualizando odontologo...");
-            preparedStatement = con.prepareStatement("UPDATE odontologos SET APELLIDO=?, NOMBRE=?, MATRICULA=? WHERE ID=?");
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE odontologos SET APELLIDO=?, NOMBRE=?, MATRICULA=? WHERE ID=?");
             preparedStatement.setString(1, o.getApellido());
             preparedStatement.setString(2, o.getNombre());
             preparedStatement.setInt(3, o.getMatricula());

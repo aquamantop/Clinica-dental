@@ -20,10 +20,9 @@ public class DomicilioDAOH2 implements IDomicilioService {
 
     @Override
     public Domicilio guardar(Domicilio d) {
-        PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()) {
             logger.debug("Guardando domicilio...");
-            preparedStatement = con.prepareStatement("INSERT INTO domicilios (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO domicilios (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, d.getCalle());
             preparedStatement.setInt(2, d.getNumero());
             preparedStatement.setString(3, d.getLocalidad());
@@ -47,11 +46,10 @@ public class DomicilioDAOH2 implements IDomicilioService {
 
     @Override
     public Domicilio buscar(int id) {
-        PreparedStatement preparedStatement = null;
         Domicilio d = null;
         try (Connection con = getConnection()){
             logger.debug("Buscando domicilio...");
-            preparedStatement = con.prepareStatement("SELECT * FROM domicilios WHERE ID=?");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM domicilios WHERE ID=?");
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
@@ -75,11 +73,10 @@ public class DomicilioDAOH2 implements IDomicilioService {
 
     @Override
     public List<Domicilio> listar() {
-        PreparedStatement preparedStatement = null;
         List<Domicilio> lista = new ArrayList<>();
         try (Connection con = getConnection()){
             logger.debug("Listando domicilios...");
-            preparedStatement = con.prepareStatement("SELECT * FROM domicilios");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM domicilios");
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
                 int id = rs.getInt("ID");
@@ -102,10 +99,9 @@ public class DomicilioDAOH2 implements IDomicilioService {
 
     @Override
     public Domicilio actualizar(Domicilio d) {
-        PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()) {
             logger.debug("Actualizando domicilio...");
-            preparedStatement = con.prepareStatement("UPDATE domicilios SET CALLE=?, NUMERO=?, LOCALIDAD=?, PROVINCIA=? WHERE ID=?");
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE domicilios SET CALLE=?, NUMERO=?, LOCALIDAD=?, PROVINCIA=? WHERE ID=?");
             preparedStatement.setString(1, d.getCalle());
             preparedStatement.setInt(2, d.getNumero());
             preparedStatement.setString(3, d.getLocalidad());

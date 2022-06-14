@@ -23,7 +23,6 @@ public class PacienteDAOH2 implements IPacienteService {
 
     @Override
     public Paciente guardar(Paciente p) {
-        PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()){
             logger.debug("Guardando paciente...");
             DomicilioDAOH2 d = new DomicilioDAOH2();
@@ -32,7 +31,7 @@ public class PacienteDAOH2 implements IPacienteService {
             p.getDomicilio().setId(domicilio.getId());
             Odontologo odontologo = o.guardar(p.getOdontologo());
             p.getOdontologo().setId(odontologo.getId());
-            preparedStatement = con.prepareStatement("INSERT INTO pacientes (APELLIDO, NOMBRE, EMAIL, DNI, FECHA_INGRESO, DOMICILIO_ID, ODONTOLOGO_ID) VALUES (?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO pacientes (APELLIDO, NOMBRE, EMAIL, DNI, FECHA_INGRESO, DOMICILIO_ID, ODONTOLOGO_ID) VALUES (?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, p.getApellido());
             preparedStatement.setString(2, p.getNombre());
             preparedStatement.setString(3, p.getEmail());
@@ -57,18 +56,14 @@ public class PacienteDAOH2 implements IPacienteService {
 
     @Override
     public Paciente eliminar(int id){
-        PreparedStatement preparedStatement1 = null;
-        PreparedStatement preparedStatement2 = null;
         Paciente p = null;
-        Domicilio d = null;
-        Odontologo o = null;
         try (Connection con = getConnection()){
             logger.debug("Eliminando paciente...");
             DomicilioDAOH2 dDAO = new DomicilioDAOH2();
             OdontologoDAOH2 oDAO = new OdontologoDAOH2();
-            preparedStatement1 = con.prepareStatement("SELECT * FROM pacientes WHERE ID=?");
+            PreparedStatement preparedStatement1 = con.prepareStatement("SELECT * FROM pacientes WHERE ID=?");
             preparedStatement1.setInt(1, id);
-            preparedStatement2 = con.prepareStatement("DELETE FROM pacientes WHERE ID=?");
+            PreparedStatement preparedStatement2 = con.prepareStatement("DELETE FROM pacientes WHERE ID=?");
             preparedStatement2.setInt(1, id);
             ResultSet rs = preparedStatement1.executeQuery();
             while(rs.next()){
@@ -79,8 +74,8 @@ public class PacienteDAOH2 implements IPacienteService {
                 LocalDate fechaIngreso = rs.getDate("FECHA_INGRESO").toLocalDate();
                 int d_id = rs.getInt("DOMICILIO_ID");
                 int o_id = rs.getInt("ODONTOLOGO_ID");
-                d = dDAO.buscar(d_id);
-                o = oDAO.buscar(o_id);
+                Domicilio d = dDAO.buscar(d_id);
+                Odontologo o = oDAO.buscar(o_id);
                 p = new Paciente(apellido, nombre, email, dni, fechaIngreso, d, o);
                 logger.info("--Paciente eliminado--");
                 logger.info(p.toString());
@@ -98,15 +93,12 @@ public class PacienteDAOH2 implements IPacienteService {
 
     @Override
     public Paciente buscar(int id) {
-        PreparedStatement preparedStatement = null;
         Paciente p = null;
-        Domicilio d = null;
-        Odontologo o = null;
         try (Connection con = getConnection()){
             logger.debug("Buscando paciente por id...");
             DomicilioDAOH2 domicilioDAOH2 = new DomicilioDAOH2();
             OdontologoDAOH2 odontologoDAOH2 = new OdontologoDAOH2();
-            preparedStatement = con.prepareStatement("SELECT * FROM pacientes WHERE ID=?");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM pacientes WHERE ID=?");
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
@@ -118,8 +110,8 @@ public class PacienteDAOH2 implements IPacienteService {
                 LocalDate fechaIngreso = rs.getDate("FECHA_INGRESO").toLocalDate();
                 int d_id = rs.getInt("DOMICILIO_ID");
                 int o_id = rs.getInt("ODONTOLOGO_ID");
-                d = domicilioDAOH2.buscar(d_id);
-                o = odontologoDAOH2.buscar(o_id);
+                Domicilio d = domicilioDAOH2.buscar(d_id);
+                Odontologo o = odontologoDAOH2.buscar(o_id);
                 p = new Paciente(apellido, nombre, email, dni, fechaIngreso, d, o);
                 p.setId(iden);
                 logger.info("--Paciente encontrado--");
@@ -135,15 +127,12 @@ public class PacienteDAOH2 implements IPacienteService {
 
     @Override
     public Paciente buscarPorEmail(String email) {
-        PreparedStatement preparedStatement = null;
         Paciente p = null;
-        Domicilio d = null;
-        Odontologo o = null;
         try (Connection con = getConnection()){
             logger.debug("Buscando paciente por email...");
             DomicilioDAOH2 domicilioDAOH2 = new DomicilioDAOH2();
             OdontologoDAOH2 odontologoDAOH2 = new OdontologoDAOH2();
-            preparedStatement = con.prepareStatement("SELECT * FROM pacientes WHERE EMAIL=?");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM pacientes WHERE EMAIL=?");
             preparedStatement.setString(1, email);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
@@ -155,8 +144,8 @@ public class PacienteDAOH2 implements IPacienteService {
                 LocalDate fechaIngreso = rs.getDate("FECHA_INGRESO").toLocalDate();
                 int d_id = rs.getInt("DOMICILIO_ID");
                 int o_id = rs.getInt("ODONTOLOGO_ID");
-                d = domicilioDAOH2.buscar(d_id);
-                o = odontologoDAOH2.buscar(o_id);
+                Domicilio d = domicilioDAOH2.buscar(d_id);
+                Odontologo o = odontologoDAOH2.buscar(o_id);
                 p = new Paciente(apellido, nombre, datoEmail, dni, fechaIngreso, d, o);
                 p.setId(id);
                 logger.info("--Paciente encontrado--");
@@ -172,15 +161,12 @@ public class PacienteDAOH2 implements IPacienteService {
 
     @Override
     public List<Paciente> listar() {
-        PreparedStatement preparedStatement = null;
         List<Paciente> lista = new ArrayList<>();
-        Domicilio d = null;
-        Odontologo o = null;
         try (Connection con = getConnection()){
             logger.debug("Listando pacientes...");
             DomicilioDAOH2 domicilioDAOH2 = new DomicilioDAOH2();
             OdontologoDAOH2 odontologoDAOH2 = new OdontologoDAOH2();
-            preparedStatement = con.prepareStatement("SELECT * FROM pacientes");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM pacientes");
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
                 int id = rs.getInt("ID");
@@ -191,8 +177,8 @@ public class PacienteDAOH2 implements IPacienteService {
                 LocalDate fechaIngreso = rs.getDate("FECHA_INGRESO").toLocalDate();
                 int d_id = rs.getInt("DOMICILIO_ID");
                 int o_id = rs.getInt("ODONTOLOGO_ID");
-                d = domicilioDAOH2.buscar(d_id);
-                o = odontologoDAOH2.buscar(o_id);
+                Domicilio d = domicilioDAOH2.buscar(d_id);
+                Odontologo o = odontologoDAOH2.buscar(o_id);
                 Paciente p = new Paciente(apellido, nombre, datoEmail, dni, fechaIngreso, d, o);
                 p.setId(id);
                 lista.add(p);
@@ -208,12 +194,11 @@ public class PacienteDAOH2 implements IPacienteService {
 
     @Override
     public Paciente actualizar(Paciente p) {
-        PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()){
             logger.debug("Actualizando paciente...");
             DomicilioDAOH2 d = new DomicilioDAOH2();
-            Domicilio domicilio = d.actualizar(p.getDomicilio());
-            preparedStatement = con.prepareStatement("UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMICILIO_ID=? WHERE ID=?");
+            d.actualizar(p.getDomicilio());
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMICILIO_ID=? WHERE ID=?");
             preparedStatement.setString(1, p.getApellido());
             preparedStatement.setString(2, p.getNombre());
             preparedStatement.setString(3, p.getEmail());

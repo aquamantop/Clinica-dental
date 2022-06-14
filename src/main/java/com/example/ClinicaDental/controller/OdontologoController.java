@@ -1,7 +1,6 @@
 package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.model.Odontologo;
-import com.example.ClinicaDental.model.Paciente;
 import com.example.ClinicaDental.service.DAO.impl.OdontologoDAOH2;
 import com.example.ClinicaDental.service.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
