@@ -1824,3 +1824,428 @@ Matricula: 5757
 Apellido: Zarate/
 Nombre: Mauro/
 Matricula: 5757
+[2022-06-14 17:10:31] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 17:10:32] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 17:10:38] [ DEBUG] [DomicilioDAOH2:107] Listando odontologos...
+[2022-06-14 17:10:38] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 17:10:38] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 17:10:40] [ DEBUG] [DomicilioDAOH2:27] Guardando odontologo...
+[2022-06-14 17:10:40] [ INFO ] [DomicilioDAOH2:33] --Odontologo guardado--
+[2022-06-14 17:10:58] [ DEBUG] [DomicilioDAOH2:131] Actualizando odontologo...
+[2022-06-14 17:10:58] [ INFO ] [DomicilioDAOH2:138] --Odontologo actualizado--
+[2022-06-14 17:11:08] [ DEBUG] [DomicilioDAOH2:107] Listando odontologos...
+[2022-06-14 17:11:08] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 17:11:08] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 17:11:08] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5000
+[2022-06-14 17:11:12] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:11:12] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:11:12] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5000
+[2022-06-14 17:13:16] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 17:13:16] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 17:13:43] [ DEBUG] [DomicilioDAOH2:180] Listando pacientes...
+[2022-06-14 17:13:43] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 17:13:43] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 17:13:43] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 17:13:43] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 17:13:43] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 17:13:47] [ DEBUG] [DomicilioDAOH2:28] Guardando paciente...
+[2022-06-14 17:13:47] [ DEBUG] [DomicilioDAOH2:25] Guardando domicilio...
+[2022-06-14 17:13:47] [ INFO ] [DomicilioDAOH2:32] --Domicilio guardado--
+[2022-06-14 17:13:47] [ DEBUG] [DomicilioDAOH2:27] Guardando odontologo...
+[2022-06-14 17:13:47] [ INFO ] [DomicilioDAOH2:33] --Odontologo guardado--
+[2022-06-14 17:13:47] [ INFO ] [DomicilioDAOH2:48] --Paciente guardado--
+[2022-06-14 17:13:47] [ INFO ] [DomicilioDAOH2:49] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]/--Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:13:51] [ DEBUG] [DomicilioDAOH2:180] Listando pacientes...
+[2022-06-14 17:13:51] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 17:13:51] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 17:13:51] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 17:13:51] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 17:13:51] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:13:51] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:13:51] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]/--Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:14:00] [ DEBUG] [DomicilioDAOH2:106] Buscando paciente por id...
+[2022-06-14 17:14:00] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:14:00] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:14:00] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:14:00] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:14:00] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:14:00] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:14:00] [ INFO ] [DomicilioDAOH2:125] --Paciente encontrado--
+[2022-06-14 17:14:00] [ INFO ] [DomicilioDAOH2:126] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]/--Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:15:07] [ DEBUG] [DomicilioDAOH2:213] Actualizando paciente...
+[2022-06-14 17:15:07] [ DEBUG] [DomicilioDAOH2:107] Actualizando domicilio...
+[2022-06-14 17:15:07] [ INFO ] [DomicilioDAOH2:115] --Domicilio actualizado--
+[2022-06-14 17:15:07] [ INFO ] [DomicilioDAOH2:225] --Paciente actualizado--
+[2022-06-14 17:15:07] [ ERROR] [DomicilioDAOH2:229] Error al guardar paciente
+java.lang.NullPointerException: Cannot invoke "com.example.ClinicaDental.model.Odontologo.toString()" because "this.odontologo" is null
+	at com.example.ClinicaDental.model.Paciente.toString(Paciente.java:102)
+	at com.example.ClinicaDental.service.DAO.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:226)
+	at com.example.ClinicaDental.service.PacienteService.actualizar(PacienteService.java:23)
+	at com.example.ClinicaDental.controller.PacienteController.actualizar(PacienteController.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2022-06-14 17:16:04] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 17:16:04] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 17:16:10] [ DEBUG] [DomicilioDAOH2:28] Guardando paciente...
+[2022-06-14 17:16:10] [ DEBUG] [DomicilioDAOH2:25] Guardando domicilio...
+[2022-06-14 17:16:10] [ INFO ] [DomicilioDAOH2:32] --Domicilio guardado--
+[2022-06-14 17:16:10] [ DEBUG] [DomicilioDAOH2:27] Guardando odontologo...
+[2022-06-14 17:16:10] [ INFO ] [DomicilioDAOH2:33] --Odontologo guardado--
+[2022-06-14 17:16:10] [ INFO ] [DomicilioDAOH2:48] --Paciente guardado--
+[2022-06-14 17:16:10] [ INFO ] [DomicilioDAOH2:49] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:16:12] [ DEBUG] [DomicilioDAOH2:180] Listando pacientes...
+[2022-06-14 17:16:12] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 17:16:12] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 17:16:12] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 17:16:12] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 17:16:12] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:16:12] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:16:12] [ INFO ] [DomicilioDAOH2:199] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:16:16] [ DEBUG] [DomicilioDAOH2:106] Buscando paciente por id...
+[2022-06-14 17:16:16] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:16:16] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:16:16] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:16:16] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:16:16] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:16:16] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:16:16] [ INFO ] [DomicilioDAOH2:125] --Paciente encontrado--
+[2022-06-14 17:16:16] [ INFO ] [DomicilioDAOH2:126] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:16:32] [ DEBUG] [DomicilioDAOH2:213] Actualizando paciente...
+[2022-06-14 17:16:32] [ DEBUG] [DomicilioDAOH2:107] Actualizando domicilio...
+[2022-06-14 17:16:32] [ INFO ] [DomicilioDAOH2:115] --Domicilio actualizado--
+[2022-06-14 17:16:32] [ INFO ] [DomicilioDAOH2:225] --Paciente actualizado--
+[2022-06-14 17:16:32] [ INFO ] [DomicilioDAOH2:226] --Paciente--
+Apellido: Alvarez/
+Nombre: Kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:16:37] [ DEBUG] [DomicilioDAOH2:106] Buscando paciente por id...
+[2022-06-14 17:16:37] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 17:16:37] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 17:16:37] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 17:16:37] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 17:16:37] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 17:16:37] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 17:16:37] [ INFO ] [DomicilioDAOH2:125] --Paciente encontrado--
+[2022-06-14 17:16:37] [ INFO ] [DomicilioDAOH2:126] --Paciente--
+Apellido: Alvarez/
+Nombre: Kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]

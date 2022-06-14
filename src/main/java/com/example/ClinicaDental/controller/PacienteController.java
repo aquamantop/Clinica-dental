@@ -59,4 +59,11 @@ public class PacienteController {
         return "listar";
     }
 
+    @PutMapping("/actualizar")
+    public String actualizar(Model model, @RequestBody Paciente paciente){
+        p.actualizar(paciente);
+        model.addAttribute("frase", paciente.toString());
+        return "usuario";
+    }
+
 }

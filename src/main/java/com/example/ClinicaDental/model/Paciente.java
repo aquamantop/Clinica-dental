@@ -97,8 +97,6 @@ public class Paciente {
                 "\nDNI: " + DNI + "/" +
                 "\nFecha de ingreso: " + fechaIngreso +
                 "/" +
-                domicilio.toString() +
-                "/" +
-                odontologo.toString();
+                domicilio.toString();
     }
 }

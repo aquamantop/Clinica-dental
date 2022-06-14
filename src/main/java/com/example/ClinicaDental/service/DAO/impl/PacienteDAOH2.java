@@ -212,7 +212,6 @@ public class PacienteDAOH2 implements IPacienteService {
         try (Connection con = getConnection()){
             logger.debug("Actualizando paciente...");
             DomicilioDAOH2 d = new DomicilioDAOH2();
-            OdontologoDAOH2 o = new OdontologoDAOH2();
             Domicilio domicilio = d.actualizar(p.getDomicilio());
             preparedStatement = con.prepareStatement("UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMICILIO_ID=? WHERE ID=?");
             preparedStatement.setString(1, p.getApellido());
