@@ -1530,3 +1530,125 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Aquaman
 	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
 	at org.h2.mvstore.db.Store.<init>(Store.java:133)
 	... 61 more
+[2022-06-14 16:26:01] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 16:26:02] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 16:27:00] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 16:27:01] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 16:28:30] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 16:28:30] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 16:29:28] [ DEBUG] [DomicilioDAOH2:107] Listando odontologos...
+[2022-06-14 16:29:28] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 16:29:28] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 16:30:31] [ DEBUG] [DomicilioDAOH2:107] Listando odontologos...
+[2022-06-14 16:30:31] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 16:30:31] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 16:33:24] [ DEBUG] [DomicilioDAOH2:27] Guardando odontologo...
+[2022-06-14 16:33:24] [ INFO ] [DomicilioDAOH2:33] --Odontologo guardado--
+[2022-06-14 16:33:31] [ DEBUG] [DomicilioDAOH2:107] Listando odontologos...
+[2022-06-14 16:33:31] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 16:33:31] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 16:33:31] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 16:34:16] [ DEBUG] [DomicilioDAOH2:52] Eliminando odontologo...
+[2022-06-14 16:34:16] [ INFO ] [DomicilioDAOH2:63] --Paciente eliminado--
+[2022-06-14 16:34:16] [ INFO ] [DomicilioDAOH2:64] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 16:34:20] [ DEBUG] [DomicilioDAOH2:107] Listando odontologos...
+[2022-06-14 16:34:20] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 16:34:20] [ INFO ] [DomicilioDAOH2:118] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 16:36:01] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 16:36:02] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 16:37:24] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 16:37:25] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 16:38:22] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 16:38:22] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 16:38:29] [ DEBUG] [DomicilioDAOH2:106] Buscando paciente por id...
+[2022-06-14 16:38:29] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 16:38:29] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 16:38:29] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 16:38:29] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 16:38:29] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 16:38:29] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 16:38:29] [ INFO ] [DomicilioDAOH2:125] --Paciente encontrado--
+[2022-06-14 16:38:29] [ INFO ] [DomicilioDAOH2:126] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 16:38:35] [ DEBUG] [DomicilioDAOH2:106] Buscando paciente por id...
+[2022-06-14 16:38:35] [ DEBUG] [DomicilioDAOH2:53] Buscando domicilio...
+[2022-06-14 16:38:35] [ INFO ] [DomicilioDAOH2:65] --Domicilio encontrado--
+[2022-06-14 16:38:35] [ INFO ] [DomicilioDAOH2:66] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 16:38:35] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 16:38:35] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 16:38:35] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 16:38:35] [ INFO ] [DomicilioDAOH2:125] --Paciente encontrado--
+[2022-06-14 16:38:35] [ INFO ] [DomicilioDAOH2:126] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]/--Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 16:39:24] [ DEBUG] [DomicilioDAOH2:81] Buscando odontologo...
+[2022-06-14 16:39:24] [ INFO ] [DomicilioDAOH2:92] --Odontologo encontrado--
+[2022-06-14 16:39:24] [ INFO ] [DomicilioDAOH2:93] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666

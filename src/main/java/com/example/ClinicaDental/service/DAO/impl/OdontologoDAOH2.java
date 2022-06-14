@@ -1,7 +1,7 @@
 package com.example.ClinicaDental.service.DAO.impl;
 
 import com.example.ClinicaDental.model.Odontologo;
-import com.example.ClinicaDental.service.DAO.IDAO;
+import com.example.ClinicaDental.service.IOdontologoService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Component
-public class OdontologoDAOH2 implements IDAO<Odontologo> {
+public class OdontologoDAOH2 implements IOdontologoService {
 
     public static final Logger logger = Logger.getLogger(DomicilioDAOH2.class);
 
@@ -44,18 +44,33 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
     }
 
     @Override
-    public void eliminar(int id){
-        PreparedStatement preparedStatement = null;
+    public Odontologo eliminar(int id){
+        PreparedStatement preparedStatement1 = null;
+        PreparedStatement preparedStatement2 = null;
+        Odontologo o = null;
         try (Connection con = getConnection()){
             logger.debug("Eliminando odontologo...");
-            preparedStatement = con.prepareStatement("DELETE FROM odontologos WHERE ID=?");
-            preparedStatement.setInt(1, id);
-            preparedStatement.close();
-            logger.info("--Odontologo eliminado--");
+            preparedStatement1 = con.prepareStatement("SELECT * FROM odontologos WHERE ID=?");
+            preparedStatement1.setInt(1, id);
+            preparedStatement2 = con.prepareStatement("DELETE FROM odontologos WHERE ID=?");
+            preparedStatement2.setInt(1, id);
+            ResultSet rs = preparedStatement1.executeQuery();
+            while(rs.next()){
+                String apellido = rs.getString("APELLIDO");
+                String nombre = rs.getString("NOMBRE");
+                int matricula = rs.getInt("MATRICULA");
+                o = new Odontologo(apellido, nombre, matricula);
+                logger.info("--Paciente eliminado--");
+                logger.info(o.toString());
+            }
+            preparedStatement2.executeUpdate();
+            preparedStatement1.close();
+            preparedStatement2.close();
         } catch (Exception e){
             logger.error("Error al eliminar odontologo", e);
             e.printStackTrace();
         }
+        return o;
     }
 
     @Override
@@ -108,4 +123,11 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
         }
         return lista;
     }
+
+    @Override
+    public Odontologo actualizar(Odontologo odontologo) {
+        return null;
+    }
+
+
 }

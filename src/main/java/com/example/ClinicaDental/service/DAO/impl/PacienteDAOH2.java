@@ -72,7 +72,6 @@ public class PacienteDAOH2 implements IPacienteService {
             preparedStatement2.setInt(1, id);
             ResultSet rs = preparedStatement1.executeQuery();
             while(rs.next()){
-                int iden = rs.getInt("ID");
                 String apellido = rs.getString("APELLIDO");
                 String nombre = rs.getString("NOMBRE");
                 String email = rs.getString("EMAIL");

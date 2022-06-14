@@ -1,17 +1,16 @@
 package com.example.ClinicaDental.service;
 
 import com.example.ClinicaDental.model.Odontologo;
-import com.example.ClinicaDental.service.DAO.IDAO;
 import org.springframework.stereotype.Service;
-import java.sql.SQLException;
+
 import java.util.List;
 
 @Service
-public class OdontologoService implements IDAO<Odontologo> {
+public class OdontologoService implements IOdontologoService {
 
-    private final IDAO<Odontologo> odontologoIDAO;
+    private final IOdontologoService odontologoIDAO;
 
-    public OdontologoService(IDAO<Odontologo> odontologoIDAO) {
+    public OdontologoService(IOdontologoService odontologoIDAO) {
         this.odontologoIDAO = odontologoIDAO;
     }
 
@@ -21,13 +20,18 @@ public class OdontologoService implements IDAO<Odontologo> {
     }
 
     @Override
+    public Odontologo actualizar(Odontologo odontologo) {
+        return odontologoIDAO.actualizar(odontologo);
+    }
+
+    @Override
     public Odontologo guardar(Odontologo odontologo){
         return odontologoIDAO.guardar(odontologo);
     }
 
     @Override
-    public void eliminar(int id){
-        odontologoIDAO.eliminar(id);
+    public Odontologo eliminar(int id){
+        return odontologoIDAO.eliminar(id);
     }
 
     @Override

@@ -1,18 +1,15 @@
 package com.example.ClinicaDental.service.DAO.impl;
 
 import com.example.ClinicaDental.model.Domicilio;
-import com.example.ClinicaDental.model.Odontologo;
-import com.example.ClinicaDental.model.Paciente;
-import com.example.ClinicaDental.service.DAO.IDAO;
+import com.example.ClinicaDental.service.IDomicilioService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class DomicilioDAOH2 implements IDAO<Domicilio> {
+public class DomicilioDAOH2 implements IDomicilioService {
 
     public static final Logger logger = Logger.getLogger(DomicilioDAOH2.class);
 

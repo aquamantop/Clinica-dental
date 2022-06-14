@@ -30,8 +30,8 @@ public class PacienteController {
         return "usuario";
     }
 
-    @GetMapping("/buscar")
-    public String buscar(Model model, @RequestParam("email") String email) {
+    @GetMapping("/buscarEmail/{email}")
+    public String buscarPorEmail(Model model, @PathVariable String email) {
         Paciente paciente = p.buscarPorEmail(email);
         String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
         String frase2 = "Odontolo asignado con matricula: " + paciente.getOdontologo().getMatricula();
@@ -40,7 +40,7 @@ public class PacienteController {
         return "usuario";
     }
 
-    @GetMapping("/buscar/{id}")
+    @GetMapping("/buscarID/{id}")
     public String buscarID(Model model, @PathVariable int id) {
         Paciente paciente = p.buscar(id);
         String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
