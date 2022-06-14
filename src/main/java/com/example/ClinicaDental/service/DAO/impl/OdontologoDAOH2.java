@@ -21,17 +21,35 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
     }
 
     @Override
-    public Odontologo guardar(Odontologo odontologo) throws SQLException {
+    public Odontologo guardar(Odontologo o){
+        PreparedStatement preparedStatement = null;
+        try (Connection con = getConnection()) {
+            logger.debug("Guardando domicilio...");
+            preparedStatement = con.prepareStatement("INSERT INTO odontologos (APELLIDO, NOMBRE, MATRICULA) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, o.getApellido());
+            preparedStatement.setString(2, o.getNombre());
+            preparedStatement.setInt(3, o.getMatricula());
+            preparedStatement.executeUpdate();
+            logger.info("--Domicilio guardado--");
+            ResultSet cg = preparedStatement.getGeneratedKeys();
+            if (cg.next()){
+                o.setId(cg.getInt(1));
+            }
+            preparedStatement.close();
+        } catch (Exception e) {
+            logger.error("Error al crear domicilio", e);
+            e.printStackTrace();
+        }
+        return o;
+    }
+
+    @Override
+    public Odontologo eliminar(int id){
         return null;
     }
 
     @Override
-    public Odontologo eliminar(int id) throws SQLException {
-        return null;
-    }
-
-    @Override
-    public Odontologo buscar(int id) throws SQLException {
+    public Odontologo buscar(int id){
         PreparedStatement preparedStatement = null;
         Odontologo o = null;
         try (Connection con = getConnection()) {

@@ -19,17 +19,36 @@ public class DomicilioDAOH2 implements IDAO<Domicilio> {
     }
 
     @Override
-    public Domicilio guardar(Domicilio domicilio) throws SQLException {
+    public Domicilio guardar(Domicilio d) {
+        PreparedStatement preparedStatement = null;
+        try (Connection con = getConnection()) {
+            logger.debug("Guardando domicilio...");
+            preparedStatement = con.prepareStatement("INSERT INTO domicilios (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, d.getCalle());
+            preparedStatement.setInt(2, d.getNumero());
+            preparedStatement.setString(3, d.getLocalidad());
+            preparedStatement.setString(4, d.getProvincia());
+            preparedStatement.executeUpdate();
+            logger.info("--Domicilio guardado--");
+            ResultSet cg = preparedStatement.getGeneratedKeys();
+            if (cg.next()){
+               d.setId(cg.getInt(1));
+            }
+            preparedStatement.close();
+        } catch (Exception e) {
+            logger.error("Error al crear domicilio", e);
+            e.printStackTrace();
+        }
+        return d;
+    }
+
+    @Override
+    public Domicilio eliminar(int id) {
         return null;
     }
 
     @Override
-    public Domicilio eliminar(int id) throws SQLException {
-        return null;
-    }
-
-    @Override
-    public Domicilio buscar(int id) throws SQLException {
+    public Domicilio buscar(int id) {
         PreparedStatement preparedStatement = null;
         Domicilio d = null;
         try (Connection con = getConnection()){
@@ -48,10 +67,7 @@ public class DomicilioDAOH2 implements IDAO<Domicilio> {
                 logger.info("--Domicilio encontrado--");
                 logger.info(d.toString());
             }
-            ResultSet clavegenerada = preparedStatement.getGeneratedKeys();
-            if (clavegenerada.next()){
-                d.setId(clavegenerada.getInt(1));
-            }
+            preparedStatement.close();
         } catch (Exception e){
             logger.error("Error al buscar el domicilio", e);
             e.printStackTrace();
@@ -78,6 +94,7 @@ public class DomicilioDAOH2 implements IDAO<Domicilio> {
                 lista.add(d);
                 logger.info(d.toString());
             }
+            preparedStatement.close();
         } catch (Exception e){
             logger.error("Error al listar los domicilios", e);
             e.printStackTrace();

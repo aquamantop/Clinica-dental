@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface IDAO<T> {
 
-    T guardar(T t) throws  SQLException;
-    T eliminar(int id) throws SQLException;
-    T buscar(int id) throws SQLException;
+    T guardar(T t);
+    T eliminar(int id);
+    T buscar(int id);
     List<T> listar();
 
 }

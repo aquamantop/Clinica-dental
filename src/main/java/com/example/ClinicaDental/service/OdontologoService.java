@@ -21,17 +21,17 @@ public class OdontologoService implements IDAO<Odontologo> {
     }
 
     @Override
-    public Odontologo guardar(Odontologo odontologo) throws SQLException {
+    public Odontologo guardar(Odontologo odontologo){
         return odontologoIDAO.guardar(odontologo);
     }
 
     @Override
-    public Odontologo eliminar(int id) throws SQLException {
+    public Odontologo eliminar(int id){
         return odontologoIDAO.eliminar(id);
     }
 
     @Override
-    public Odontologo buscar(int id) throws SQLException {
+    public Odontologo buscar(int id){
         return odontologoIDAO.buscar(id);
     }
 

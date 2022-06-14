@@ -6,8 +6,6 @@ import com.example.ClinicaDental.model.Paciente;
 import com.example.ClinicaDental.service.IPacienteService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
-
-import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -24,25 +22,32 @@ public class PacienteDAOH2 implements IPacienteService {
     }
 
     @Override
-    public Paciente guardar(Paciente p) throws SQLException {
+    public Paciente guardar(Paciente p) {
         PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()){
             logger.debug("Guardando paciente...");
             DomicilioDAOH2 d = new DomicilioDAOH2();
             OdontologoDAOH2 o = new OdontologoDAOH2();
-
+            d.guardar(p.getDomicilio());
+            o.guardar(p.getOdontologo());
+            preparedStatement = con.prepareStatement("INSERT INTO pacientes (APELLIDO, NOMBRE, EMAIL, DNI, FECHA_INGRESO, DOMICILIO_ID, ODONTOLOGO_ID) VALUES (?,?,?,?,?,?,?)");
+            preparedStatement.setString(1, p.getApellido());
+            preparedStatement.setString(2, p.getNombre());
+            preparedStatement.setString(3, p.getEmail());
+            preparedStatement.setInt(4, p.getDNI());
+            preparedStatement.setDate(5, Date.valueOf(p.getFechaIngreso()));
+            preparedStatement.setInt(6, p.getDomicilio().getId());
+            preparedStatement.setInt(6, p.getOdontologo().getId());
+            preparedStatement.close();
         } catch (Exception e){
             logger.error("Error al guardar paciente", e);
             e.printStackTrace();
         }
-
         return p;
     }
 
-
-
     @Override
-    public Paciente buscar(int id) throws SQLException {
+    public Paciente buscar(int id) {
         PreparedStatement preparedStatement = null;
         Paciente p = null;
         Domicilio d = null;
@@ -70,6 +75,7 @@ public class PacienteDAOH2 implements IPacienteService {
                 logger.info("--Paciente encontrado--");
                 logger.info(p.toString());
             }
+            preparedStatement.close();
         } catch (Exception e){
             logger.error("Error al buscar paciente", e);
             e.printStackTrace();
@@ -78,7 +84,7 @@ public class PacienteDAOH2 implements IPacienteService {
     }
 
     @Override
-    public Paciente buscarPorEmail(String email) throws SQLException {
+    public Paciente buscarPorEmail(String email) {
         PreparedStatement preparedStatement = null;
         Paciente p = null;
         Domicilio d = null;
@@ -106,11 +112,17 @@ public class PacienteDAOH2 implements IPacienteService {
                 logger.info("--Paciente encontrado--");
                 logger.info(p.toString());
             }
+            preparedStatement.close();
         } catch (Exception e){
             logger.error("Error al buscar paciente", e);
             e.printStackTrace();
         }
         return p;
+    }
+
+    @Override
+    public Paciente eliminar(Paciente p){
+        return null;
     }
 
     @Override
@@ -141,6 +153,7 @@ public class PacienteDAOH2 implements IPacienteService {
                 lista.add(p);
                 logger.info(p.toString());
             }
+            preparedStatement.close();
         } catch (Exception e){
             logger.error("Error al listar pacientes", e);
             e.printStackTrace();
