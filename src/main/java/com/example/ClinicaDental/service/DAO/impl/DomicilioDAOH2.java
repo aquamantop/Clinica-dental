@@ -1,10 +1,13 @@
 package com.example.ClinicaDental.service.DAO.impl;
 
 import com.example.ClinicaDental.model.Domicilio;
+import com.example.ClinicaDental.model.Odontologo;
+import com.example.ClinicaDental.model.Paciente;
 import com.example.ClinicaDental.service.DAO.IDAO;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,16 +39,14 @@ public class DomicilioDAOH2 implements IDAO<Domicilio> {
             }
             preparedStatement.close();
         } catch (Exception e) {
-            logger.error("Error al crear domicilio", e);
+            logger.error("Error al guardar domicilio", e);
             e.printStackTrace();
         }
         return d;
     }
 
     @Override
-    public Domicilio eliminar(int id) {
-        return null;
-    }
+    public void eliminar(int id) {}
 
     @Override
     public Domicilio buscar(int id) {

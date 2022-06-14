@@ -24,28 +24,38 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
     public Odontologo guardar(Odontologo o){
         PreparedStatement preparedStatement = null;
         try (Connection con = getConnection()) {
-            logger.debug("Guardando domicilio...");
+            logger.debug("Guardando odontologo...");
             preparedStatement = con.prepareStatement("INSERT INTO odontologos (APELLIDO, NOMBRE, MATRICULA) VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, o.getApellido());
             preparedStatement.setString(2, o.getNombre());
             preparedStatement.setInt(3, o.getMatricula());
             preparedStatement.executeUpdate();
-            logger.info("--Domicilio guardado--");
+            logger.info("--Odontologo guardado--");
             ResultSet cg = preparedStatement.getGeneratedKeys();
             if (cg.next()){
                 o.setId(cg.getInt(1));
             }
             preparedStatement.close();
         } catch (Exception e) {
-            logger.error("Error al crear domicilio", e);
+            logger.error("Error al guardar odontologo", e);
             e.printStackTrace();
         }
         return o;
     }
 
     @Override
-    public Odontologo eliminar(int id){
-        return null;
+    public void eliminar(int id){
+        PreparedStatement preparedStatement = null;
+        try (Connection con = getConnection()){
+            logger.debug("Eliminando odontologo...");
+            preparedStatement = con.prepareStatement("DELETE FROM odontologos WHERE ID=?");
+            preparedStatement.setInt(1, id);
+            preparedStatement.close();
+            logger.info("--Odontologo eliminado--");
+        } catch (Exception e){
+            logger.error("Error al eliminar odontologo", e);
+            e.printStackTrace();
+        }
     }
 
     @Override

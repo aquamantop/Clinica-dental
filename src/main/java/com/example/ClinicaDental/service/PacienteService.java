@@ -34,8 +34,8 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public Paciente eliminar(Paciente p){
-        return pacienteIDAO.eliminar(p);
+    public Paciente eliminar(int id){
+        return pacienteIDAO.eliminar(id);
     }
 
 }

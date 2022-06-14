@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.sql.SQLException;
 
 @Controller
 @RequestMapping("/pacientes")
@@ -16,14 +15,23 @@ public class PacienteController {
     @Autowired
     private final PacienteService p = new PacienteService(new PacienteDAOH2());
 
-//    @PostMapping("/guardar")
-//    public Paciente guardar(@RequestBody Paciente paciente) throws SQLException {
-//        return p.guardar(paciente);
-//    }
+    @PostMapping("/guardar")
+    public String guardar(Model model, @RequestBody Paciente paciente){
+        p.guardar(paciente);
+        model.addAttribute("frase", paciente.toString());
+        return "usuario";
+    }
 
+    @DeleteMapping("/eliminar/{id}")
+    public String eliminar(Model model, @PathVariable int id){
+        Paciente paciente = p.eliminar(id);
+        String frase = "Paciente eliminado: " + paciente.getNombre() + " " + paciente.getApellido();
+        model.addAttribute("frase", frase);
+        return "usuario";
+    }
 
     @GetMapping("/buscar")
-    public String buscar(Model model, @RequestParam("email") String email) throws SQLException {
+    public String buscar(Model model, @RequestParam("email") String email) {
         Paciente paciente = p.buscarPorEmail(email);
         String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
         String frase2 = "Odontolo asignado con matricula: " + paciente.getOdontologo().getMatricula();
@@ -33,7 +41,7 @@ public class PacienteController {
     }
 
     @GetMapping("/buscar/{id}")
-    public String buscarID(Model model, @PathVariable int id) throws SQLException {
+    public String buscarID(Model model, @PathVariable int id) {
         Paciente paciente = p.buscar(id);
         String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
         String frase2 = "Odontolo asignado con matricula: " + paciente.getOdontologo().getMatricula();

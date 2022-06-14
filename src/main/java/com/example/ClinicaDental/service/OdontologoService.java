@@ -26,8 +26,8 @@ public class OdontologoService implements IDAO<Odontologo> {
     }
 
     @Override
-    public Odontologo eliminar(int id){
-        return odontologoIDAO.eliminar(id);
+    public void eliminar(int id){
+        odontologoIDAO.eliminar(id);
     }
 
     @Override
