@@ -205,4 +205,31 @@ public class PacienteDAOH2 implements IPacienteService {
         }
         return lista;
     }
+
+    @Override
+    public Paciente actualizar(Paciente p) {
+        PreparedStatement preparedStatement = null;
+        try (Connection con = getConnection()){
+            logger.debug("Actualizando paciente...");
+            DomicilioDAOH2 d = new DomicilioDAOH2();
+            OdontologoDAOH2 o = new OdontologoDAOH2();
+            Domicilio domicilio = d.actualizar(p.getDomicilio());
+            preparedStatement = con.prepareStatement("UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMICILIO_ID=? WHERE ID=?");
+            preparedStatement.setString(1, p.getApellido());
+            preparedStatement.setString(2, p.getNombre());
+            preparedStatement.setString(3, p.getEmail());
+            preparedStatement.setInt(4, p.getDNI());
+            preparedStatement.setDate(5, Date.valueOf(p.getFechaIngreso()));
+            preparedStatement.setInt(6, p.getDomicilio().getId());
+            preparedStatement.setInt(7, p.getId());
+            preparedStatement.executeUpdate();
+            logger.info("--Paciente actualizado--");
+            logger.info(p.toString());
+            preparedStatement.close();
+        } catch (Exception e){
+            logger.error("Error al guardar paciente", e);
+            e.printStackTrace();
+        }
+        return p;
+    }
 }

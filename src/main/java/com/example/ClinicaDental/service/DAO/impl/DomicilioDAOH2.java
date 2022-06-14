@@ -99,4 +99,25 @@ public class DomicilioDAOH2 implements IDomicilioService {
         }
         return lista;
     }
+
+    @Override
+    public Domicilio actualizar(Domicilio d) {
+        PreparedStatement preparedStatement = null;
+        try (Connection con = getConnection()) {
+            logger.debug("Actualizando domicilio...");
+            preparedStatement = con.prepareStatement("UPDATE domicilios SET CALLE=?, NUMERO=?, LOCALIDAD=?, PROVINCIA=? WHERE ID=?");
+            preparedStatement.setString(1, d.getCalle());
+            preparedStatement.setInt(2, d.getNumero());
+            preparedStatement.setString(3, d.getLocalidad());
+            preparedStatement.setString(4, d.getProvincia());
+            preparedStatement.setInt(5, d.getId());
+            preparedStatement.executeUpdate();
+            logger.info("--Domicilio actualizado--");
+            preparedStatement.close();
+        } catch (Exception e) {
+            logger.error("Error al guardar domicilio", e);
+            e.printStackTrace();
+        }
+        return d;
+    }
 }

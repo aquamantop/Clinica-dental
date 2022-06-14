@@ -9,5 +9,6 @@ public interface IDomicilioService {
     void eliminar(int id);
     Domicilio buscar(int id);
     List<Domicilio> listar();
+    Domicilio actualizar(Domicilio domicilio);
 
 }

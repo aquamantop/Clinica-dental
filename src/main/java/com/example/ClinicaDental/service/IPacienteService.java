@@ -10,5 +10,6 @@ public interface IPacienteService {
     Paciente buscarPorEmail(String email);
     Paciente eliminar(int id);
     List<Paciente> listar();
+    Paciente actualizar(Paciente p);
 
 }
