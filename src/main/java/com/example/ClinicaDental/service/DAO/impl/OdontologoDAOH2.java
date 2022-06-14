@@ -125,8 +125,23 @@ public class OdontologoDAOH2 implements IOdontologoService {
     }
 
     @Override
-    public Odontologo actualizar(Odontologo odontologo) {
-        return null;
+    public Odontologo actualizar(Odontologo o) {
+        PreparedStatement preparedStatement = null;
+        try (Connection con = getConnection()) {
+            logger.debug("Actualizando odontologo...");
+            preparedStatement = con.prepareStatement("UPDATE odontologos SET APELLIDO=?, NOMBRE=?, MATRICULA=? WHERE ID=?");
+            preparedStatement.setString(1, o.getApellido());
+            preparedStatement.setString(2, o.getNombre());
+            preparedStatement.setInt(3, o.getMatricula());
+            preparedStatement.setInt(4, o.getId());
+            preparedStatement.executeUpdate();
+            logger.info("--Odontologo actualizado--");
+            preparedStatement.close();
+        } catch (Exception e) {
+            logger.error("Error al actualizar odontologo", e);
+            e.printStackTrace();
+        }
+        return o;
     }
 
 

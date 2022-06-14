@@ -48,4 +48,11 @@ public class OdontologoController {
         return "listar";
     }
 
+    @PutMapping("/actualizar")
+    public String actualizar(Model model, @RequestBody Odontologo odontologo){
+        o.actualizar(odontologo);
+        model.addAttribute("frase", odontologo.toString());
+        return "usuario";
+    }
+
 }
