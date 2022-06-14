@@ -1,7 +1,7 @@
-package com.example.ClinicaDental.service.DAO.impl;
+package com.example.ClinicaDental.Repository.impl;
 
+import com.example.ClinicaDental.Repository.IDomicilioService;
 import com.example.ClinicaDental.model.Domicilio;
-import com.example.ClinicaDental.service.IDomicilioService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import java.sql.*;
