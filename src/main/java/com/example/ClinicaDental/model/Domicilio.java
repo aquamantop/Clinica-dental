@@ -62,6 +62,6 @@ public class Domicilio {
                 "\nCalle: " + calle + "/" +
                 "\nNumero: " + numero + "/" +
                 "\nLocalidad: " + localidad + "/" +
-                "\nProvincia: " + provincia;
+                "\nProvincia: " + provincia + "\n";
     }
 }

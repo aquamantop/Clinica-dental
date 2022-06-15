@@ -22,8 +22,8 @@ public class PacienteController {
         ResponseEntity response = null;
 
         if(paciente != null) {
-            response = new ResponseEntity(p.guardar(paciente), HttpStatus.OK);
-        } else response = new ResponseEntity(HttpStatus.FORBIDDEN);
+            response = new ResponseEntity(p.guardar(paciente).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("Paciente no guardado",HttpStatus.FORBIDDEN);
 
         //model.addAttribute("frase", paciente.toString());
         return response;
@@ -34,8 +34,8 @@ public class PacienteController {
         ResponseEntity response = null;
 
         if(p.buscar(id) != null){
-            response = new ResponseEntity(p.eliminar(id), HttpStatus.OK);
-        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+            response = new ResponseEntity(p.eliminar(id).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
         //model.addAttribute("frase", frase);
         return response;
     }
@@ -45,8 +45,8 @@ public class PacienteController {
         ResponseEntity response = null;
 
         if(p.buscarPorEmail(email) != null){
-            response = new ResponseEntity(p.buscarPorEmail(email), HttpStatus.OK);
-        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+            response = new ResponseEntity(p.buscarPorEmail(email).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
 
         //model.addAttribute("frase", frase);
         //model.addAttribute("frase2", frase2);
@@ -59,8 +59,8 @@ public class PacienteController {
         ResponseEntity response = null;
 
         if(id > 0 && p.buscar(id) != null){
-            response = new ResponseEntity(p.buscar(id), HttpStatus.OK);
-        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+            response = new ResponseEntity(p.buscar(id).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
 
         //model.addAttribute("frase", frase);
         //model.addAttribute("frase2", frase2);
@@ -77,9 +77,8 @@ public class PacienteController {
         //model.addAttribute("frase"+paciente.getId(), frase);
         //}
         if(p.listar().size() > 0){
-            response = new ResponseEntity(p.listar(), HttpStatus.OK);
-
-        } else response = new ResponseEntity(HttpStatus.NO_CONTENT);
+            response = new ResponseEntity(p.listar().toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("Pacientes no encontrados", HttpStatus.NO_CONTENT);
 
         return response;
     }
@@ -91,8 +90,8 @@ public class PacienteController {
         if(p.buscar(paciente.getId()) != null){
             p.actualizar(paciente);
             Paciente p1 = p.buscar(paciente.getId());
-            response = new ResponseEntity(p1, HttpStatus.OK);
-        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+            response = new ResponseEntity(p1.toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
 
 
 //        model.addAttribute("frase", p1.toString());
