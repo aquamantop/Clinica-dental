@@ -4,6 +4,8 @@ import com.example.ClinicaDental.model.Odontologo;
 import com.example.ClinicaDental.repository.impl.OdontologoDAOH2;
 import com.example.ClinicaDental.service.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,43 +18,65 @@ public class OdontologoController {
     private final OdontologoService o = new OdontologoService(new OdontologoDAOH2());
 
     @PostMapping("/guardar")
-    public String guardar(Model model, @RequestBody Odontologo odontologo){
-        o.guardar(odontologo);
-        model.addAttribute("frase", odontologo.toString());
-        return "usuario";
+    public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo){
+        ResponseEntity<Odontologo> response = null;
+
+        if(odontologo != null){
+            response = new ResponseEntity(o.guardar(odontologo).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.FORBIDDEN);
+
+        //model.addAttribute("frase", odontologo.toString());
+        return response;
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public String eliminar(Model model, @PathVariable int id){
-        Odontologo odontologo = o.eliminar(id);
-        String frase = "Odontologo eliminado: " + odontologo.getNombre() + " " + odontologo.getApellido();
-        model.addAttribute("frase", frase);
-        return "usuario";
+    public ResponseEntity<Odontologo> eliminar(@PathVariable int id){
+        ResponseEntity response = null;
+
+        if(o.buscar(id) != null){
+            response = new ResponseEntity(o.eliminar(id).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.FORBIDDEN);
+        //model.addAttribute("frase", frase);
+
+        return response;
     }
 
     @GetMapping("/buscar/{id}")
-    public String buscarID(Model model, @PathVariable int id) {
-        Odontologo odontologo = o.buscar(id);
-        String frase = "Bienvenido: " + odontologo.toString();
-        model.addAttribute("frase", frase);
-        return "usuario";
+    public ResponseEntity<Odontologo> buscarID(@PathVariable int id) {
+        ResponseEntity response = null;
+
+        if(id > 0 && o.buscar(id) != null){
+            response = new ResponseEntity(o.buscar(id).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.FORBIDDEN);
+        //model.addAttribute("frase", frase);
+
+        return response;
     }
 
     @GetMapping("/listar")
-    public String listarOdontologos(Model model) {
-        for (Odontologo odontologo : o.listar()){
-            String frase = "Hola paciente " + odontologo.getNombre() + " " + odontologo.getApellido();
-            model.addAttribute("frase"+odontologo.getId(), frase);
-        }
-        return "listar";
+    public ResponseEntity listarOdontologos() {
+        ResponseEntity response = null;
+
+        if(o.listar().size() > 0){
+            for (Odontologo odontologo : o.listar()){
+                response = new ResponseEntity(o.listar().toString(), HttpStatus.OK);
+                //model.addAttribute("frase"+odontologo.getId(), frase);
+            }
+        } else response = new ResponseEntity("No se pudo encontrar odontologos", HttpStatus.FORBIDDEN);
+
+        return response;
     }
 
     @PutMapping("/actualizar")
-    public String actualizar(Model model, @RequestBody Odontologo odontologo){
-        o.actualizar(odontologo);
-        Odontologo o1 = o.buscar(odontologo.getId());
-        model.addAttribute("frase", o1.toString());
-        return "usuario";
+    public ResponseEntity<Odontologo> actualizar(Model model, @RequestBody Odontologo odontologo){
+        ResponseEntity response = null;
+
+        if(odontologo != null){
+            response = new ResponseEntity(o.actualizar(odontologo).toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.FORBIDDEN);
+        //model.addAttribute("frase", o1.toString());
+
+        return response;
     }
 
 }

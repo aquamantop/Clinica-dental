@@ -23,7 +23,7 @@ public class PacienteController {
 
         if(paciente != null) {
             response = new ResponseEntity(p.guardar(paciente).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("Paciente no guardado",HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se pudo guardar paciente",HttpStatus.FORBIDDEN);
 
         //model.addAttribute("frase", paciente.toString());
         return response;
@@ -35,7 +35,7 @@ public class PacienteController {
 
         if(p.buscar(id) != null){
             response = new ResponseEntity(p.eliminar(id).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
+        } else response = new ResponseEntity("No se pudo eliminar paciente", HttpStatus.FORBIDDEN);
         //model.addAttribute("frase", frase);
         return response;
     }
@@ -46,7 +46,7 @@ public class PacienteController {
 
         if(p.buscarPorEmail(email) != null){
             response = new ResponseEntity(p.buscarPorEmail(email).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
+        } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.FORBIDDEN);
 
         //model.addAttribute("frase", frase);
         //model.addAttribute("frase2", frase2);
@@ -60,7 +60,7 @@ public class PacienteController {
 
         if(id > 0 && p.buscar(id) != null){
             response = new ResponseEntity(p.buscar(id).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
+        } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.FORBIDDEN);
 
         //model.addAttribute("frase", frase);
         //model.addAttribute("frase2", frase2);
@@ -78,7 +78,7 @@ public class PacienteController {
         //}
         if(p.listar().size() > 0){
             response = new ResponseEntity(p.listar().toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("Pacientes no encontrados", HttpStatus.NO_CONTENT);
+        } else response = new ResponseEntity("No se pudo encontrar pacientes", HttpStatus.FORBIDDEN);
 
         return response;
     }
@@ -91,7 +91,7 @@ public class PacienteController {
             p.actualizar(paciente);
             Paciente p1 = p.buscar(paciente.getId());
             response = new ResponseEntity(p1.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("Paciente no encontrado", HttpStatus.NOT_FOUND);
+        } else response = new ResponseEntity("No se pudo actualizar paciente", HttpStatus.FORBIDDEN);
 
 
 //        model.addAttribute("frase", p1.toString());
