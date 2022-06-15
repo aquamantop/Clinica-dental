@@ -95,8 +95,6 @@ public class Paciente {
                 "\nNombre: " + nombre + "/" +
                 "\nEmail: " + email + "/" +
                 "\nDNI: " + DNI + "/" +
-                "\nFecha de ingreso: " + fechaIngreso +
-                "/" +
-                domicilio.toString();
+                "\nFecha de ingreso: " + fechaIngreso;
     }
 }

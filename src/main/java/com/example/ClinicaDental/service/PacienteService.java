@@ -8,40 +8,40 @@ import java.util.List;
 @Service
 public class PacienteService implements IPacienteService {
 
-    private final IPacienteService pacienteIDAO;
+    private final IPacienteService pacienteService;
 
-    public PacienteService(IPacienteService pacienteIDAO) {
-        this.pacienteIDAO = pacienteIDAO;
+    public PacienteService(IPacienteService pacienteService) {
+        this.pacienteService = pacienteService;
     }
 
     @Override
     public List<Paciente> listar() {
-        return pacienteIDAO.listar();
+        return pacienteService.listar();
     }
 
     @Override
     public Paciente actualizar(Paciente p) {
-        return pacienteIDAO.actualizar(p);
+        return pacienteService.actualizar(p);
     }
 
     @Override
     public Paciente guardar(Paciente p){
-        return pacienteIDAO.guardar(p);
+        return pacienteService.guardar(p);
     }
 
     @Override
     public Paciente buscar(int id){
-        return pacienteIDAO.buscar(id);
+        return pacienteService.buscar(id);
     }
 
     @Override
     public Paciente buscarPorEmail(String email){
-        return pacienteIDAO.buscarPorEmail(email);
+        return pacienteService.buscarPorEmail(email);
     }
 
     @Override
     public Paciente eliminar(int id){
-        return pacienteIDAO.eliminar(id);
+        return pacienteService.eliminar(id);
     }
 
 }

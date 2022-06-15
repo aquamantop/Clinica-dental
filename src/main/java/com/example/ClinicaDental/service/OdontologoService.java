@@ -9,35 +9,35 @@ import java.util.List;
 @Service
 public class OdontologoService implements IOdontologoService {
 
-    private final IOdontologoService odontologoIDAO;
+    private final IOdontologoService odontologoService;
 
-    public OdontologoService(IOdontologoService odontologoIDAO) {
-        this.odontologoIDAO = odontologoIDAO;
+    public OdontologoService(IOdontologoService odontologoService) {
+        this.odontologoService = odontologoService;
     }
 
     @Override
     public List<Odontologo> listar() {
-        return odontologoIDAO.listar();
+        return odontologoService.listar();
     }
 
     @Override
     public Odontologo actualizar(Odontologo odontologo) {
-        return odontologoIDAO.actualizar(odontologo);
+        return odontologoService.actualizar(odontologo);
     }
 
     @Override
     public Odontologo guardar(Odontologo odontologo){
-        return odontologoIDAO.guardar(odontologo);
+        return odontologoService.guardar(odontologo);
     }
 
     @Override
     public Odontologo eliminar(int id){
-        return odontologoIDAO.eliminar(id);
+        return odontologoService.eliminar(id);
     }
 
     @Override
     public Odontologo buscar(int id){
-        return odontologoIDAO.buscar(id);
+        return odontologoService.buscar(id);
     }
 
 

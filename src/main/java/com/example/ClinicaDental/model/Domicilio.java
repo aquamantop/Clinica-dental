@@ -14,8 +14,7 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-    public Domicilio() {
-    }
+    public Domicilio() {}
 
     public int getId() {
         return id;
@@ -63,7 +62,6 @@ public class Domicilio {
                 "\nCalle: " + calle + "/" +
                 "\nNumero: " + numero + "/" +
                 "\nLocalidad: " + localidad + "/" +
-                "\nProvincia: " + provincia +
-                ']';
+                "\nProvincia: " + provincia;
     }
 }
