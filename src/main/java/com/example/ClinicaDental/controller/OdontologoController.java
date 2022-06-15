@@ -50,7 +50,8 @@ public class OdontologoController {
     @PutMapping("/actualizar")
     public String actualizar(Model model, @RequestBody Odontologo odontologo){
         o.actualizar(odontologo);
-        model.addAttribute("frase", odontologo.toString());
+        Odontologo o1 = o.buscar(odontologo.getId());
+        model.addAttribute("frase", o1.toString());
         return "usuario";
     }
 

@@ -1,0 +1,88 @@
+[2022-06-14 22:14:47] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 22:14:47] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 22:15:09] [ DEBUG] [DomicilioDAOH2:103] Listando odontologos...
+[2022-06-14 22:15:09] [ INFO ] [DomicilioDAOH2:114] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 22:15:09] [ INFO ] [DomicilioDAOH2:114] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 22:15:15] [ DEBUG] [DomicilioDAOH2:27] Guardando odontologo...
+[2022-06-14 22:15:15] [ INFO ] [DomicilioDAOH2:33] --Odontologo guardado--
+[2022-06-14 22:15:21] [ DEBUG] [DomicilioDAOH2:78] Buscando odontologo...
+[2022-06-14 22:15:21] [ INFO ] [DomicilioDAOH2:89] --Odontologo encontrado--
+[2022-06-14 22:15:21] [ INFO ] [DomicilioDAOH2:90] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757
+[2022-06-14 22:15:33] [ DEBUG] [DomicilioDAOH2:126] Actualizando odontologo...
+[2022-06-14 22:15:33] [ DEBUG] [DomicilioDAOH2:78] Buscando odontologo...
+[2022-06-14 22:15:33] [ INFO ] [DomicilioDAOH2:89] --Odontologo encontrado--
+[2022-06-14 22:15:33] [ INFO ] [DomicilioDAOH2:90] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757
+[2022-06-14 22:15:33] [ INFO ] [DomicilioDAOH2:144] --Odontologo actualizado--
+[2022-06-14 22:16:30] [ DEBUG] [DomicilioDAOH2:78] Buscando odontologo...
+[2022-06-14 22:16:30] [ INFO ] [DomicilioDAOH2:89] --Odontologo encontrado--
+[2022-06-14 22:16:30] [ INFO ] [DomicilioDAOH2:90] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5000
+[2022-06-14 22:18:01] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 22:18:01] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 22:18:11] [ DEBUG] [OdontologoDAOH2:24] Guardando odontologo...
+[2022-06-14 22:18:11] [ INFO ] [OdontologoDAOH2:30] --Odontologo guardado--
+[2022-06-14 22:18:15] [ DEBUG] [OdontologoDAOH2:100] Listando odontologos...
+[2022-06-14 22:18:15] [ INFO ] [OdontologoDAOH2:111] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 22:18:15] [ INFO ] [OdontologoDAOH2:111] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 22:18:15] [ INFO ] [OdontologoDAOH2:111] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757
+[2022-06-14 22:18:17] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:18:17] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:18:17] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757
+[2022-06-14 22:18:17] [ DEBUG] [OdontologoDAOH2:123] Actualizando odontologo...
+[2022-06-14 22:18:17] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:18:17] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:18:17] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757
+[2022-06-14 22:18:17] [ INFO ] [OdontologoDAOH2:141] --Odontologo actualizado--
+[2022-06-14 22:18:43] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 22:18:43] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 22:18:51] [ DEBUG] [OdontologoDAOH2:24] Guardando odontologo...
+[2022-06-14 22:18:51] [ INFO ] [OdontologoDAOH2:30] --Odontologo guardado--
+[2022-06-14 22:18:53] [ DEBUG] [OdontologoDAOH2:123] Actualizando odontologo...
+[2022-06-14 22:18:53] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:18:53] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:18:53] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757
+[2022-06-14 22:18:53] [ INFO ] [OdontologoDAOH2:141] --Odontologo actualizado--
+[2022-06-14 22:18:53] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:18:53] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:18:53] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5000
+[2022-06-14 22:18:56] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:18:56] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:18:56] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5000

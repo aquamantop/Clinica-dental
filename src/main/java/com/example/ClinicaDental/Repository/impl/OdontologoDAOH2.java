@@ -1,20 +1,17 @@
 package com.example.ClinicaDental.Repository.impl;
 
 import com.example.ClinicaDental.Repository.IOdontologoService;
-import com.example.ClinicaDental.Repository.impl.DomicilioDAOH2;
 import com.example.ClinicaDental.model.Odontologo;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Component
 public class OdontologoDAOH2 implements IOdontologoService {
 
-    public static final Logger logger = Logger.getLogger(DomicilioDAOH2.class);
+    public static final Logger logger = Logger.getLogger(OdontologoDAOH2.class);
 
     public static Connection getConnection() throws Exception {
         Class.forName("org.h2.Driver").newInstance();
@@ -124,10 +121,21 @@ public class OdontologoDAOH2 implements IOdontologoService {
     public Odontologo actualizar(Odontologo o) {
         try (Connection con = getConnection()) {
             logger.debug("Actualizando odontologo...");
+            Odontologo o1 = this.buscar(o.getId());
             PreparedStatement preparedStatement = con.prepareStatement("UPDATE odontologos SET APELLIDO=?, NOMBRE=?, MATRICULA=? WHERE ID=?");
-            preparedStatement.setString(1, o.getApellido());
-            preparedStatement.setString(2, o.getNombre());
-            preparedStatement.setInt(3, o.getMatricula());
+
+            if(o.getApellido() != null){
+                preparedStatement.setString(1, o.getApellido());
+            } else preparedStatement.setString(1, o1.getApellido());
+
+            if(o.getNombre() != null){
+                preparedStatement.setString(2, o.getNombre());
+            } else preparedStatement.setString(2, o1.getNombre());
+
+            if(o.getMatricula() > 0){
+                preparedStatement.setInt(3, o.getMatricula());
+            } else preparedStatement.setInt(3, o1.getMatricula());
+
             preparedStatement.setInt(4, o.getId());
             preparedStatement.executeUpdate();
             logger.info("--Odontologo actualizado--");
