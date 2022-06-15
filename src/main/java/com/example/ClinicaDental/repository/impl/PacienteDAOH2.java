@@ -26,11 +26,8 @@ public class PacienteDAOH2 implements IPacienteService {
         try (Connection con = getConnection()){
             logger.debug("Guardando paciente...");
             DomicilioDAOH2 d = new DomicilioDAOH2();
-            OdontologoDAOH2 o = new OdontologoDAOH2();
             Domicilio domicilio = d.guardar(p.getDomicilio());
             p.getDomicilio().setId(domicilio.getId());
-            Odontologo odontologo = o.guardar(p.getOdontologo());
-            p.getOdontologo().setId(odontologo.getId());
             PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO pacientes (APELLIDO, NOMBRE, EMAIL, DNI, FECHA_INGRESO, DOMICILIO_ID, ODONTOLOGO_ID) VALUES (?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, p.getApellido());
             preparedStatement.setString(2, p.getNombre());
@@ -38,7 +35,13 @@ public class PacienteDAOH2 implements IPacienteService {
             preparedStatement.setInt(4, p.getDNI());
             preparedStatement.setDate(5, Date.valueOf(p.getFechaIngreso()));
             preparedStatement.setInt(6, p.getDomicilio().getId());
-            preparedStatement.setInt(7, p.getOdontologo().getId());
+            if(p.getOdontologo() != null){
+                OdontologoDAOH2 o = new OdontologoDAOH2();
+                Odontologo odontologo = o.guardar(p.getOdontologo());
+                p.getOdontologo().setId(odontologo.getId());
+                preparedStatement.setInt(7, p.getOdontologo().getId());
+            } else preparedStatement.setInt(7, 0);
+
             preparedStatement.executeUpdate();
             ResultSet cg = preparedStatement.getGeneratedKeys();
             if(cg.next()){
