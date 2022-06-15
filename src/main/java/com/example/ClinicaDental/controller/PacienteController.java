@@ -4,6 +4,8 @@ import com.example.ClinicaDental.model.Paciente;
 import com.example.ClinicaDental.repository.impl.PacienteDAOH2;
 import com.example.ClinicaDental.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,55 +18,86 @@ public class PacienteController {
     private final PacienteService p = new PacienteService(new PacienteDAOH2());
 
     @PostMapping("/guardar")
-    public String guardar(Model model, @RequestBody Paciente paciente){
-        p.guardar(paciente);
-        model.addAttribute("frase", paciente.toString());
-        return "usuario";
+    public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente){
+        ResponseEntity response = null;
+
+        if(paciente != null) {
+            response = new ResponseEntity(p.guardar(paciente), HttpStatus.OK);
+        } else response = new ResponseEntity(HttpStatus.FORBIDDEN);
+
+        //model.addAttribute("frase", paciente.toString());
+        return response;
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public String eliminar(Model model, @PathVariable int id){
-        Paciente paciente = p.eliminar(id);
-        String frase = "Paciente eliminado: " + paciente.getNombre() + " " + paciente.getApellido();
-        model.addAttribute("frase", frase);
-        return "usuario";
+    public ResponseEntity eliminar(@PathVariable int id){
+        ResponseEntity response = null;
+
+        if(p.buscar(id) != null){
+            response = new ResponseEntity(p.eliminar(id), HttpStatus.OK);
+        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+        //model.addAttribute("frase", frase);
+        return response;
     }
 
     @GetMapping("/buscarEmail/{email}")
-    public String buscarPorEmail(Model model, @PathVariable String email) {
-        Paciente paciente = p.buscarPorEmail(email);
-        String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
-        String frase2 = "Odontolo asignado con matricula: " + paciente.getOdontologo().getMatricula();
-        model.addAttribute("frase", frase);
-        model.addAttribute("frase2", frase2);
-        return "usuario";
+    public ResponseEntity<Paciente> buscarPorEmail(@PathVariable String email) {
+        ResponseEntity response = null;
+
+        if(p.buscarPorEmail(email) != null){
+            response = new ResponseEntity(p.buscarPorEmail(email), HttpStatus.OK);
+        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+
+        //model.addAttribute("frase", frase);
+        //model.addAttribute("frase2", frase2);
+
+        return response;
     }
 
     @GetMapping("/buscarID/{id}")
-    public String buscarID(Model model, @PathVariable int id) {
-        Paciente paciente = p.buscar(id);
-        String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
-        String frase2 = "Odontolo asignado con matricula: " + paciente.getOdontologo().getMatricula();
-        model.addAttribute("frase", frase);
-        model.addAttribute("frase2", frase2);
-        return "usuario";
+    public ResponseEntity<Paciente> buscarID(@PathVariable int id) {
+        ResponseEntity response = null;
+
+        if(id > 0 && p.buscar(id) != null){
+            response = new ResponseEntity(p.buscar(id), HttpStatus.OK);
+        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+
+        //model.addAttribute("frase", frase);
+        //model.addAttribute("frase2", frase2);
+
+        return response;
     }
 
     @GetMapping("/listar")
-    public String listarPacientes(Model model) {
-        for (Paciente paciente : p.listar()){
-            String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
-            model.addAttribute("frase"+paciente.getId(), frase);
-        }
-        return "listar";
+    public ResponseEntity listarPacientes() {
+        ResponseEntity response = null;
+
+        //for (Paciente paciente : p.listar()){
+        //String frase = "Hola paciente " + paciente.getNombre() + " " + paciente.getApellido();
+        //model.addAttribute("frase"+paciente.getId(), frase);
+        //}
+        if(p.listar().size() > 0){
+            response = new ResponseEntity(p.listar(), HttpStatus.OK);
+
+        } else response = new ResponseEntity(HttpStatus.NO_CONTENT);
+
+        return response;
     }
 
     @PutMapping("/actualizar")
-    public String actualizar(Model model, @RequestBody Paciente paciente){
-        p.actualizar(paciente);
-        Paciente p1 = p.buscar(paciente.getId());
-        model.addAttribute("frase", p1.toString());
-        return "usuario";
+    public ResponseEntity<Paciente> actualizar(@RequestBody Paciente paciente){
+        ResponseEntity response = null;
+
+        if(p.buscar(paciente.getId()) != null){
+            p.actualizar(paciente);
+            Paciente p1 = p.buscar(paciente.getId());
+            response = new ResponseEntity(p1, HttpStatus.OK);
+        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+
+
+//        model.addAttribute("frase", p1.toString());
+
+        return response;
     }
 
 }
