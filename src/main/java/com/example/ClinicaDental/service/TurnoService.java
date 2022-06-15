@@ -6,7 +6,6 @@ import com.example.ClinicaDental.model.Paciente;
 import com.example.ClinicaDental.model.Turno;
 import com.example.ClinicaDental.repository.ITurnoService;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
