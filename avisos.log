@@ -239,7 +239,7 @@ UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMI
 	at org.h2.command.Command.executeUpdate(Command.java:252)
 	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:209)
 	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:169)
-	at com.example.ClinicaDental.Repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:235)
+	at com.example.ClinicaDental.repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:235)
 	at com.example.ClinicaDental.service.PacienteService.actualizar(PacienteService.java:24)
 	at com.example.ClinicaDental.controller.PacienteController.actualizar(PacienteController.java:64)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
@@ -363,7 +363,7 @@ Provincia: cordoba]
 [2022-06-14 22:34:07] [ ERROR] [DomicilioDAOH2:240] Error al guardar paciente
 java.lang.NullPointerException: Cannot invoke "com.example.ClinicaDental.model.Domicilio.toString()" because "this.domicilio" is null
 	at com.example.ClinicaDental.model.Paciente.toString(Paciente.java:100)
-	at com.example.ClinicaDental.Repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:237)
+	at com.example.ClinicaDental.repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:237)
 	at com.example.ClinicaDental.service.PacienteService.actualizar(PacienteService.java:24)
 	at com.example.ClinicaDental.controller.PacienteController.actualizar(PacienteController.java:64)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
@@ -532,7 +532,7 @@ Provincia: cordoba]
 [2022-06-14 22:34:55] [ ERROR] [DomicilioDAOH2:240] Error al guardar paciente
 java.lang.NullPointerException: Cannot invoke "com.example.ClinicaDental.model.Domicilio.toString()" because "this.domicilio" is null
 	at com.example.ClinicaDental.model.Paciente.toString(Paciente.java:100)
-	at com.example.ClinicaDental.Repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:237)
+	at com.example.ClinicaDental.repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:237)
 	at com.example.ClinicaDental.service.PacienteService.actualizar(PacienteService.java:24)
 	at com.example.ClinicaDental.controller.PacienteController.actualizar(PacienteController.java:64)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)

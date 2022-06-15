@@ -1,6 +1,6 @@
-package com.example.ClinicaDental.Repository.impl;
+package com.example.ClinicaDental.repository.impl;
 
-import com.example.ClinicaDental.Repository.IPacienteService;
+import com.example.ClinicaDental.repository.IPacienteService;
 import com.example.ClinicaDental.model.Domicilio;
 import com.example.ClinicaDental.model.Odontologo;
 import com.example.ClinicaDental.model.Paciente;

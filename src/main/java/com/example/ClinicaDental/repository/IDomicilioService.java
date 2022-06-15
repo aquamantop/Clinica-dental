@@ -1,4 +1,4 @@
-package com.example.ClinicaDental.Repository;
+package com.example.ClinicaDental.repository;
 
 import com.example.ClinicaDental.model.Domicilio;
 import java.util.List;
