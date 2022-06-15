@@ -2,6 +2,7 @@ package com.example.ClinicaDental.Repository.impl;
 
 import com.example.ClinicaDental.Repository.IDomicilioService;
 import com.example.ClinicaDental.model.Domicilio;
+import com.example.ClinicaDental.model.Odontologo;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import java.sql.*;
@@ -101,11 +102,25 @@ public class DomicilioDAOH2 implements IDomicilioService {
     public Domicilio actualizar(Domicilio d) {
         try (Connection con = getConnection()) {
             logger.debug("Actualizando domicilio...");
+            Domicilio d1 = this.buscar(d.getId());
             PreparedStatement preparedStatement = con.prepareStatement("UPDATE domicilios SET CALLE=?, NUMERO=?, LOCALIDAD=?, PROVINCIA=? WHERE ID=?");
-            preparedStatement.setString(1, d.getCalle());
-            preparedStatement.setInt(2, d.getNumero());
-            preparedStatement.setString(3, d.getLocalidad());
-            preparedStatement.setString(4, d.getProvincia());
+
+            if(d.getCalle() != null){
+                preparedStatement.setString(1, d.getCalle());
+            } else preparedStatement.setString(1, d1.getCalle());
+
+            if(d.getNumero() > 0){
+                preparedStatement.setInt(2, d.getNumero());
+            } else preparedStatement.setInt(2, d1.getNumero());
+
+            if(d.getLocalidad() != null){
+                preparedStatement.setString(3, d.getLocalidad());
+            } else preparedStatement.setString(3, d1.getLocalidad());
+
+            if(d.getProvincia() != null){
+                preparedStatement.setString(4, d.getProvincia());
+            } else preparedStatement.setString(4, d1.getProvincia());
+
             preparedStatement.setInt(5, d.getId());
             preparedStatement.executeUpdate();
             logger.info("--Domicilio actualizado--");

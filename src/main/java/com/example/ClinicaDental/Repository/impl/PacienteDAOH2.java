@@ -197,15 +197,41 @@ public class PacienteDAOH2 implements IPacienteService {
         try (Connection con = getConnection()){
             logger.debug("Actualizando paciente...");
             DomicilioDAOH2 d = new DomicilioDAOH2();
-            d.actualizar(p.getDomicilio());
-            PreparedStatement preparedStatement = con.prepareStatement("UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMICILIO_ID=? WHERE ID=?");
-            preparedStatement.setString(1, p.getApellido());
-            preparedStatement.setString(2, p.getNombre());
-            preparedStatement.setString(3, p.getEmail());
-            preparedStatement.setInt(4, p.getDNI());
-            preparedStatement.setDate(5, Date.valueOf(p.getFechaIngreso()));
-            preparedStatement.setInt(6, p.getDomicilio().getId());
-            preparedStatement.setInt(7, p.getId());
+            OdontologoDAOH2 o = new OdontologoDAOH2();
+            Paciente p1 = this.buscar(p.getId());
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMICILIO_ID=?, ODONTOLOGO_ID=? WHERE ID=?");
+
+            if(p.getApellido() != null){
+                preparedStatement.setString(1, p.getApellido());
+            } else preparedStatement.setString(1, p1.getApellido());
+
+            if(p.getNombre() != null) {
+                preparedStatement.setString(2, p.getNombre());
+            } else preparedStatement.setString(2, p1.getNombre());
+
+            if(p.getEmail() != null) {
+                preparedStatement.setString(3, p.getEmail());
+            } else preparedStatement.setString(3, p1.getEmail());
+
+            if(p.getDNI() > 0) {
+                preparedStatement.setInt(4, p.getDNI());
+            } else preparedStatement.setInt(4, p1.getDNI());
+
+            if(p.getFechaIngreso() != null) {
+                preparedStatement.setDate(5, Date.valueOf(p.getFechaIngreso()));
+            } else preparedStatement.setDate(5, Date.valueOf(p1.getFechaIngreso()));
+
+            if(p.getDomicilio() != null) {
+                d.actualizar(p.getDomicilio());
+                preparedStatement.setInt(6, p.getDomicilio().getId());
+            } preparedStatement.setInt(6, p1.getOdontologo().getId());
+
+            if(p.getOdontologo() != null) {
+                o.actualizar(p.getOdontologo());
+                preparedStatement.setInt(7, p.getDomicilio().getId());
+            } else preparedStatement.setInt(7, p1.getDomicilio().getId());
+
+            preparedStatement.setInt(8, p.getId());
             preparedStatement.executeUpdate();
             logger.info("--Paciente actualizado--");
             logger.info(p.toString());

@@ -86,3 +86,550 @@ Matricula: 5000
 Apellido: Zarate/
 Nombre: Mauro/
 Matricula: 5000
+[2022-06-14 22:32:23] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 22:32:24] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 22:32:38] [ DEBUG] [DomicilioDAOH2:27] Guardando paciente...
+[2022-06-14 22:32:38] [ DEBUG] [DomicilioDAOH2:25] Guardando domicilio...
+[2022-06-14 22:32:38] [ INFO ] [DomicilioDAOH2:32] --Domicilio guardado--
+[2022-06-14 22:32:38] [ DEBUG] [OdontologoDAOH2:24] Guardando odontologo...
+[2022-06-14 22:32:38] [ INFO ] [OdontologoDAOH2:30] --Odontologo guardado--
+[2022-06-14 22:32:38] [ INFO ] [DomicilioDAOH2:47] --Paciente guardado--
+[2022-06-14 22:32:38] [ INFO ] [DomicilioDAOH2:48] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:32:42] [ DEBUG] [DomicilioDAOH2:166] Listando pacientes...
+[2022-06-14 22:32:42] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 22:32:42] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:32:42] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:32:42] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:185] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 22:32:42] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 22:32:42] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:32:42] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:32:42] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:185] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 22:32:42] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:32:42] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:32:42] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:32:42] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:32:42] [ INFO ] [DomicilioDAOH2:185] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:32:46] [ DEBUG] [DomicilioDAOH2:98] Buscando paciente por id...
+[2022-06-14 22:32:46] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:32:46] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:32:46] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:32:46] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:32:46] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:32:46] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:32:46] [ INFO ] [DomicilioDAOH2:117] --Paciente encontrado--
+[2022-06-14 22:32:46] [ INFO ] [DomicilioDAOH2:118] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:33:11] [ DEBUG] [DomicilioDAOH2:198] Actualizando paciente...
+[2022-06-14 22:33:11] [ DEBUG] [DomicilioDAOH2:98] Buscando paciente por id...
+[2022-06-14 22:33:11] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:33:11] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:33:11] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:33:11] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:33:11] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:33:11] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:33:11] [ INFO ] [DomicilioDAOH2:117] --Paciente encontrado--
+[2022-06-14 22:33:11] [ INFO ] [DomicilioDAOH2:118] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:33:11] [ ERROR] [DomicilioDAOH2:240] Error al guardar paciente
+org.h2.jdbc.JdbcSQLDataException: Parametro "#6" no está fijado
+Parameter "#6" is not set; SQL statement:
+UPDATE pacientes SET APELLIDO=?, NOMBRE=?, EMAIL=?, DNI=?, FECHA_INGRESO=?, DOMICILIO_ID=?, ODONTOLOGO_ID=? WHERE ID=? [90012-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:75)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:186)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:164)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:209)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:169)
+	at com.example.ClinicaDental.Repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:235)
+	at com.example.ClinicaDental.service.PacienteService.actualizar(PacienteService.java:24)
+	at com.example.ClinicaDental.controller.PacienteController.actualizar(PacienteController.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2022-06-14 22:33:58] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 22:33:58] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 22:34:02] [ DEBUG] [DomicilioDAOH2:27] Guardando paciente...
+[2022-06-14 22:34:02] [ DEBUG] [DomicilioDAOH2:25] Guardando domicilio...
+[2022-06-14 22:34:02] [ INFO ] [DomicilioDAOH2:32] --Domicilio guardado--
+[2022-06-14 22:34:02] [ DEBUG] [OdontologoDAOH2:24] Guardando odontologo...
+[2022-06-14 22:34:02] [ INFO ] [OdontologoDAOH2:30] --Odontologo guardado--
+[2022-06-14 22:34:02] [ INFO ] [DomicilioDAOH2:47] --Paciente guardado--
+[2022-06-14 22:34:02] [ INFO ] [DomicilioDAOH2:48] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:04] [ DEBUG] [DomicilioDAOH2:98] Buscando paciente por id...
+[2022-06-14 22:34:04] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:34:04] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:34:04] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:04] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:34:04] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:34:04] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:34:04] [ INFO ] [DomicilioDAOH2:117] --Paciente encontrado--
+[2022-06-14 22:34:04] [ INFO ] [DomicilioDAOH2:118] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:07] [ DEBUG] [DomicilioDAOH2:198] Actualizando paciente...
+[2022-06-14 22:34:07] [ DEBUG] [DomicilioDAOH2:98] Buscando paciente por id...
+[2022-06-14 22:34:07] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:34:07] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:34:07] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:07] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:34:07] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:34:07] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:34:07] [ INFO ] [DomicilioDAOH2:117] --Paciente encontrado--
+[2022-06-14 22:34:07] [ INFO ] [DomicilioDAOH2:118] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:07] [ INFO ] [DomicilioDAOH2:236] --Paciente actualizado--
+[2022-06-14 22:34:07] [ ERROR] [DomicilioDAOH2:240] Error al guardar paciente
+java.lang.NullPointerException: Cannot invoke "com.example.ClinicaDental.model.Domicilio.toString()" because "this.domicilio" is null
+	at com.example.ClinicaDental.model.Paciente.toString(Paciente.java:100)
+	at com.example.ClinicaDental.Repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:237)
+	at com.example.ClinicaDental.service.PacienteService.actualizar(PacienteService.java:24)
+	at com.example.ClinicaDental.controller.PacienteController.actualizar(PacienteController.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2022-06-14 22:34:46] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-14 22:34:46] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-14 22:34:51] [ DEBUG] [DomicilioDAOH2:27] Guardando paciente...
+[2022-06-14 22:34:51] [ DEBUG] [DomicilioDAOH2:25] Guardando domicilio...
+[2022-06-14 22:34:51] [ INFO ] [DomicilioDAOH2:32] --Domicilio guardado--
+[2022-06-14 22:34:51] [ DEBUG] [OdontologoDAOH2:24] Guardando odontologo...
+[2022-06-14 22:34:51] [ INFO ] [OdontologoDAOH2:30] --Odontologo guardado--
+[2022-06-14 22:34:51] [ INFO ] [DomicilioDAOH2:47] --Paciente guardado--
+[2022-06-14 22:34:51] [ INFO ] [DomicilioDAOH2:48] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:53] [ DEBUG] [DomicilioDAOH2:166] Listando pacientes...
+[2022-06-14 22:34:53] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 22:34:53] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:34:53] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:34:53] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:185] --Paciente--
+Apellido: Rampazzo/
+Nombre: Franco/
+Email: franco@gmail.com/
+DNI: 123/
+Fecha de ingreso: 2020-01-01/--Domicilio--
+Calle: Digital Street/
+Numero: 100/
+Localidad: Moron/
+Provincia: Buenos Aires]
+[2022-06-14 22:34:53] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 22:34:53] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:34:53] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:34:53] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:185] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01/--Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires]
+[2022-06-14 22:34:53] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:53] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:34:53] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:34:53] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:34:53] [ INFO ] [DomicilioDAOH2:185] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:55] [ DEBUG] [DomicilioDAOH2:198] Actualizando paciente...
+[2022-06-14 22:34:55] [ DEBUG] [DomicilioDAOH2:98] Buscando paciente por id...
+[2022-06-14 22:34:55] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:55] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:34:55] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:34:55] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:117] --Paciente encontrado--
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:118] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:236] --Paciente actualizado--
+[2022-06-14 22:34:55] [ ERROR] [DomicilioDAOH2:240] Error al guardar paciente
+java.lang.NullPointerException: Cannot invoke "com.example.ClinicaDental.model.Domicilio.toString()" because "this.domicilio" is null
+	at com.example.ClinicaDental.model.Paciente.toString(Paciente.java:100)
+	at com.example.ClinicaDental.Repository.impl.PacienteDAOH2.actualizar(PacienteDAOH2.java:237)
+	at com.example.ClinicaDental.service.PacienteService.actualizar(PacienteService.java:24)
+	at com.example.ClinicaDental.controller.PacienteController.actualizar(PacienteController.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2022-06-14 22:34:55] [ DEBUG] [DomicilioDAOH2:98] Buscando paciente por id...
+[2022-06-14 22:34:55] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:34:55] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:34:55] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:34:55] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:117] --Paciente encontrado--
+[2022-06-14 22:34:55] [ INFO ] [DomicilioDAOH2:118] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki2020@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:35:02] [ DEBUG] [DomicilioDAOH2:98] Buscando paciente por id...
+[2022-06-14 22:35:02] [ DEBUG] [DomicilioDAOH2:52] Buscando domicilio...
+[2022-06-14 22:35:02] [ INFO ] [DomicilioDAOH2:64] --Domicilio encontrado--
+[2022-06-14 22:35:02] [ INFO ] [DomicilioDAOH2:65] --Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]
+[2022-06-14 22:35:02] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-14 22:35:02] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-14 22:35:02] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: zarate/
+Nombre: mauro/
+Matricula: 5757
+[2022-06-14 22:35:02] [ INFO ] [DomicilioDAOH2:117] --Paciente encontrado--
+[2022-06-14 22:35:02] [ INFO ] [DomicilioDAOH2:118] --Paciente--
+Apellido: alvarez/
+Nombre: kiki/
+Email: kiki2020@gmail.com/
+DNI: 222/
+Fecha de ingreso: 2022-06-08/--Domicilio--
+Calle: plaza/
+Numero: 999/
+Localidad: cordoba/
+Provincia: cordoba]

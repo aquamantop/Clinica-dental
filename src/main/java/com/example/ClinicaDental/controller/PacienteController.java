@@ -62,7 +62,8 @@ public class PacienteController {
     @PutMapping("/actualizar")
     public String actualizar(Model model, @RequestBody Paciente paciente){
         p.actualizar(paciente);
-        model.addAttribute("frase", paciente.toString());
+        Paciente p1 = p.buscar(paciente.getId());
+        model.addAttribute("frase", p1.toString());
         return "usuario";
     }
 
