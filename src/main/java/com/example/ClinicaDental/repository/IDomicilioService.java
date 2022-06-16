@@ -1,6 +1,6 @@
 package com.example.ClinicaDental.repository;
 
-import com.example.ClinicaDental.model.Domicilio;
+import com.example.ClinicaDental.entity.Domicilio;
 import java.util.List;
 
 public interface IDomicilioService {

@@ -1,14 +1,15 @@
 package com.example.ClinicaDental.repository.impl;
 
 import com.example.ClinicaDental.repository.IDomicilioService;
-import com.example.ClinicaDental.model.Domicilio;
+import com.example.ClinicaDental.entity.Domicilio;
 import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 public class DomicilioDAOH2 implements IDomicilioService {
 
     public static final Logger logger = Logger.getLogger(DomicilioDAOH2.class);

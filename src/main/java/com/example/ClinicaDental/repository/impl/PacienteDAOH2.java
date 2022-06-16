@@ -1,17 +1,18 @@
 package com.example.ClinicaDental.repository.impl;
 
 import com.example.ClinicaDental.repository.IPacienteService;
-import com.example.ClinicaDental.model.Domicilio;
-import com.example.ClinicaDental.model.Odontologo;
-import com.example.ClinicaDental.model.Paciente;
+import com.example.ClinicaDental.entity.Domicilio;
+import com.example.ClinicaDental.entity.Odontologo;
+import com.example.ClinicaDental.entity.Paciente;
 import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 public class PacienteDAOH2 implements IPacienteService {
 
     public static final Logger logger = Logger.getLogger(DomicilioDAOH2.class);

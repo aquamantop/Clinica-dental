@@ -1,9 +1,9 @@
 package com.example.ClinicaDental.service;
 
-import com.example.ClinicaDental.model.Domicilio;
-import com.example.ClinicaDental.model.Odontologo;
-import com.example.ClinicaDental.model.Paciente;
-import com.example.ClinicaDental.model.Turno;
+import com.example.ClinicaDental.entity.Domicilio;
+import com.example.ClinicaDental.entity.Odontologo;
+import com.example.ClinicaDental.entity.Paciente;
+import com.example.ClinicaDental.entity.Turno;
 import com.example.ClinicaDental.repository.ITurnoService;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;

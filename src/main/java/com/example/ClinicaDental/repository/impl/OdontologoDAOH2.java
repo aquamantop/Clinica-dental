@@ -1,14 +1,15 @@
 package com.example.ClinicaDental.repository.impl;
 
 import com.example.ClinicaDental.repository.IOdontologoService;
-import com.example.ClinicaDental.model.Odontologo;
+import com.example.ClinicaDental.entity.Odontologo;
 import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Repository
 public class OdontologoDAOH2 implements IOdontologoService {
 
     public static final Logger logger = Logger.getLogger(OdontologoDAOH2.class);

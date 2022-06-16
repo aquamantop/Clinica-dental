@@ -1,7 +1,7 @@
 package com.example.ClinicaDental.service;
 
 import com.example.ClinicaDental.repository.IOdontologoService;
-import com.example.ClinicaDental.model.Odontologo;
+import com.example.ClinicaDental.entity.Odontologo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.example.ClinicaDental.repository;
 
-import com.example.ClinicaDental.model.Paciente;
+import com.example.ClinicaDental.entity.Paciente;
 import java.util.List;
 
 public interface IPacienteService {

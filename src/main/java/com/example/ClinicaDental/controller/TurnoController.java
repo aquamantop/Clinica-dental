@@ -1,6 +1,6 @@
 package com.example.ClinicaDental.controller;
 
-import com.example.ClinicaDental.model.Turno;
+import com.example.ClinicaDental.entity.Turno;
 import com.example.ClinicaDental.service.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

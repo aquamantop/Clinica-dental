@@ -1,6 +1,6 @@
 package com.example.ClinicaDental.repository;
 
-import com.example.ClinicaDental.model.Odontologo;
+import com.example.ClinicaDental.entity.Odontologo;
 import java.util.List;
 
 public interface IOdontologoService {

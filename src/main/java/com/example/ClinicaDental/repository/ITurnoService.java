@@ -1,6 +1,6 @@
 package com.example.ClinicaDental.repository;
 
-import com.example.ClinicaDental.model.Turno;
+import com.example.ClinicaDental.entity.Turno;
 
 import java.util.List;
 

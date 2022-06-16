@@ -1,4 +1,4 @@
-package com.example.ClinicaDental.model;
+package com.example.ClinicaDental.entity;
 
 public class Domicilio {
     private int id;
