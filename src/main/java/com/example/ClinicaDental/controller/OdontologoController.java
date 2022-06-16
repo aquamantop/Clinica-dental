@@ -1,7 +1,6 @@
 package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Odontologo;
-import com.example.ClinicaDental.repository.impl.OdontologoDAOH2;
 import com.example.ClinicaDental.service.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class OdontologoController {
 
     @Autowired
-    private final OdontologoService o = new OdontologoService(new OdontologoDAOH2());
+    OdontologoService o;
 
     @PostMapping("/guardar")
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo){

@@ -1,7 +1,6 @@
 package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Paciente;
-import com.example.ClinicaDental.repository.impl.PacienteDAOH2;
 import com.example.ClinicaDental.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class PacienteController {
 
     @Autowired
-    private final PacienteService p = new PacienteService(new PacienteDAOH2());
+    PacienteService p;
 
     @PostMapping("/guardar")
     public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente){

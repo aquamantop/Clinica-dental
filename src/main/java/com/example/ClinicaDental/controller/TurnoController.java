@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class TurnoController {
 
     @Autowired
-    public TurnoService turnoService;
+    TurnoService turnoService;
 
     @PostMapping("/guardar")
     public ResponseEntity guardar(@RequestBody Turno t) {
