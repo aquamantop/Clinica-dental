@@ -18,12 +18,11 @@ public class TurnoController {
     @PostMapping("/guardar")
     public ResponseEntity guardar(@RequestBody Turno t) {
         ResponseEntity response = null;
-        if(turnoService.getTurnos() == null){
+        if (turnoService.getTurnos() == null){
             turnoService.generarTurnos();
         }
 
         Turno turno = turnoService.guardar(t);
-
 
         if (turno != null) {
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
@@ -35,7 +34,7 @@ public class TurnoController {
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity eliminar(@PathVariable int id){
         ResponseEntity response = null;
-        if(turnoService.getTurnos() == null){
+        if (turnoService.getTurnos() == null){
             turnoService.generarTurnos();
         }
 
@@ -51,7 +50,7 @@ public class TurnoController {
     @GetMapping("/buscar/{id}")
     public ResponseEntity buscar(@PathVariable int id){
         ResponseEntity response = null;
-        if(turnoService.getTurnos() == null){
+        if (turnoService.getTurnos() == null){
             turnoService.generarTurnos();
         }
 
@@ -67,7 +66,7 @@ public class TurnoController {
     @PutMapping("/actualizar")
     public ResponseEntity actualizar(@RequestBody Turno t) {
         ResponseEntity response = null;
-        if(turnoService.getTurnos() == null){
+        if (turnoService.getTurnos() == null){
             turnoService.generarTurnos();
         }
 
@@ -76,6 +75,17 @@ public class TurnoController {
         if (turno != null) {
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
         } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
+
+        return response;
+    }
+
+    @GetMapping("/listar")
+    public ResponseEntity listar(){
+        ResponseEntity response = null;
+        if (turnoService.getTurnos() == null){
+            turnoService.generarTurnos();
+            response = new ResponseEntity(turnoService.listar().toString(), HttpStatus.OK);
+        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
 
         return response;
     }

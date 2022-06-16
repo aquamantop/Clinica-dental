@@ -38,10 +38,6 @@ public class TurnoService implements ITurnoService {
 
     }
 
-    public List<Turno> mostrarTurnos() {
-        return this.turnos;
-    }
-
     public List<Turno> getTurnos() {
         return turnos;
     }
@@ -95,6 +91,11 @@ public class TurnoService implements ITurnoService {
             return turno;
         } else return null;
 
+    }
+
+    @Override
+    public List<Turno> listar() {
+        return turnos;
     }
 
     @Override
