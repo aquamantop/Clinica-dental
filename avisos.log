@@ -503,3 +503,53 @@ Email: kiki@gmail.com/
 DNI: 222/
 Fecha de ingreso: 2022-06-08
 
+[2022-06-15 22:36:18] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-15 22:36:18] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-15 22:37:25] [ DEBUG] [DomicilioDAOH2:101] Buscando paciente por id...
+[2022-06-15 22:37:25] [ DEBUG] [DomicilioDAOH2:51] Buscando domicilio...
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:63] --Domicilio encontrado--
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:64] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires
+
+[2022-06-15 22:37:25] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-15 22:37:25] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-15 22:37:25] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:120] --Paciente encontrado--
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:121] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01
+
+[2022-06-15 22:37:25] [ DEBUG] [DomicilioDAOH2:101] Buscando paciente por id...
+[2022-06-15 22:37:25] [ DEBUG] [DomicilioDAOH2:51] Buscando domicilio...
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:63] --Domicilio encontrado--
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:64] --Domicilio--
+Calle: House Street/
+Numero: 200/
+Localidad: Grand Bourg/
+Provincia: Buenos Aires
+
+[2022-06-15 22:37:25] [ DEBUG] [OdontologoDAOH2:75] Buscando odontologo...
+[2022-06-15 22:37:25] [ INFO ] [OdontologoDAOH2:86] --Odontologo encontrado--
+[2022-06-15 22:37:25] [ INFO ] [OdontologoDAOH2:87] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:120] --Paciente encontrado--
+[2022-06-15 22:37:25] [ INFO ] [DomicilioDAOH2:121] --Paciente--
+Apellido: Test/
+Nombre: Horacio/
+Email: horacio@gmail.com/
+DNI: 321/
+Fecha de ingreso: 2022-01-01
+

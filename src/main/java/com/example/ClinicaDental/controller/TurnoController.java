@@ -26,7 +26,7 @@ public class TurnoController {
 
         if (turno != null) {
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
         return response;
     }
@@ -42,7 +42,7 @@ public class TurnoController {
 
         if (turno != null) {
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
         return response;
     }
@@ -58,7 +58,7 @@ public class TurnoController {
 
         if (turno != null) {
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
         return response;
     }

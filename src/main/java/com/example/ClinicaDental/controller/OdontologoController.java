@@ -23,7 +23,7 @@ public class OdontologoController {
 
         if(odontologo != null){
             response = new ResponseEntity(o.guardar(odontologo).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.NOT_FOUND);
 
         //model.addAttribute("frase", odontologo.toString());
         return response;
@@ -35,7 +35,7 @@ public class OdontologoController {
 
         if(o.buscar(id) != null){
             response = new ResponseEntity(o.eliminar(id).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
         //model.addAttribute("frase", frase);
 
         return response;
@@ -47,14 +47,14 @@ public class OdontologoController {
 
         if(id > 0 && o.buscar(id) != null){
             response = new ResponseEntity(o.buscar(id).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.NOT_FOUND);
         //model.addAttribute("frase", frase);
 
         return response;
     }
 
     @GetMapping("/listar")
-    public ResponseEntity listarOdontologos() {
+    public ResponseEntity<Odontologo> listarOdontologos() {
         ResponseEntity response = null;
 
         if(o.listar().size() > 0){
@@ -62,7 +62,7 @@ public class OdontologoController {
                 response = new ResponseEntity(o.listar().toString(), HttpStatus.OK);
                 //model.addAttribute("frase"+odontologo.getId(), frase);
             }
-        } else response = new ResponseEntity("No se pudo encontrar odontologos", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se pudo encontrar odontologos", HttpStatus.NOT_FOUND);
 
         return response;
     }
@@ -73,7 +73,7 @@ public class OdontologoController {
 
         if(odontologo != null){
             response = new ResponseEntity(o.actualizar(odontologo).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.FORBIDDEN);
+        } else response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.NOT_FOUND);
         //model.addAttribute("frase", o1.toString());
 
         return response;
