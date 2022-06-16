@@ -51,7 +51,7 @@ public class Odontologo {
         return "--Odontologo--" +
                 "\nApellido: " + apellido + "/" +
                 "\nNombre: " + nombre + "/" +
-                "\nMatricula: " + matricula + "\n";
+                "\nMatricula: " + matricula;
     }
 
 }

@@ -76,6 +76,28 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
+    public Turno guardar(Turno turno) {
+
+        if(turno.getFechaHora() != null
+                && turno.getOdontologo() != null
+                && turno.getPaciente() != null) {
+            for (Turno t: turnos){
+                if(t.getPaciente().getId() == turno.getPaciente().getId()){
+                    turno.setPaciente(t.getPaciente());
+                }
+            }
+            for (Turno t: turnos){
+                if(t.getOdontologo().getId() == turno.getOdontologo().getId()){
+                    turno.setOdontologo(t.getOdontologo());
+                }
+            }
+            turnos.add(turno);
+            return turno;
+        } else return null;
+
+    }
+
+    @Override
     public Turno actualizar(Turno turno){
         Turno turnoModificado = null;
 

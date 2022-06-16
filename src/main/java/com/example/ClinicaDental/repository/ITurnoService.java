@@ -7,5 +7,6 @@ public interface ITurnoService {
     Turno eliminar(int id);
     Turno actualizar(Turno t);
     Turno buscar(int id);
+    Turno guardar(Turno t);
 
 }

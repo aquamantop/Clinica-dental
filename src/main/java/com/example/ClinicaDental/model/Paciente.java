@@ -95,6 +95,6 @@ public class Paciente {
                 "\nNombre: " + nombre + "/" +
                 "\nEmail: " + email + "/" +
                 "\nDNI: " + DNI + "/" +
-                "\nFecha de ingreso: " + fechaIngreso + "\n";
+                "\nFecha de ingreso: " + fechaIngreso;
     }
 }

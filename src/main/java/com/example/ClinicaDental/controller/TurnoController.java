@@ -15,12 +15,29 @@ public class TurnoController {
     @Autowired
     public TurnoService turnoService;
 
+    @PostMapping("/guardar")
+    public ResponseEntity guardar(@RequestBody Turno t) {
+        ResponseEntity response = null;
+        if(turnoService.getTurnos() == null){
+            turnoService.generarTurnos();
+        }
+
+        Turno turno = turnoService.guardar(t);
+
+
+        if (turno != null) {
+            response = new ResponseEntity(turno.toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("No se guardo el turno", HttpStatus.NOT_FOUND);
+
+        return response;
+    }
+
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity eliminar(@PathVariable int id){
         ResponseEntity response = null;
-        if(turnoService.getTurnos().size() > 0){
-            System.out.println("Turnos generados");
-        } else turnoService.generarTurnos();
+        if(turnoService.getTurnos() == null){
+            turnoService.generarTurnos();
+        }
 
         Turno turno = turnoService.eliminar(id);
 
@@ -34,9 +51,9 @@ public class TurnoController {
     @GetMapping("/buscar/{id}")
     public ResponseEntity buscar(@PathVariable int id){
         ResponseEntity response = null;
-        if(turnoService.getTurnos() != null){
-            System.out.println("Turnos generados");
-        } else turnoService.generarTurnos();
+        if(turnoService.getTurnos() == null){
+            turnoService.generarTurnos();
+        }
 
         Turno turno = turnoService.buscar(id);
 
@@ -50,9 +67,9 @@ public class TurnoController {
     @PutMapping("/actualizar")
     public ResponseEntity actualizar(@RequestBody Turno t) {
         ResponseEntity response = null;
-        if(turnoService.getTurnos().size() > 0){
-            System.out.println("Turnos generados");
-        } else turnoService.generarTurnos();
+        if(turnoService.getTurnos() == null){
+            turnoService.generarTurnos();
+        }
 
         Turno turno = turnoService.actualizar(t);
 

@@ -54,8 +54,8 @@ public class Turno {
     public String toString() {
         return "--Turno--" +
                 "\nFecha y hora: " + fechaHora +
-                "\n" + paciente.toString() +
-                "\n" + odontologo.toString() + "\n";
+                "\n\n" + paciente.toString() +
+                "\n\n" + odontologo.toString();
     }
 
 }
