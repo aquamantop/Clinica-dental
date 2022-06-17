@@ -4,7 +4,7 @@ package com.example.ClinicaDental.entity;
 import java.time.LocalDateTime;
 
 public class Turno {
-    private int id;
+    private Integer id;
     private Odontologo odontologo;
     private Paciente paciente;
     private LocalDateTime fechaHora;
@@ -18,11 +18,11 @@ public class Turno {
 
     public Turno() {}
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -1,7 +1,7 @@
 package com.example.ClinicaDental.entity;
 
 public class Odontologo {
-    private int id;
+    private Integer id;
     private String apellido;
     private String nombre;
     private int matricula;
@@ -14,11 +14,11 @@ public class Odontologo {
 
     public Odontologo(){}
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
