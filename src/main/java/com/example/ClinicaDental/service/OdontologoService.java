@@ -1,7 +1,8 @@
 package com.example.ClinicaDental.service;
 
-import com.example.ClinicaDental.repository.IOdontologoService;
 import com.example.ClinicaDental.entity.Odontologo;
+import com.example.ClinicaDental.repository.IOdontologoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,11 +10,8 @@ import java.util.List;
 @Service
 public class OdontologoService implements IOdontologoService {
 
-    private final IOdontologoService odontologoService;
-
-    public OdontologoService(IOdontologoService odontologoService) {
-        this.odontologoService = odontologoService;
-    }
+    @Autowired
+    IOdontologoService odontologoService;
 
     @Override
     public List<Odontologo> listar() {

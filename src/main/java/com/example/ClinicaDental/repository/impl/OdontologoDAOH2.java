@@ -1,5 +1,6 @@
 package com.example.ClinicaDental.repository.impl;
 
+import com.example.ClinicaDental.dto.OdontologoDTO;
 import com.example.ClinicaDental.repository.IOdontologoService;
 import com.example.ClinicaDental.entity.Odontologo;
 import org.apache.log4j.Logger;
