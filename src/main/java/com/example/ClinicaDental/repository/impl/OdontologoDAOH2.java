@@ -4,6 +4,7 @@ import com.example.ClinicaDental.dto.OdontologoDTO;
 import com.example.ClinicaDental.repository.IOdontologoService;
 import com.example.ClinicaDental.entity.Odontologo;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -13,7 +14,8 @@ import java.util.List;
 @Repository
 public class OdontologoDAOH2 implements IOdontologoService {
 
-    public static final Logger logger = Logger.getLogger(OdontologoDAOH2.class);
+    @Autowired
+    Logger logger = Logger.getLogger(OdontologoDAOH2.class);
 
     public static Connection getConnection() throws Exception {
         Class.forName("org.h2.Driver").newInstance();
