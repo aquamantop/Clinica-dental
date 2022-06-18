@@ -7,12 +7,12 @@ public class Paciente {
     private String apellido;
     private String nombre;
     private String email;
-    private int DNI;
+    private Integer DNI;
     private LocalDate fechaIngreso;
     private Domicilio domicilio;
     private Odontologo odontologo;
 
-    public Paciente(String apellido, String nombre, String email, int DNI, LocalDate fechaIngreso, Domicilio domicilio, Odontologo odontologo) {
+    public Paciente(String apellido, String nombre, String email, Integer DNI, LocalDate fechaIngreso, Domicilio domicilio, Odontologo odontologo) {
         this.apellido = apellido;
         this.nombre = nombre;
         this.email = email;
@@ -56,11 +56,11 @@ public class Paciente {
         this.email = email;
     }
 
-    public int getDNI() {
+    public Integer getDNI() {
         return DNI;
     }
 
-    public void setDNI(int DNI) {
+    public void setDNI(Integer DNI) {
         this.DNI = DNI;
     }
 
