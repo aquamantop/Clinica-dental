@@ -53,7 +53,7 @@ public class PacienteController {
         ResponseEntity response = null;
 
         if(id > 0 && p.buscar(id) != null){
-            response = new ResponseEntity(p.buscar(id).toString(), HttpStatus.OK);
+            response = new ResponseEntity(p.buscar(id), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
 
         return response;

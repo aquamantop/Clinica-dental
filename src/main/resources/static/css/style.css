@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+body {
+  background-color: #DFF6FF;
+  color: #2F8F9D;
+  font-family: [Space Mono] "https://fonts.google.com/specimen/Space+Mono";
+  font-weight: 700; }
+  body h1 {
+    text-align: center;
+    font-size: 4rem; }
+  body main {
+    padding: 5rem;
+    font-size: 2rem; }
+    body main #fecha {
+      font-size: 2rem;
+      margin: 1rem 0rem; }
+    body main form .doctores {
+      margin: 1.5rem 0rem; }
+    body main form button {
+      background-color: #06283D;
+      color: #47B5FF;
+      padding: 1rem;
+      font-size: 1.5rem;
+      border-radius: 1rem; }
+  body footer {
+    color: #2F8F9D;
+    clear: both;
+    text-align: center;
+    font-size: 2rem; }
+  body footer a {
+    text-decoration: none;
+    color: #47B5FF; }
+  body footer a:visited {
+    color: #06283D; }
+  body footer a:hover {
+    color: #1363DF; }
