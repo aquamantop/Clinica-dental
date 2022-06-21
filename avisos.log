@@ -1,0 +1,344 @@
+
+[2022-06-18 15:55:32] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:55:32] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757]
+[2022-06-18 15:55:32] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:55:32] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757]
+[2022-06-18 15:55:32] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:55:32] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757]
+[2022-06-18 15:55:32] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:55:32] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757]
+[2022-06-18 15:55:32] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:55:32] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Zarate/
+Nombre: Mauro/
+Matricula: 5757]
+[2022-06-18 15:55:58] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 15:55:58] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 15:56:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:56:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:56:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:56:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:56:37] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 15:56:38] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 15:56:44] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:44] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:56:44] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:44] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:56:44] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:44] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:56:44] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:56:44] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:00] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:00] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:00] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:00] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:00] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:00] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:00] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:00] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:05] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 15:58:05] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 15:58:10] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:10] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:10] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:10] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:10] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:10] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:58:10] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:58:10] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:01] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 15:59:01] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 15:59:01] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 15:59:02] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 15:59:09] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:09] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:09] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:09] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:09] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:09] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:09] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:09] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:23] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 15:59:24] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 15:59:30] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:30] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:30] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:30] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:30] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:30] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:30] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:30] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:53] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 15:59:53] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 15:59:58] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:58] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:58] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:58] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:58] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:58] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 15:59:58] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 15:59:58] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 16:00:16] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-18 16:00:17] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-18 16:00:20] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 16:00:20] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 16:00:20] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 16:00:20] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 16:00:20] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 16:00:20] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-18 16:00:20] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-18 16:00:20] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 15:15:15] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 15:15:15] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 15:15:16] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 15:15:16] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 15:15:26] [ DEBUG] [OdontologoDAOH2:77] Buscando odontologo...
+[2022-06-21 15:15:26] [ INFO ] [OdontologoDAOH2:88] --Odontologo encontrado--
+[2022-06-21 15:15:26] [ INFO ] [OdontologoDAOH2:89] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111
+[2022-06-21 15:15:26] [ DEBUG] [OdontologoDAOH2:77] Buscando odontologo...
+[2022-06-21 15:15:26] [ INFO ] [OdontologoDAOH2:88] --Odontologo encontrado--
+[2022-06-21 15:15:26] [ INFO ] [OdontologoDAOH2:89] --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111

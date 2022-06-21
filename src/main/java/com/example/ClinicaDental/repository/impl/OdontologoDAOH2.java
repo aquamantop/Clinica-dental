@@ -110,8 +110,8 @@ public class OdontologoDAOH2 implements IOdontologoService {
                 Odontologo o = new Odontologo(apellido, nombre, matricula);
                 o.setId(id);
                 lista.add(o);
-                logger.info(o.toString());
             }
+            logger.info(lista);
         } catch (Exception e){
             logger.error("Error al listar odontologos", e);
             e.printStackTrace();
