@@ -28,6 +28,7 @@ window.addEventListener('load', () => {
     }
 
     form.addEventListener('submit', (e) => {
+        e.preventDefault()
         const formData = {
             nombre: nombre.value,
             apellido: apellido.value,
@@ -41,28 +42,27 @@ window.addEventListener('load', () => {
             body: JSON.stringify(formData)
         }
 
-        if(nombre.value != null && apellido.value != null && matricula.value != null){
+        if(nombre.value.trim() != "" && apellido.value.trim() != "" && matricula.value.trim() != ""){
             fetch(url, settings)
             .then(response => {
                 response.json()
             })
             .then(data => {
-                console.log(data)
                 alert("Datos enviados")
                 resetearForm()
             })
             .catch(e => {
+                console.log(e)
                 alert("ERROR")
                 resetearForm()
-                console.log(e)
             })
-        }
+        } else alert("Completar datos")
     })
 
     function resetearForm(){
-        document.querySelector('#nombre').value = ""
-        document.querySelector('#apellido').value = ""
-        document.querySelector('#matricula').value = ""
+        nombre.value = ""
+        apellido.value = ""
+        matricula.value = ""
         for (let i = array.length; i > 0; i--) {
             array.pop();
           }

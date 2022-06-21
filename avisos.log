@@ -455,3 +455,104 @@ Matricula: 123456]
 [2022-06-21 16:19:36] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
 [2022-06-21 16:19:36] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
 [2022-06-21 16:19:36] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:28:38] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:28:38] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:28:38] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:28:38] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:29:20] [ DEBUG] [OdontologoDAOH2:26] Guardando odontologo...
+[2022-06-21 16:29:20] [ INFO ] [OdontologoDAOH2:32] --Odontologo guardado--
+[2022-06-21 16:29:38] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:29:38] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: /
+Nombre: /
+Matricula: 0]
+[2022-06-21 16:29:38] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:29:38] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: /
+Nombre: /
+Matricula: 0]
+[2022-06-21 16:29:38] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:29:38] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: /
+Nombre: /
+Matricula: 0]
+[2022-06-21 16:29:38] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:29:38] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: /
+Nombre: /
+Matricula: 0]
+[2022-06-21 16:29:38] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:29:38] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: /
+Nombre: /
+Matricula: 0]
+[2022-06-21 16:31:49] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:31:50] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:31:50] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:31:50] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:32:02] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:32:02] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:32:02] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:32:02] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:32:02] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:32:02] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:32:02] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:32:02] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:35:01] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:35:01] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:35:02] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:35:02] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
