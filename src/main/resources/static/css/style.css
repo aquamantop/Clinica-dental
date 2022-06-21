@@ -11,21 +11,31 @@ body {
   font-weight: 700; }
   body h1 {
     text-align: center;
-    font-size: 4rem; }
+    font-size: 3rem;
+    text-decoration-line: underline; }
   body main {
     padding: 5rem;
     font-size: 2rem; }
-    body main #fecha {
-      font-size: 2rem;
-      margin: 1rem 0rem; }
-    body main form .doctores {
-      margin: 1.5rem 0rem; }
-    body main form button {
-      background-color: #06283D;
-      color: #47B5FF;
-      padding: 1rem;
-      font-size: 1.5rem;
-      border-radius: 1rem; }
+    body main form {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      margin: 0% 25%;
+      font-size: 1.5rem; }
+      body main form p {
+        text-align: center;
+        margin: 1rem;
+        font-size: 2rem; }
+      body main form input {
+        padding: 1rem;
+        margin: 2rem 0rem; }
+      body main form button {
+        background-color: #06283D;
+        color: #47B5FF;
+        padding: 1rem;
+        margin: 0rem 5rem;
+        font-size: 1.5rem;
+        border-radius: 1rem; }
   body footer {
     color: #2F8F9D;
     clear: both;

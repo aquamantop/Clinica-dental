@@ -342,3 +342,106 @@ Matricula: 111
 Apellido: Messi/
 Nombre: Lio/
 Matricula: 111
+[2022-06-21 15:23:49] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 15:23:49] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 15:23:49] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 15:23:49] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:02:28] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:02:28] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:02:28] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:02:28] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:02:28] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:02:28] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:02:28] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:02:28] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111]
+[2022-06-21 16:11:22] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:11:22] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:11:22] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:11:22] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:11:46] [ DEBUG] [OdontologoDAOH2:26] Guardando odontologo...
+[2022-06-21 16:11:46] [ INFO ] [OdontologoDAOH2:32] --Odontologo guardado--
+[2022-06-21 16:13:45] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:13:45] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:13:45] [ DEBUG] [ClinicaDentalApplication:18] Cargando base de datos...
+[2022-06-21 16:13:45] [ INFO ] [ClinicaDentalApplication:21] Base de datos cargada con exito
+[2022-06-21 16:13:55] [ DEBUG] [OdontologoDAOH2:26] Guardando odontologo...
+[2022-06-21 16:13:55] [ INFO ] [OdontologoDAOH2:32] --Odontologo guardado--
+[2022-06-21 16:14:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:14:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Ceratti/
+Nombre: Gustavo/
+Matricula: 123456]
+[2022-06-21 16:14:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:14:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Ceratti/
+Nombre: Gustavo/
+Matricula: 123456]
+[2022-06-21 16:14:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:14:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Ceratti/
+Nombre: Gustavo/
+Matricula: 123456]
+[2022-06-21 16:14:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:14:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Ceratti/
+Nombre: Gustavo/
+Matricula: 123456]
+[2022-06-21 16:14:04] [ DEBUG] [OdontologoDAOH2:102] Listando odontologos...
+[2022-06-21 16:14:04] [ INFO ] [OdontologoDAOH2:114] [--Odontologo--
+Apellido: Carlos/
+Nombre: Roberto/
+Matricula: 666, --Odontologo--
+Apellido: Messi/
+Nombre: Lio/
+Matricula: 111, --Odontologo--
+Apellido: Ceratti/
+Nombre: Gustavo/
+Matricula: 123456]
