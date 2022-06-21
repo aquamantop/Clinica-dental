@@ -1,22 +1,38 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
+    // Constantes
+    const form = document.querySelector("#form")
+    const nombre = document.querySelector("#nombre")
+    const apellido = document.querySelector("#apellido")
+    const matricula = document.querySelector("#matricula")
+    const regex = /^[0-9]+$/
+    const url = '/odontologos/guardar'
+    const array = []
 
-    //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
-    //los datos que el usuario cargará del nuevo odontologo
-    const formulario = document.querySelector('#add_new_odontologo');
+    matricula.addEventListener("keydown", (e) => {
+        if (e.code === "Backspace") {
+            array.pop()
+        }
+    })
+    matricula.addEventListener("keypress", (e) => {
+        if (!validarMatricula(e.key)) {
+            e.preventDefault()
+        }
+    })
+    function validarMatricula (cant) {
+        let p = cant.match(regex)
 
-    //Ante un submit del formulario se ejecutará la siguiente funcion
-    formulario.addEventListener('submit', function (event) {
+        if (p && array.length < 10) {
+            array.push(cant)
+            return true
+        } else false
+    }
 
-       //creamos un JSON que tendrá los datos de un nuevo odontologo
+    form.addEventListener('submit', (e) => {
         const formData = {
-            nombre: document.querySelector('#nombre').value,
-            apellido: document.querySelector('#apellido').value,
-            matricula: document.querySelector('#matricula').value,
-
-        };
-        //invocamos utilizando la función fetch la API peliculas con el método POST que guardará
-        //la película que enviaremos en formato JSON
-        const url = '/odontologos/guardar';
+            nombre: nombre.value,
+            apellido: apellido.value,
+            matricula: matricula.value,
+        }
         const settings = {
             method: 'POST',
             headers: {
@@ -25,49 +41,31 @@ window.addEventListener('load', function () {
             body: JSON.stringify(formData)
         }
 
-        fetch(url, settings)
+        if(nombre.value != null && apellido.value != null && matricula.value != null){
+            fetch(url, settings)
             .then(response => {
                 response.json()
             })
             .then(data => {
-                 //Si no hay ningun error se muestra un mensaje diciendo que el odontologo
-                 //se agrego bien
-                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
-                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                     '<strong></strong> Odontologo agregado </div>'
-
-                 document.querySelector('#response').innerHTML = successAlert;
-                 document.querySelector('#response').style.display = "block";
-                 resetUploadForm();
-
+                console.log(data)
+                alert("Datos enviados")
+                resetearForm()
             })
-            .catch(error => {
-                    //Si hay algun error se muestra un mensaje diciendo que el odontologo
-                    //no se pudo guardar y se intente nuevamente
-                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                     '<strong> Error intente nuevamente</strong> </div>'
+            .catch(e => {
+                alert("ERROR")
+                resetearForm()
+                console.log(e)
+            })
+        }
+    })
 
-                      document.querySelector('#response').innerHTML = errorAlert;
-                      document.querySelector('#response').style.display = "block";
-                     //se dejan todos los campos vacíos por si se quiere ingresar otro odontologo
-                     resetUploadForm();})
-    });
-
-
-    function resetUploadForm(){
-        document.querySelector('#nombre').value = "";
-        document.querySelector('#apellido').value = "";
-         document.querySelector('#matricula').value = "";
-
+    function resetearForm(){
+        document.querySelector('#nombre').value = ""
+        document.querySelector('#apellido').value = ""
+        document.querySelector('#matricula').value = ""
+        for (let i = array.length; i > 0; i--) {
+            array.pop();
+          }
     }
 
-    (function(){
-        let pathname = window.location.pathname;
-        if(pathname === "/"){
-            document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/odontologoList.html") {
-            document.querySelector(".nav .nav-item a:last").addClass("active");
-        }
-    })();
-});
+})
