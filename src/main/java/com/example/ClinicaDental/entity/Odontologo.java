@@ -1,7 +1,14 @@
 package com.example.ClinicaDental.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "odontologos")
 public class Odontologo {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
     private String apellido;
     private String nombre;
     private int matricula;
@@ -14,11 +21,11 @@ public class Odontologo {
 
     public Odontologo(){}
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

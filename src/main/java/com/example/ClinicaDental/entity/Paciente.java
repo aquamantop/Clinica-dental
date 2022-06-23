@@ -1,15 +1,25 @@
 package com.example.ClinicaDental.entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "pacientes")
 public class Paciente {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
     private String apellido;
     private String nombre;
     private String email;
     private Integer DNI;
     private LocalDate fechaIngreso;
+
+    @OneToOne(cascade = CascadeType.REMOVE)
     private Domicilio domicilio;
+
+    @ManyToOne
     private Odontologo odontologo;
 
     public Paciente(String apellido, String nombre, String email, Integer DNI, LocalDate fechaIngreso, Domicilio domicilio, Odontologo odontologo) {
@@ -24,11 +34,11 @@ public class Paciente {
 
     public Paciente(){}
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

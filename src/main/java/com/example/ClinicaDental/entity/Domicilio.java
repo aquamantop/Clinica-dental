@@ -1,7 +1,14 @@
 package com.example.ClinicaDental.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "domicilios")
 public class Domicilio {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
     private String calle;
     private int numero;
     private String localidad;
@@ -16,11 +23,11 @@ public class Domicilio {
 
     public Domicilio() {}
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
