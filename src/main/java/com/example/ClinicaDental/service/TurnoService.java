@@ -4,7 +4,7 @@ import com.example.ClinicaDental.entity.Domicilio;
 import com.example.ClinicaDental.entity.Odontologo;
 import com.example.ClinicaDental.entity.Paciente;
 import com.example.ClinicaDental.entity.Turno;
-import com.example.ClinicaDental.repository.ITurnoService;
+import com.example.ClinicaDental.repository.TurnoRepository;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TurnoService implements ITurnoService {
+public class TurnoService implements TurnoRepository {
 
     private List<Turno> turnos;
 
@@ -20,17 +20,17 @@ public class TurnoService implements ITurnoService {
         if(turnos == null) {
             turnos = new ArrayList<>();
             Odontologo julieth = new Odontologo("Julieth", "Ruiz", 5959);
-            julieth.setId(1);
+            julieth.setId(1L);
             Domicilio d1 = new Domicilio("Pellegrini", 123, "Rosario", "Santa Fe");
-            d1.setId(1);
+            d1.setId(1L);
             Paciente justo = new Paciente("Marelli", "Justo", "justo@dh.com", 12354678, LocalDate.of(2020, 1, 1), d1, julieth);
-            justo.setId(1);
+            justo.setId(1L);
             Odontologo franco = new Odontologo("Franco", "Rampazzo", 8989);
-            franco.setId(2);
+            franco.setId(2L);
             Domicilio d2 = new Domicilio("Callao", 222, "Rosario", "Santa Fe");
-            d2.setId(2);
+            d2.setId(2L);
             Paciente gabi = new Paciente("Gabi", "Mateo", "gabi@dh.com", 12354678, LocalDate.of(2022, 1, 1), d2, julieth);
-            gabi.setId(2);
+            gabi.setId(2L);
 
             this.turnos.add(new Turno(1, julieth, justo, LocalDateTime.now()));
             this.turnos.add(new Turno(2, franco, gabi, LocalDateTime.now()));

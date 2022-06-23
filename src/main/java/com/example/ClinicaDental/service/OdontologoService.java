@@ -1,42 +1,41 @@
 package com.example.ClinicaDental.service;
 
 import com.example.ClinicaDental.entity.Odontologo;
-import com.example.ClinicaDental.repository.IOdontologoService;
+import com.example.ClinicaDental.repository.OdontologoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class OdontologoService implements IOdontologoService {
+public class OdontologoService {
 
     @Autowired
-    IOdontologoService odontologoService;
+    OdontologoRepository odontologoRepository;
 
-    @Override
     public List<Odontologo> listar() {
-        return odontologoService.listar();
+        return odontologoRepository.findAll();
     }
 
-    @Override
-    public Odontologo actualizar(Odontologo odontologo) {
-        return odontologoService.actualizar(odontologo);
+    public Odontologo actualizar(Odontologo o) {
+        return odontologoRepository.save(o);
     }
 
-    @Override
-    public Odontologo guardar(Odontologo odontologo){
-        return odontologoService.guardar(odontologo);
+    public Odontologo guardar(Odontologo o){
+        return odontologoRepository.save(o);
     }
 
-    @Override
-    public Odontologo eliminar(int id){
-        return odontologoService.eliminar(id);
+    public String eliminar(Long id){
+        String resultado = "";
+        if(odontologoRepository.existsById(id)){
+            odontologoRepository.deleteById(id);
+            resultado = "Odontologo eliminado con id: " + id;
+        } else resultado = "Error al eliminar";
+        return resultado;
     }
 
-    @Override
-    public Odontologo buscar(int id){
-        return odontologoService.buscar(id);
+    public Optional<Odontologo> buscar(Long id){
+        return odontologoRepository.findById(id);
     }
-
 
 }

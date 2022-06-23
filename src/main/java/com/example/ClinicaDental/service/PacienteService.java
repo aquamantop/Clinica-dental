@@ -1,47 +1,41 @@
 package com.example.ClinicaDental.service;
 
-import com.example.ClinicaDental.repository.IPacienteService;
+import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class PacienteService implements IPacienteService {
+public class PacienteService {
 
-    private final IPacienteService pacienteService;
+    @Autowired
+    PacienteRepository pacienteRepository;
 
-    public PacienteService(IPacienteService pacienteService) {
-        this.pacienteService = pacienteService;
-    }
-
-    @Override
     public List<Paciente> listar() {
-        return pacienteService.listar();
+        return pacienteRepository.findAll();
     }
 
-    @Override
     public Paciente actualizar(Paciente p) {
-        return pacienteService.actualizar(p);
+        return pacienteRepository.save(p);
     }
 
-    @Override
     public Paciente guardar(Paciente p){
-        return pacienteService.guardar(p);
+        return pacienteRepository.save(p);
     }
 
-    @Override
-    public Paciente buscar(int id){
-        return pacienteService.buscar(id);
+    public Optional<Paciente> buscar(Long id){
+        return pacienteRepository.findById(id);
     }
 
-    @Override
     public Paciente buscarPorEmail(String email){
-        return pacienteService.buscarPorEmail(email);
+        return null;
     }
 
-    @Override
-    public Paciente eliminar(int id){
-        return pacienteService.eliminar(id);
+    public void eliminar(Long id){
+        pacienteRepository.deleteById(id);
     }
 
 }
