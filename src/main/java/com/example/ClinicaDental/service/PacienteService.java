@@ -1,5 +1,6 @@
 package com.example.ClinicaDental.service;
 
+import com.example.ClinicaDental.entity.Odontologo;
 import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,26 @@ public class PacienteService {
     }
 
     public Paciente actualizar(Paciente p) {
-        Paciente paciente = null;
-        if(buscar(p.getId()).isPresent()){
-            paciente = pacienteRepository.save(p);
+        Paciente paciente = buscar(p.getId()).get();
+        if(p.getNombre() != null) {
+            paciente.setNombre(p.getNombre());
         }
+        if(p.getApellido() != null){
+            paciente.setApellido(p.getApellido());
+        }
+        if(p.getEmail() != null){
+            paciente.setEmail(p.getEmail());
+        }
+        if(p.getDNI() != null){
+            paciente.setDNI(p.getDNI());
+        }
+        if(p.getFechaIngreso() != null){
+            paciente.setFechaIngreso(p.getFechaIngreso());
+        }
+        if(p.getDomicilio() != null){
+            paciente.setDomicilio(p.getDomicilio());
+        }
+        pacienteRepository.save(paciente);
         return paciente;
     }
 

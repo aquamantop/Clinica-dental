@@ -22,10 +22,17 @@ public class OdontologoService {
     }
 
     public Odontologo actualizar(Odontologo o) {
-        Odontologo odontologo = null;
-        if(buscar(o.getId()).isPresent()){
-            odontologo = odontologoRepository.save(o);
+        Odontologo odontologo = buscar(o.getId()).get();
+        if(o.getNombre() != null) {
+            odontologo.setNombre(o.getNombre());
         }
+        if(o.getApellido() != null){
+            odontologo.setApellido(o.getApellido());
+        }
+        if(o.getMatricula() != null){
+            odontologo.setMatricula(o.getMatricula());
+        }
+        odontologoRepository.save(odontologo);
         return odontologo;
     }
 

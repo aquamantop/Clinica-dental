@@ -23,7 +23,7 @@ public class Odontologo {
     private String nombre;
 
     @Column
-    private int matricula;
+    private Integer matricula;
 
     @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
     @JsonIgnore
