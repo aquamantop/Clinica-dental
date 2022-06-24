@@ -18,7 +18,11 @@ public class OdontologoService {
     }
 
     public Odontologo actualizar(Odontologo o) {
-        return odontologoRepository.save(o);
+        Odontologo odontologo = null;
+        if(buscar(o.getId()).isPresent()){
+            odontologo = odontologoRepository.save(o);
+        }
+        return odontologo;
     }
 
     public Odontologo guardar(Odontologo o){

@@ -28,18 +28,18 @@ public class OdontologoController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Odontologo> eliminar(@PathVariable int id){
+    public ResponseEntity<Odontologo> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
 
-        if(o.buscar(id) != null){
-            response = new ResponseEntity(o.eliminar(id).toString(), HttpStatus.NO_CONTENT);
+        if(o.buscar(id).isPresent()){
+            response = new ResponseEntity(o.eliminar(id), HttpStatus.NO_CONTENT);
         } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<Odontologo> buscarID(@PathVariable int id) {
+    public ResponseEntity<Odontologo> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
 
         if(id > 0 && o.buscar(id) != null){

@@ -3,7 +3,6 @@ package com.example.ClinicaDental.service;
 import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +18,11 @@ public class PacienteService {
     }
 
     public Paciente actualizar(Paciente p) {
-        return pacienteRepository.save(p);
+        Paciente paciente = null;
+        if(buscar(p.getId()).isPresent()){
+            paciente = pacienteRepository.save(p);
+        }
+        return paciente;
     }
 
     public Paciente guardar(Paciente p){
@@ -34,8 +37,13 @@ public class PacienteService {
         return null;
     }
 
-    public void eliminar(Long id){
-        pacienteRepository.deleteById(id);
+    public String eliminar(Long id){
+        String resultado = "";
+        if(pacienteRepository.existsById(id)){
+            pacienteRepository.deleteById(id);
+            resultado = "Odontologo eliminado con id: " + id;
+        } else resultado = "Error al eliminar";
+        return resultado;
     }
 
 }

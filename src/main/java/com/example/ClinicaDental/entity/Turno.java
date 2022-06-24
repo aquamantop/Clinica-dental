@@ -1,54 +1,35 @@
 package com.example.ClinicaDental.entity;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@Entity
 public class Turno {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
+    @OneToOne
     private Odontologo odontologo;
+
+    @OneToOne
     private Paciente paciente;
+
     private LocalDateTime fechaHora;
 
-    public Turno(int id, Odontologo odontologo, Paciente paciente, LocalDateTime fechaHora) {
-        this.id = id;
+    public Turno(Odontologo odontologo, Paciente paciente, LocalDateTime fechaHora) {
         this.odontologo = odontologo;
         this.paciente = paciente;
         this.fechaHora = fechaHora;
     }
 
     public Turno() {}
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Odontologo getOdontologo() {
-        return odontologo;
-    }
-
-    public void setOdontologo(Odontologo odontologo) {
-        this.odontologo = odontologo;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-
-    public LocalDateTime getFechaHora() {
-        return fechaHora;
-    }
-
-    public void setFechaHora(LocalDateTime fechaHora) {
-        this.fechaHora = fechaHora;
-    }
 
     @Override
     public String toString() {

@@ -1,7 +1,14 @@
 package com.example.ClinicaDental.entity;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "odontologos")
 public class Odontologo {
@@ -13,6 +20,9 @@ public class Odontologo {
     private String nombre;
     private int matricula;
 
+    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
+    private Set<Paciente> pacientes = new HashSet<>();
+
     public Odontologo(String apellido, String nombre, int matricula) {
         this.apellido = apellido;
         this.nombre = nombre;
@@ -20,38 +30,6 @@ public class Odontologo {
     }
 
     public Odontologo(){}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
-    }
 
     @Override
     public String toString() {

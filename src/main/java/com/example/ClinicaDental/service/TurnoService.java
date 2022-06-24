@@ -1,131 +1,45 @@
 package com.example.ClinicaDental.service;
 
-import com.example.ClinicaDental.entity.Domicilio;
-import com.example.ClinicaDental.entity.Odontologo;
-import com.example.ClinicaDental.entity.Paciente;
 import com.example.ClinicaDental.entity.Turno;
 import com.example.ClinicaDental.repository.TurnoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class TurnoService implements TurnoRepository {
+public class TurnoService {
 
-    private List<Turno> turnos;
+    @Autowired
+    TurnoRepository turnoRepository;
 
-    public void generarTurnos(){
-        if(turnos == null) {
-            turnos = new ArrayList<>();
-            Odontologo julieth = new Odontologo("Julieth", "Ruiz", 5959);
-            julieth.setId(1L);
-            Domicilio d1 = new Domicilio("Pellegrini", 123, "Rosario", "Santa Fe");
-            d1.setId(1L);
-            Paciente justo = new Paciente("Marelli", "Justo", "justo@dh.com", 12354678, LocalDate.of(2020, 1, 1), d1, julieth);
-            justo.setId(1L);
-            Odontologo franco = new Odontologo("Franco", "Rampazzo", 8989);
-            franco.setId(2L);
-            Domicilio d2 = new Domicilio("Callao", 222, "Rosario", "Santa Fe");
-            d2.setId(2L);
-            Paciente gabi = new Paciente("Gabi", "Mateo", "gabi@dh.com", 12354678, LocalDate.of(2022, 1, 1), d2, julieth);
-            gabi.setId(2L);
-
-            this.turnos.add(new Turno(1, julieth, justo, LocalDateTime.now()));
-            this.turnos.add(new Turno(2, franco, gabi, LocalDateTime.now()));
-        } else System.out.println("Turno generados");
-
-    }
-
-    public List<Turno> getTurnos() {
-        return turnos;
-    }
-
-    public void setTurnos(List<Turno> turnos) {
-        this.turnos = turnos;
-    }
-
-    @Override
-    public Turno eliminar(int id){
-        Turno turnoEliminado = null;
-        for (int i = 0; i < turnos.size(); i++) {
-            Turno turno = turnos.get(i);
-            turnoEliminado = turno;
-            if (turno.getId() == id) {
-                turnos.remove(i);
-            }
-        }
-        return turnoEliminado;
-    }
-
-
-    @Override
-    public Turno buscar(int id){
-        Turno t = null;
-        for (Turno turno:turnos) {
-            if (turno.getId() == id) {
-                t = turno;
-            }
-        }
-        return t;
-    }
-
-    @Override
-    public Turno guardar(Turno turno) {
-
-        if(turno.getFechaHora() != null
-                && turno.getOdontologo() != null
-                && turno.getPaciente() != null) {
-            for (Turno t: turnos){
-                if(t.getPaciente().getId() == turno.getPaciente().getId()){
-                    turno.setPaciente(t.getPaciente());
-                }
-            }
-            for (Turno t: turnos){
-                if(t.getOdontologo().getId() == turno.getOdontologo().getId()){
-                    turno.setOdontologo(t.getOdontologo());
-                }
-            }
-            turnos.add(turno);
-            return turno;
-        } else return null;
-
-    }
-
-    @Override
     public List<Turno> listar() {
-        return turnos;
+        return turnoRepository.findAll();
     }
 
-    @Override
-    public Turno actualizar(Turno turno){
-        Turno turnoModificado = null;
-
-        if (turno.getId() > 0) {
-            int id = turno.getId();
-            for (int i = 0; i < turnos.size(); i++) {
-                if (turnos.get(i).getId() == id) {
-                    turnoModificado = turnos.get(i);
-                    Turno turnoViejo = turnos.get(i);
-
-                    if (turno.getFechaHora() != null) {
-                        turnoModificado.setFechaHora(turno.getFechaHora());
-                    } else turnoModificado.setFechaHora(turnoViejo.getFechaHora());
-
-                    if (turno.getOdontologo() != null) {
-                        turnoModificado.setOdontologo(turno.getOdontologo());
-                    } else turnoModificado.setOdontologo(turnoViejo.getOdontologo());
-
-                    if (turno.getPaciente() != null) {
-                        turnoModificado.setPaciente(turno.getPaciente());
-                    } else turnoModificado.setPaciente(turnoViejo.getPaciente());
-
-                    turnos.set(i, turnoModificado);
-                }
-            }
+    public Turno actualizar(Turno t) {
+        Turno turno = null;
+        if(buscar(t.getId()).isPresent()){
+            turno = turnoRepository.save(t);
         }
-        return turnoModificado;
+        return turno;
+    }
+
+    public Turno guardar(Turno t){
+        return turnoRepository.save(t);
+    }
+
+    public Optional<Turno> buscar(Long id){
+        return turnoRepository.findById(id);
+    }
+
+    public String eliminar(Long id){
+        String resultado = "";
+        if(turnoRepository.existsById(id)){
+            turnoRepository.deleteById(id);
+            resultado = "Odontologo eliminado con id: " + id;
+        } else resultado = "Error al eliminar";
+        return resultado;
     }
 
 }

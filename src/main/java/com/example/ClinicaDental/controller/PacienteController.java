@@ -8,6 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/pacientes")
 public class PacienteController {
@@ -27,11 +30,11 @@ public class PacienteController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity eliminar(@PathVariable int id){
+    public ResponseEntity<Paciente> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
 
-        if(p.buscar(id) != null){
-            response = new ResponseEntity(p.eliminar(id).toString(), HttpStatus.OK);
+        if(p.buscar(id).isPresent()){
+            response = new ResponseEntity(p.eliminar(id), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo eliminar paciente", HttpStatus.NOT_FOUND);
 
         return response;
@@ -39,20 +42,14 @@ public class PacienteController {
 
     @GetMapping("/buscarEmail/{email}")
     public ResponseEntity<Paciente> buscarPorEmail(@PathVariable String email) {
-        ResponseEntity response = null;
-
-        if(p.buscarPorEmail(email) != null){
-            response = new ResponseEntity(p.buscarPorEmail(email).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
-
-        return response;
+        return null;
     }
 
-    @GetMapping("/buscarID/{id}")
-    public ResponseEntity<Paciente> buscarID(@PathVariable int id) {
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<Paciente> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
 
-        if(id > 0 && p.buscar(id) != null){
+        if(id > 0 && p.buscar(id).isPresent()){
             response = new ResponseEntity(p.buscar(id), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
 
@@ -60,7 +57,7 @@ public class PacienteController {
     }
 
     @GetMapping("/listar")
-    public ResponseEntity listarPacientes() {
+    public ResponseEntity<List<Paciente>> listarPacientes() {
         ResponseEntity response = null;
 
         if(p.listar().size() > 0){
@@ -74,9 +71,9 @@ public class PacienteController {
     public ResponseEntity<Paciente> actualizar(@RequestBody Paciente paciente){
         ResponseEntity response = null;
 
-        if(p.buscar(paciente.getId()) != null){
+        if(p.buscar(paciente.getId()).isPresent()){
             p.actualizar(paciente);
-            Paciente p1 = p.buscar(paciente.getId());
+            Optional<Paciente> p1 = p.buscar(paciente.getId());
             response = new ResponseEntity(p1.toString(), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo actualizar paciente", HttpStatus.NOT_FOUND);
 

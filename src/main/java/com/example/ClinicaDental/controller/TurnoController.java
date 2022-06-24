@@ -8,6 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/turnos")
 public class TurnoController {
@@ -18,9 +21,6 @@ public class TurnoController {
     @PostMapping("/guardar")
     public ResponseEntity guardar(@RequestBody Turno t) {
         ResponseEntity response = null;
-        if (turnoService.getTurnos() == null){
-            turnoService.generarTurnos();
-        }
 
         Turno turno = turnoService.guardar(t);
 
@@ -32,31 +32,23 @@ public class TurnoController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity eliminar(@PathVariable int id){
+    public ResponseEntity<Turno> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
-        if (turnoService.getTurnos() == null){
-            turnoService.generarTurnos();
-        }
 
-        Turno turno = turnoService.eliminar(id);
-
-        if (turno != null) {
-            response = new ResponseEntity(turno.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
+        if(turnoService.buscar(id).isPresent()){
+            response = new ResponseEntity(turnoService.eliminar(id), HttpStatus.NO_CONTENT);
+        } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity buscar(@PathVariable int id){
+    public ResponseEntity buscar(@PathVariable Long id){
         ResponseEntity response = null;
-        if (turnoService.getTurnos() == null){
-            turnoService.generarTurnos();
-        }
 
-        Turno turno = turnoService.buscar(id);
+        Optional<Turno> turno = turnoService.buscar(id);
 
-        if (turno != null) {
+        if (turno.isPresent()) {
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
         } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
@@ -66,9 +58,6 @@ public class TurnoController {
     @PutMapping("/actualizar")
     public ResponseEntity actualizar(@RequestBody Turno t) {
         ResponseEntity response = null;
-        if (turnoService.getTurnos() == null){
-            turnoService.generarTurnos();
-        }
 
         Turno turno = turnoService.actualizar(t);
 
@@ -80,10 +69,9 @@ public class TurnoController {
     }
 
     @GetMapping("/listar")
-    public ResponseEntity listar(){
+    public ResponseEntity<List<Turno>> listar(){
         ResponseEntity response = null;
-        if (turnoService.getTurnos() == null){
-            turnoService.generarTurnos();
+        if (turnoService.listar().size() > 0){
             response = new ResponseEntity(turnoService.listar().toString(), HttpStatus.OK);
         } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
 
