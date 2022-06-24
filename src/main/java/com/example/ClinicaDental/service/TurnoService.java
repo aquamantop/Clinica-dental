@@ -37,7 +37,7 @@ public class TurnoService {
         String resultado = "";
         if(turnoRepository.existsById(id)){
             turnoRepository.deleteById(id);
-            resultado = "Odontologo eliminado con id: " + id;
+            resultado = "Turno eliminado con id: " + id;
         } else resultado = "Error al eliminar";
         return resultado;
     }

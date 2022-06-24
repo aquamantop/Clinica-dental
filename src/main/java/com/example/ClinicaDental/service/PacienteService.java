@@ -41,7 +41,7 @@ public class PacienteService {
         String resultado = "";
         if(pacienteRepository.existsById(id)){
             pacienteRepository.deleteById(id);
-            resultado = "Odontologo eliminado con id: " + id;
+            resultado = "Paciente eliminado con id: " + id;
         } else resultado = "Error al eliminar";
         return resultado;
     }
