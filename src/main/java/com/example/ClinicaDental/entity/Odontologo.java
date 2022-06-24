@@ -1,8 +1,8 @@
 package com.example.ClinicaDental.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,12 +16,18 @@ public class Odontologo {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Column
     private String apellido;
+
+    @Column
     private String nombre;
+
+    @Column
     private int matricula;
 
     @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
-    private Set<Paciente> pacientes = new HashSet<>();
+    @JsonIgnore
+    private Set<Turno> turnoss = new HashSet<>();
 
     public Odontologo(String apellido, String nombre, int matricula) {
         this.apellido = apellido;

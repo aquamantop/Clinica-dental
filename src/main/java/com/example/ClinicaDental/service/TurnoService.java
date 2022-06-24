@@ -17,16 +17,16 @@ public class TurnoService {
         return turnoRepository.findAll();
     }
 
+    public Turno guardar(Turno t){
+        return turnoRepository.save(t);
+    }
+
     public Turno actualizar(Turno t) {
         Turno turno = null;
         if(buscar(t.getId()).isPresent()){
             turno = turnoRepository.save(t);
         }
         return turno;
-    }
-
-    public Turno guardar(Turno t){
-        return turnoRepository.save(t);
     }
 
     public Optional<Turno> buscar(Long id){

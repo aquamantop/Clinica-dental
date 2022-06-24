@@ -17,16 +17,16 @@ public class OdontologoService {
         return odontologoRepository.findAll();
     }
 
+    public Odontologo guardar(Odontologo o){
+        return odontologoRepository.save(o);
+    }
+
     public Odontologo actualizar(Odontologo o) {
         Odontologo odontologo = null;
         if(buscar(o.getId()).isPresent()){
             odontologo = odontologoRepository.save(o);
         }
         return odontologo;
-    }
-
-    public Odontologo guardar(Odontologo o){
-        return odontologoRepository.save(o);
     }
 
     public String eliminar(Long id){

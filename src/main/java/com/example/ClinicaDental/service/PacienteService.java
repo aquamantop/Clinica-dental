@@ -17,16 +17,16 @@ public class PacienteService {
         return pacienteRepository.findAll();
     }
 
+    public Paciente guardar(Paciente p){
+        return pacienteRepository.save(p);
+    }
+
     public Paciente actualizar(Paciente p) {
         Paciente paciente = null;
         if(buscar(p.getId()).isPresent()){
             paciente = pacienteRepository.save(p);
         }
         return paciente;
-    }
-
-    public Paciente guardar(Paciente p){
-        return pacienteRepository.save(p);
     }
 
     public Optional<Paciente> buscar(Long id){

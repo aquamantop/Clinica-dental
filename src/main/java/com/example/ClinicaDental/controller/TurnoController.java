@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -46,22 +45,8 @@ public class TurnoController {
     public ResponseEntity buscar(@PathVariable Long id){
         ResponseEntity response = null;
 
-        Optional<Turno> turno = turnoService.buscar(id);
-
-        if (turno.isPresent()) {
-            response = new ResponseEntity(turno.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
-
-        return response;
-    }
-
-    @PutMapping("/actualizar")
-    public ResponseEntity actualizar(@RequestBody Turno t) {
-        ResponseEntity response = null;
-
-        Turno turno = turnoService.actualizar(t);
-
-        if (turno != null) {
+        if (id > 0) {
+            Turno turno = turnoService.buscar(id).get();
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
         } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
@@ -74,6 +59,18 @@ public class TurnoController {
         if (turnoService.listar().size() > 0){
             response = new ResponseEntity(turnoService.listar().toString(), HttpStatus.OK);
         } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+
+        return response;
+    }
+
+    @PutMapping("/actualizar")
+    public ResponseEntity actualizar(@RequestBody Turno t) {
+        ResponseEntity response = null;
+
+        if (t != null) {
+            turnoService.actualizar(t);
+            response = new ResponseEntity(t.toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
         return response;
     }

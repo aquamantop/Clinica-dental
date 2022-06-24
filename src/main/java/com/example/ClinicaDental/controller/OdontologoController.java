@@ -9,19 +9,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/odontologos")
 public class OdontologoController {
 
     @Autowired
-    OdontologoService o;
+    OdontologoService odontologoService;
 
     @PostMapping("/guardar")
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo){
         ResponseEntity<Odontologo> response = null;
 
         if(odontologo != null){
-            response = new ResponseEntity(o.guardar(odontologo).toString(), HttpStatus.CREATED);
+            response = new ResponseEntity(odontologoService.guardar(odontologo).toString(), HttpStatus.CREATED);
         } else response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
@@ -31,8 +33,8 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
 
-        if(o.buscar(id).isPresent()){
-            response = new ResponseEntity(o.eliminar(id), HttpStatus.NO_CONTENT);
+        if(odontologoService.buscar(id).isPresent()){
+            response = new ResponseEntity(odontologoService.eliminar(id), HttpStatus.NO_CONTENT);
         } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
@@ -42,8 +44,9 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
 
-        if(id > 0 && o.buscar(id) != null){
-            response = new ResponseEntity(o.buscar(id).toString(), HttpStatus.OK);
+        if(id > 0){
+            Odontologo odontologo = odontologoService.buscar(id).get();
+            response = new ResponseEntity(odontologo.toString(), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
@@ -53,10 +56,8 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> listarOdontologos() {
         ResponseEntity response = null;
 
-        if(o.listar().size() > 0){
-            for (Odontologo odontologo : o.listar()){
-                response = new ResponseEntity(o.listar().toString(), HttpStatus.OK);
-            }
+        if(odontologoService.listar().size() > 0){
+            response = new ResponseEntity(odontologoService.listar().toString(), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo encontrar odontologos", HttpStatus.NOT_FOUND);
 
         return response;
@@ -67,7 +68,7 @@ public class OdontologoController {
         ResponseEntity response = null;
 
         if(odontologo != null){
-            response = new ResponseEntity(o.actualizar(odontologo).toString(), HttpStatus.ACCEPTED);
+            response = new ResponseEntity(odontologoService.actualizar(odontologo).toString(), HttpStatus.ACCEPTED);
         } else response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
