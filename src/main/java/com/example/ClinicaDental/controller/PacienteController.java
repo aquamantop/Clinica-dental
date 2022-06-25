@@ -1,5 +1,6 @@
 package com.example.ClinicaDental.controller;
 
+import com.example.ClinicaDental.dto.PacienteDTO;
 import com.example.ClinicaDental.entity.Paciente;
 import com.example.ClinicaDental.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pacientes")
@@ -20,7 +22,7 @@ public class PacienteController {
         ResponseEntity response = null;
 
         if(paciente != null) {
-            response = new ResponseEntity(pacienteService.guardar(paciente).toString(), HttpStatus.OK);
+            response = new ResponseEntity(pacienteService.guardar(paciente), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo guardar paciente",HttpStatus.NOT_FOUND);
 
         return response;
@@ -42,20 +44,20 @@ public class PacienteController {
         ResponseEntity response = null;
 
         if(email != null){
-            Paciente paciente = pacienteService.buscarPorEmail(email).get();
-            response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
+            Optional<Paciente> paciente = pacienteService.buscarPorEmail(email);
+            response = new ResponseEntity(paciente, HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
 
         return response;
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<Paciente> buscarID(@PathVariable Long id) {
+    public ResponseEntity<PacienteDTO> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
 
-        if(id > 0){
-            Paciente paciente = pacienteService.buscar(id).get();
-            response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
+        if(pacienteService.buscar(id).isPresent()){
+            Optional<Paciente> paciente = pacienteService.buscar(id);
+            response = new ResponseEntity(paciente, HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
 
         return response;
@@ -78,7 +80,7 @@ public class PacienteController {
 
         if(paciente != null){
             pacienteService.actualizar(paciente);
-            response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
+            response = new ResponseEntity(paciente, HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo actualizar paciente", HttpStatus.NOT_FOUND);
 
         return response;

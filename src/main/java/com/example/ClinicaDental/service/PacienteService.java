@@ -4,8 +4,11 @@ import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class PacienteService {
@@ -13,8 +16,9 @@ public class PacienteService {
     @Autowired
     PacienteRepository pacienteRepository;
 
-    public List<Paciente> listar() {
-        return pacienteRepository.findAll();
+    public Set<Paciente> listar() {
+        List<Paciente> pacientesList = pacienteRepository.findAll();
+        return new HashSet<>(pacientesList);
     }
 
     public Paciente guardar(Paciente p){
@@ -22,7 +26,7 @@ public class PacienteService {
     }
 
     public Paciente actualizar(Paciente p) {
-        Paciente paciente = buscar(p.getId()).get();
+        Paciente paciente  = buscar(p.getId()).get();
         if(p.getNombre() != null) {
             paciente.setNombre(p.getNombre());
         }
@@ -51,6 +55,7 @@ public class PacienteService {
 
     public Optional<Paciente> buscarPorEmail(String email){
         return pacienteRepository.buscarEmail(email);
+
     }
 
     public String eliminar(Long id){
