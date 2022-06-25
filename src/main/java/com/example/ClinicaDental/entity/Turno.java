@@ -22,6 +22,7 @@ public class Turno {
     @JoinColumn(name = "paciente_id", referencedColumnName = "id", nullable = false)
     private Paciente paciente;
 
+    @Column
     private LocalDateTime fechaHora;
 
     public Turno(Odontologo odontologo, Paciente paciente, LocalDateTime fechaHora) {
@@ -32,12 +33,5 @@ public class Turno {
 
     public Turno() {}
 
-    @Override
-    public String toString() {
-        return "--Turno--" +
-                "\nFecha y hora: " + fechaHora +
-                "\n\n" + paciente.toString() +
-                "\n\n" + odontologo.toString();
-    }
 
 }

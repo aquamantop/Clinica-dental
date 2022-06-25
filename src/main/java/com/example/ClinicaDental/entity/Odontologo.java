@@ -37,12 +37,5 @@ public class Odontologo {
 
     public Odontologo(){}
 
-    @Override
-    public String toString() {
-        return "--Odontologo--" +
-                "\nApellido: " + apellido + "/" +
-                "\nNombre: " + nombre + "/" +
-                "\nMatricula: " + matricula;
-    }
 
 }

@@ -51,14 +51,5 @@ public class Paciente {
 
     public Paciente(){}
 
-    @Override
-    public String toString() {
-        return "--Paciente--" +
-                "\nApellido: " + apellido + "/" +
-                "\nNombre: " + nombre + "/" +
-                "\nEmail: " + email + "/" +
-                "\nDNI: " + DNI + "/" +
-                "\nFecha de ingreso: " + fechaIngreso;
-    }
 
 }
