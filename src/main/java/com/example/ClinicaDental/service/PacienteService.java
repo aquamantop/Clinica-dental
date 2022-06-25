@@ -50,8 +50,8 @@ public class PacienteService {
         return pacienteRepository.findById(id);
     }
 
-    public Paciente buscarPorEmail(String email){
-        return null;
+    public Optional<Paciente> buscarPorEmail(String email){
+        return pacienteRepository.buscarEmail(email);
     }
 
     public String eliminar(Long id){

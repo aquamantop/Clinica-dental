@@ -30,7 +30,7 @@ public class PacienteController {
     public ResponseEntity<Paciente> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
 
-        if(pacienteService.buscar(id) != null){
+        if(pacienteService.buscar(id).isPresent()){
             response = new ResponseEntity(pacienteService.eliminar(id), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo eliminar paciente", HttpStatus.NOT_FOUND);
 
@@ -39,7 +39,14 @@ public class PacienteController {
 
     @GetMapping("/buscarEmail/{email}")
     public ResponseEntity<Paciente> buscarPorEmail(@PathVariable String email) {
-        return null;
+        ResponseEntity response = null;
+
+        if(email != null){
+            Paciente paciente = pacienteService.buscarPorEmail(email).get();
+            response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
+        } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
+
+        return response;
     }
 
     @GetMapping("/buscar/{id}")
