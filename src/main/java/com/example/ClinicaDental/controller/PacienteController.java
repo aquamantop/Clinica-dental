@@ -2,6 +2,7 @@ package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Paciente;
 import com.example.ClinicaDental.service.PacienteService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +16,20 @@ public class PacienteController {
     @Autowired
     PacienteService pacienteService;
 
+    public static final Logger logger = Logger.getLogger(PacienteController.class);
+
     @PostMapping("/guardar")
     public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente){
         ResponseEntity response = null;
 
+        logger.debug("Guardando paciente...");
         if(paciente != null) {
             response = new ResponseEntity(pacienteService.guardar(paciente).toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo guardar paciente",HttpStatus.NOT_FOUND);
+            logger.info("Paciente guardado");
+        } else {
+            response = new ResponseEntity("No se pudo guardar paciente",HttpStatus.NOT_FOUND);
+            logger.error("Error al guardar paciente");
+        }
 
         return response;
     }
@@ -30,9 +38,14 @@ public class PacienteController {
     public ResponseEntity<Paciente> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
 
+        logger.debug("Eliminando paciente...");
         if(pacienteService.buscar(id).isPresent()){
             response = new ResponseEntity(pacienteService.eliminar(id), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo eliminar paciente", HttpStatus.NOT_FOUND);
+            logger.info("Paciente eliminado");
+        } else {
+            response = new ResponseEntity("No se pudo eliminar paciente", HttpStatus.NOT_FOUND);
+            logger.error("Error al eliminar paciente");
+        }
 
         return response;
     }
@@ -41,10 +54,15 @@ public class PacienteController {
     public ResponseEntity<Paciente> buscarPorEmail(@PathVariable String email) {
         ResponseEntity response = null;
 
+        logger.debug("Buscando paciente por email...");
         if(pacienteService.buscarPorEmail(email).isPresent()){
             Paciente paciente = pacienteService.buscarPorEmail(email).get();
             response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
+            logger.info("Paciente encontrado");
+        } else {
+            response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
+            logger.error("Error al buscar paciente por email");
+        }
 
         return response;
     }
@@ -53,10 +71,15 @@ public class PacienteController {
     public ResponseEntity<Paciente> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
 
+        logger.debug("Buscando paciente por id...");
         if(pacienteService.buscar(id).isPresent()){
             Paciente paciente = pacienteService.buscar(id).get();
             response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
+            logger.info("Paciente encontrado");
+        } else {
+            response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
+            logger.error("Error al buscar paciente por id");
+        }
 
         return response;
     }
@@ -65,9 +88,14 @@ public class PacienteController {
     public ResponseEntity<List<Paciente>> listarPacientes() {
         ResponseEntity response = null;
 
+        logger.debug("Listando pacientes...");
         if(pacienteService.listar().size() > 0){
             response = new ResponseEntity(pacienteService.listar().toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo encontrar pacientes", HttpStatus.NOT_FOUND);
+            logger.info("Pacientes listados");
+        } else {
+            response = new ResponseEntity("No se pudo encontrar pacientes", HttpStatus.NOT_FOUND);
+            logger.error("Error al listar pacientes");
+        }
 
         return response;
     }
@@ -76,10 +104,20 @@ public class PacienteController {
     public ResponseEntity<Paciente> actualizar(@RequestBody Paciente paciente){
         ResponseEntity response = null;
 
+        logger.debug("Actualizando paciente...");
         if(paciente != null){
-            pacienteService.actualizar(paciente);
-            response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo actualizar paciente", HttpStatus.NOT_FOUND);
+            if(paciente.getDomicilio() != null){
+                pacienteService.actualizar(paciente);
+                response = new ResponseEntity(paciente.toString(), HttpStatus.OK);
+            } else {
+                pacienteService.actualizar(paciente);
+                response = new ResponseEntity(paciente.datosPaciente(), HttpStatus.OK);
+            }
+            logger.info("Paciente con id: " + paciente.getId() + " actualizado");
+        } else {
+            response = new ResponseEntity("No se pudo actualizar paciente", HttpStatus.NOT_FOUND);
+            logger.error("Error al actualizar paciente");
+        }
 
         return response;
     }

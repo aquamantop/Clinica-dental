@@ -2,6 +2,7 @@ package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Odontologo;
 import com.example.ClinicaDental.service.OdontologoService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,8 @@ public class OdontologoController {
 
     @Autowired
     OdontologoService odontologoService;
+
+    public static final Logger logger = Logger.getLogger(OdontologoController.class);
 
     @PostMapping("/guardar")
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo){

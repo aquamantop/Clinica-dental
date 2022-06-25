@@ -2,6 +2,7 @@ package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Turno;
 import com.example.ClinicaDental.service.TurnoService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,8 @@ public class TurnoController {
 
     @Autowired
     TurnoService turnoService;
+
+    public static final Logger logger = Logger.getLogger(TurnoController.class);
 
     @PostMapping("/guardar")
     public ResponseEntity guardar(@RequestBody Turno t) {
@@ -43,7 +46,7 @@ public class TurnoController {
     public ResponseEntity buscar(@PathVariable Long id){
         ResponseEntity response = null;
 
-        if (id > 0) {
+        if (turnoService.buscar(id).isPresent()) {
             Turno turno = turnoService.buscar(id).get();
             response = new ResponseEntity(turno.toString(), HttpStatus.OK);
         } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);

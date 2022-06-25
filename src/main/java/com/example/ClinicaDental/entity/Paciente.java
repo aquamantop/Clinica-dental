@@ -62,4 +62,13 @@ public class Paciente {
                 domicilio.toString();
     }
 
+    public String datosPaciente(){
+        return "--Paciente--" +
+                "\nApellido: " + apellido +
+                "\nNombre: " + nombre +
+                "\nEmail: " + email +
+                "\nDNI: " + DNI +
+                "\nFecha de ingreso: " + fechaIngreso;
+    }
+
 }
