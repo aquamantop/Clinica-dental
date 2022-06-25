@@ -40,9 +40,9 @@ public class Domicilio {
     @Override
     public String toString() {
         return "--Domicilio--" +
-                "\nCalle: " + calle + "/" +
-                "\nNumero: " + numero + "/" +
-                "\nLocalidad: " + localidad + "/" +
+                "\nCalle: " + calle +
+                "\nNumero: " + numero +
+                "\nLocalidad: " + localidad +
                 "\nProvincia: " + provincia;
     }
 

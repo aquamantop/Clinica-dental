@@ -54,11 +54,12 @@ public class Paciente {
     @Override
     public String toString() {
         return "--Paciente--" +
-                "\nApellido: " + apellido + "/" +
-                "\nNombre: " + nombre + "/" +
-                "\nEmail: " + email + "/" +
-                "\nDNI: " + DNI + "/" +
-                "\nFecha de ingreso: " + fechaIngreso;
+                "\nApellido: " + apellido +
+                "\nNombre: " + nombre +
+                "\nEmail: " + email +
+                "\nDNI: " + DNI +
+                "\nFecha de ingreso: " + fechaIngreso + "\n" +
+                domicilio.toString();
     }
 
 }
