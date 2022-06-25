@@ -4,7 +4,6 @@ import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -55,7 +54,6 @@ public class PacienteService {
 
     public Optional<Paciente> buscarPorEmail(String email){
         return pacienteRepository.buscarEmail(email);
-
     }
 
     public String eliminar(Long id){

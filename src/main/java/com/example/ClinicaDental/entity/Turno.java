@@ -33,5 +33,13 @@ public class Turno {
 
     public Turno() {}
 
+    @Override
+    public String toString() {
+        return "--Turno--" +
+                "\nFecha y hora: " + fechaHora +
+                "\n\n" + paciente.toString() +
+                "\n\n" + odontologo.toString();
+    }
+
 
 }
