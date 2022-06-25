@@ -1,6 +1,5 @@
 package com.example.ClinicaDental.service;
 
-import com.example.ClinicaDental.entity.Odontologo;
 import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
