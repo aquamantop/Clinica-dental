@@ -1,11 +1,15 @@
 package com.example.ClinicaDental.service;
 
+import com.example.ClinicaDental.entity.Paciente;
 import com.example.ClinicaDental.entity.Turno;
 import com.example.ClinicaDental.repository.TurnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class TurnoService {
@@ -13,8 +17,8 @@ public class TurnoService {
     @Autowired
     TurnoRepository turnoRepository;
 
-    public List<Turno> listar() {
-        return turnoRepository.findAll();
+    public Set<Turno> listar() {
+        return new HashSet<>(turnoRepository.findAll());
     }
 
     public Turno guardar(Turno t){

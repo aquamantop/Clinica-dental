@@ -4,8 +4,9 @@ import com.example.ClinicaDental.entity.Odontologo;
 import com.example.ClinicaDental.repository.OdontologoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class OdontologoService {
@@ -13,8 +14,8 @@ public class OdontologoService {
     @Autowired
     OdontologoRepository odontologoRepository;
 
-    public List<Odontologo> listar() {
-        return odontologoRepository.findAll();
+    public Set<Odontologo> listar() {
+        return new HashSet<>(odontologoRepository.findAll());
     }
 
     public Odontologo guardar(Odontologo o){

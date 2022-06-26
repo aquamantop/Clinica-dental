@@ -16,8 +16,7 @@ public class PacienteService {
     PacienteRepository pacienteRepository;
 
     public Set<Paciente> listar() {
-        List<Paciente> pacientesList = pacienteRepository.findAll();
-        return new HashSet<>(pacientesList);
+        return new HashSet<>(pacienteRepository.findAll());
     }
 
     public Paciente guardar(Paciente p){
