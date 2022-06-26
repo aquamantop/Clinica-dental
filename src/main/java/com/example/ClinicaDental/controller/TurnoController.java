@@ -69,8 +69,13 @@ public class TurnoController {
         ResponseEntity response = null;
 
         if (t != null) {
-            turnoService.actualizar(t);
-            response = new ResponseEntity(t.toString(), HttpStatus.OK);
+            if(t.getPaciente().getDomicilio() != null && t.getPaciente() != null && t.getOdontologo() != null) {
+                turnoService.actualizar(t);
+                response = new ResponseEntity(t.toString(), HttpStatus.OK);
+            } else {
+                turnoService.actualizar(t);
+                response = new ResponseEntity(t, HttpStatus.OK);
+            }
         } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
         return response;

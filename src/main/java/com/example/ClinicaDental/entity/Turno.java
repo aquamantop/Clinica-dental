@@ -36,9 +36,10 @@ public class Turno {
     @Override
     public String toString() {
         return "--Turno--" +
+                "\nId: " + id +
                 "\nFecha y hora: " + fechaHora +
-                "\n\n" + paciente.toString() +
-                "\n\n" + odontologo.toString();
+                "\n\n" + "\n" + paciente.toString() +
+                "\n\n" + "\n" + odontologo.toString();
     }
 
 

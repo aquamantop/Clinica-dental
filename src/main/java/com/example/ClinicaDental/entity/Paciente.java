@@ -54,6 +54,7 @@ public class Paciente {
     @Override
     public String toString() {
         return "--Paciente--" +
+                "\nId: " + id +
                 "\nApellido: " + apellido +
                 "\nNombre: " + nombre +
                 "\nEmail: " + email +
@@ -64,6 +65,7 @@ public class Paciente {
 
     public String datosPaciente(){
         return "--Paciente--" +
+                "\nId: " + id +
                 "\nApellido: " + apellido +
                 "\nNombre: " + nombre +
                 "\nEmail: " + email +
