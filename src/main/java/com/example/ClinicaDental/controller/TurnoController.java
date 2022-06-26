@@ -25,7 +25,10 @@ public class TurnoController {
         Turno turno = turnoService.guardar(t);
 
         if (turno != null) {
-            response = new ResponseEntity(turno.toString(), HttpStatus.OK);
+            if(t.getPaciente().getDomicilio() != null){
+                response = new ResponseEntity(turno.toString(), HttpStatus.OK);
+            } else response = new ResponseEntity(turno, HttpStatus.OK);
+
         } else response = new ResponseEntity("No se guardo el turno", HttpStatus.NOT_FOUND);
 
         return response;

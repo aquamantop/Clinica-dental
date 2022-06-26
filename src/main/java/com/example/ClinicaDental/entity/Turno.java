@@ -42,5 +42,12 @@ public class Turno {
                 "\n\n" + "\n" + odontologo.toString();
     }
 
+    public String datosTurno() {
+        return "--Turno--" +
+                "\nId: " + id +
+                "\nFecha y hora: " + fechaHora +
+                "\n" + paciente.datosPaciente() +
+                "\n" + odontologo.toString();
+    }
 
 }
