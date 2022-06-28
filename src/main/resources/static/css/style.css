@@ -51,6 +51,7 @@ main {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
+  margin: 0rem 0.5rem;
 }
 .borrar:hover {
   background-color: var(--borrar);
@@ -63,6 +64,7 @@ main {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
+  margin: 0rem 0.5rem;
 }
 .editar:hover {
   background-color: var(--link);
@@ -165,6 +167,31 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Actualizar */
+#actualizar {
+  background-color: var(--link-visitado);
+  color: var(--link);
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin: 1rem 0rem;
+}
+#actualizar:hover {
+  background-color: var(--link);
+  color: var(--link-visitado);
+}
+#volver {
+  background-color: var(--link-visitado);
+  color: var(--link);
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+#volver:hover {
+  background-color: var(--link);
+  color: var(--link-visitado);
 }
 
 li {
