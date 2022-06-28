@@ -12,7 +12,7 @@
   --link-visitado: #06283D;
   --fondo: #DFF6FF;
   --borrar: #ff0000;
-  --negro: rgb(0, 0, 0);
+  --letraBorrar: rgb(136, 0, 0);
 }
 
 body {
@@ -45,15 +45,15 @@ main {
 
 /* Borrar */
 #borrar {
-  background-color: var(--borrar);
-  color: var(--negro);
+  background-color: var(--letraBorrar);
+  color: var(--borrar);
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
 }
 #borrar:hover {
-  background-color: var(--negro);
-  color: var(--borrar);
+  background-color: var(--borrar);
+  color: var(--letraBorrar
 }
 /* Editar */
 #editar {
