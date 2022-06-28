@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -24,6 +25,7 @@ public class PacienteController {
 
         logger.debug("Guardando paciente...");
         if(paciente != null) {
+            paciente.setFechaIngreso(LocalDate.now());
             response = new ResponseEntity(pacienteService.guardar(paciente), HttpStatus.OK);
             logger.info("Paciente guardado");
         } else {

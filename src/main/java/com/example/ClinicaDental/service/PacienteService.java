@@ -19,7 +19,13 @@ public class PacienteService {
     }
 
     public Paciente guardar(Paciente p){
-        return pacienteRepository.save(p);
+        if(p.getNombre() != null
+            && p.getApellido() != null
+            && p.getEmail() != null
+            && p.getDNI() != null
+            && p.getDomicilio() != null) {
+            return pacienteRepository.save(p);
+        } else return null;
     }
 
     public Paciente actualizar(Paciente p) {

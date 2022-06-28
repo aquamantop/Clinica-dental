@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
         if (p && array.length < 10) {
             array.push(cant)
             return true
-        } else false
+        } else return false
     }
 
     form.addEventListener('submit', (e) => {
@@ -52,8 +52,7 @@ window.addEventListener('load', () => {
                 resetearForm()
             })
             .catch(e => {
-                console.log(e)
-                alert("ERROR")
+                alert(e)
                 resetearForm()
             })
         } else alert("Completar datos")
