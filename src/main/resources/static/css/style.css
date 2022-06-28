@@ -4,101 +4,181 @@
   border: 0;
   vertical-align: baseline; }
 
+/* Colores */
+:root {
+  --color-principal: #2F8F9D;
+  --link: #47B5FF;
+  --link-hover: #1363DF;
+  --link-visitado: #06283D;
+  --fondo: #DFF6FF;
+  --borrar: #ff0000;
+  --negro: rgb(0, 0, 0);
+}
+
 body {
-  background-color: #DFF6FF;
-  color: #2F8F9D;
+  background-color: var(--fondo);
+  color: var(--color-principal);
   font-family: [Space Mono] "https://fonts.google.com/specimen/Space+Mono";
-  font-weight: 700; }
-  body h1 {
-    text-align: center;
-    font-size: 3rem;
-    text-decoration-line: underline; }
-  body p {
-    text-align: center;
-    margin: 1rem;
-    font-size: 2rem; }
-  body a {
-    text-decoration: none; }
-  body main {
-    padding: 5rem;
-    font-size: 2rem;
-    display: grid; }
-    body main form {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: center;
-      margin: 0% 25%;
-      font-size: 1.5rem; }
-      body main form input {
-        padding: 1rem;
-        margin: 2rem 0rem; }
-      body main form #enviar {
-        background-color: #06283D;
-        color: #47B5FF;
-        padding: 1rem;
-        margin: 0% 25%;
-        font-size: 1.5rem;
-        border-radius: 1rem; }
-      body main form #enviar:hover {
-        background-color: #47B5FF;
-        color: #06283D; }
-    body main #portal {
-      position: fixed;
-      background-color: #47B5FF;
-      color: #06283D;
-      padding: 1rem;
-      top: 2%;
-      left: 2%;
-      font-size: 1.5rem;
-      border-radius: 1rem; }
-    body main #portal:hover {
-      background-color: #06283D;
-      color: #47B5FF; }
-    body main #home {
-      position: fixed;
-      background-color: #47B5FF;
-      color: #06283D;
-      padding: 1rem;
-      top: 2%;
-      right: 2%;
-      font-size: 1.5rem;
-      border-radius: 1rem; }
-    body main #home:hover {
-      background-color: #06283D;
-      color: #47B5FF; }
-    body main .turno {
-      margin: 1rem 0rem;
-      padding: 1rem;
-      font-size: 1rem; }
-    body main #marginAgregar {
-      margin-top: 5%; }
-    body main .agregar {
-      background-color: #06283D;
-      color: #47B5FF;
-      padding: 1rem;
-      font-size: 1.5rem;
-      border-radius: 1rem; }
-    body main .agregar:hover {
-      background-color: #47B5FF;
-      color: #06283D; }
-  body #mainHome {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    body #mainHome .portales {
-      margin: 2rem 0rem; }
-  body #mainOdontologos {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-  body footer {
-    color: #2F8F9D;
-    clear: both;
-    text-align: center;
-    font-size: 2rem; }
-  body footer a {
-    color: #47B5FF; }
-  body footer a:visited {
-    color: #06283D; }
-  body footer a:hover {
-    color: #1363DF; }
+  font-weight: 700;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-decoration-line: underline;
+}
+
+p {
+  text-align: center;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  padding: 5rem;
+  font-size: 2rem;
+}
+
+/* Borrar */
+#borrar {
+  background-color: var(--borrar);
+  color: var(--negro);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+#borrar:hover {
+  background-color: var(--negro);
+  color: var(--borrar);
+}
+/* Editar */
+#editar {
+  background-color: var(--link-visitado);
+  color: var(--link);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+#editar:hover {
+  background-color: var(--link);
+  color: var(--link-visitado);
+}
+
+form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: 0% 25%;
+  font-size: 1.5rem;
+}
+
+input {
+  padding: 1rem;
+  margin: 2rem 0rem;
+}
+#enviar {
+  background-color: var(--link-visitado);
+  color: var(--link);
+  padding: 1rem;
+  margin: 0% 25%;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+#enviar:hover {
+  background-color: var(--link);
+  color: var(--link-visitado);
+}
+
+/* Portales */
+#portal {
+  position: fixed;
+  background-color: var(--link);
+  color: var(--link-visitado);
+  padding: 1rem;
+  top: 2%;
+  left: 2%;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+#portal:hover {
+  background-color: var(--link-visitado);
+  color: var(--link);
+}
+
+.portales {
+  margin: 2rem 0rem;
+}
+
+/* Boton home */
+#home {
+  position: fixed;
+  background-color: var(--link);
+  color: var(--link-visitado);
+  padding: 1rem;
+  top: 2%;
+  right: 2%;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+#home:hover {
+  background-color: var(--link-visitado);
+  color: var(--link);
+}
+
+/* Turnos */
+.turno {
+  margin: 1rem 0rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* Boton agregar */
+#marginAgregar {
+  margin-top: 5%;
+}
+.agregar {
+  background-color: var(--link-visitado);
+  color: var(--link);
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+.agregar:hover {
+  background-color: var(--link);
+  color: var(--link-visitado);
+}
+
+/* Main del home */
+#mainHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main de odontologos */
+#mainOdontologos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Pie de pagina */
+footer {
+  color: var(--color-principal);
+  clear: both;
+  text-align: center;
+  font-size: 2rem;
+}
+footer a {
+  color: var(--link);
+}
+footer a:visited {
+  color: var(--link-visitado);
+  }
+footer a:hover {
+  color: var(--link-hover);
+}

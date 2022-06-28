@@ -11,9 +11,12 @@ window.addEventListener('load', () => {
         .then(data => {
             console.log(data)
             data.forEach(e => {
-                ul.innerHTML += `<li>${e.id + ') Odontologo: ' + e.nombre + ' ' +e.apellido + '. Matricula: '
-                + e.matricula}</li>
-                `
+                ul.innerHTML += `<li>
+                                 <button id="borrar">X</button>
+                                 <button id="editar">Editar</button>
+                                 ${e.id + ') Odontologo: ' + e.nombre + ' ' +e.apellido + '. Matricula: '
+                                 + e.matricula}
+                                 </li>`
             });
         })
 
