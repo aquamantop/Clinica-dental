@@ -17,8 +17,27 @@
 
 <main id="mainOdontologos">
     <p>Odontologos</p>
+
     <ul>
     </ul>
+
+    <form id="form" class="hide">
+        <p>Agregar Odontologo</p>
+        <!-- Nombre -->
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Ingresar nombre" name="nombre" id="nombre" class="odontologo">
+
+        <!-- Apellido -->
+        <label for="apellido">Apellido</label>
+        <input type="text" placeholder="Ingresar apellido" name="apellido" id="apellido" class="odontologo">
+
+        <!-- Matricula -->
+        <label for="matricula">Matricula</label>
+        <input type="text" placeholder="Ingresar matricula" name="matricula" id="matricula" class="odontologo">
+
+        <!-- Boton -->
+        <button type="submit" id="enviar">Enviar</button>
+    </form>
 
     <!-- Agregar -->
     <a id="marginAgregar" href="../html/postOdontologo.html"><button id="agregarOdont" class="agregar">Agregar</button></a>
@@ -28,7 +47,7 @@
 </main>
 
 <footer>
-    <div class="attribution">
+    <div>
         Coded by <a href="https://github.com/aquamantop" target="_blank">Franco Rampazzo</a>.
     </div>
 </footer>

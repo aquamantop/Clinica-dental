@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* Colores */
 :root {
@@ -44,26 +45,26 @@ main {
 }
 
 /* Borrar */
-#borrar {
+.borrar {
   background-color: var(--letraBorrar);
   color: var(--borrar);
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
 }
-#borrar:hover {
+.borrar:hover {
   background-color: var(--borrar);
-  color: var(--letraBorrar
+  color: var(--letraBorrar);
 }
 /* Editar */
-#editar {
+.editar {
   background-color: var(--link-visitado);
   color: var(--link);
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
 }
-#editar:hover {
+.editar:hover {
   background-color: var(--link);
   color: var(--link-visitado);
 }
@@ -138,7 +139,7 @@ input {
 
 /* Boton agregar */
 #marginAgregar {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .agregar {
   background-color: var(--link-visitado);
@@ -166,6 +167,10 @@ input {
   align-items: center;
 }
 
+li {
+  margin: 1rem 0rem 0rem;
+}
+
 /* Pie de pagina */
 footer {
   color: var(--color-principal);
@@ -181,4 +186,9 @@ footer a:visited {
   }
 footer a:hover {
   color: var(--link-hover);
+}
+
+/* Ocultar */
+.hide {
+  display: none;
 }

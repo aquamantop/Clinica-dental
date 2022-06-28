@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
     const url = '/pacientes/guardar'
     const array = []
 
+    // Validaciones
     dni.addEventListener("keydown", (e) => {
         if (e.code === "Backspace") {
             array.pop()
@@ -32,6 +33,7 @@ window.addEventListener('load', () => {
         } else return false
     }
 
+    // POST
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         const formData = {
@@ -72,6 +74,7 @@ window.addEventListener('load', () => {
         } else alert("Completar datos")
     })
 
+    // Resetear form
     function resetearForm(){
         nombre.value = ""
         apellido.value = ""

@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
     const ul = document.querySelector("ul")
     const url = '/odontologos/listar'
 
+    console.log(ul)
         // GET
         fetch(url)
         .then(response => {
@@ -12,9 +13,9 @@ window.addEventListener('load', () => {
             console.log(data)
             data.forEach(e => {
                 ul.innerHTML += `<li>
-                                 <button id="borrar">X</button>
-                                 <button id="editar">Editar</button>
-                                 ${e.id + ') Odontologo: ' + e.nombre + ' ' +e.apellido + '. Matricula: '
+                                 <button class="borrar">X</button>
+                                 <button class="editar">${e.id}</button>
+                                 ${'Odontologo: ' + e.nombre + ' ' +e.apellido + '. Matricula: '
                                  + e.matricula}
                                  </li>`
             });
