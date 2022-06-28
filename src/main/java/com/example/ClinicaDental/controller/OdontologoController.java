@@ -22,9 +22,14 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo){
         ResponseEntity<Odontologo> response = null;
 
+        logger.debug("Guardando odontologo...");
         if(odontologo != null){
             response = new ResponseEntity(odontologoService.guardar(odontologo), HttpStatus.CREATED);
-        } else response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.NOT_FOUND);
+            logger.info("Odontologo guardado");
+        } else {
+            response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.NOT_FOUND);
+            logger.error("Error al guardar odontologo");
+        }
 
         return response;
     }
@@ -33,9 +38,14 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
 
+        logger.debug("Eliminando odontologo...");
         if(odontologoService.buscar(id).isPresent()){
             response = new ResponseEntity(odontologoService.eliminar(id), HttpStatus.NO_CONTENT);
-        } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
+            logger.info("Odontologo eliminado");
+        } else {
+            response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
+            logger.error("Error al eliminar odontologo");
+        }
 
         return response;
     }
@@ -44,10 +54,14 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
 
-        if(id > 0){
-            Odontologo odontologo = odontologoService.buscar(id).get();
-            response = new ResponseEntity(odontologo.toString(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.NOT_FOUND);
+        logger.debug("Buscando odontologo...");
+        if(odontologoService.buscar(id).isPresent()){
+            response = new ResponseEntity(odontologoService.buscar(id).get(), HttpStatus.OK);
+            logger.info("Odontologo encontrado");
+        } else {
+            response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.NOT_FOUND);
+            logger.error("Error al buscar odontologo");
+        }
 
         return response;
     }
@@ -56,9 +70,14 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> listarOdontologos() {
         ResponseEntity response = null;
 
+        logger.debug("Listando odontologos...");
         if(odontologoService.listar().size() > 0){
             response = new ResponseEntity(odontologoService.listar(), HttpStatus.OK);
-        } else response = new ResponseEntity("No se pudo encontrar odontologos", HttpStatus.NOT_FOUND);
+            logger.info("Odontologos listados");
+        } else {
+            response = new ResponseEntity("No se pudo encontrar odontologos", HttpStatus.NOT_FOUND);
+            logger.error("Error al listar odontologos");
+        }
 
         return response;
     }
@@ -67,9 +86,14 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> actualizar(Model model, @RequestBody Odontologo odontologo){
         ResponseEntity response = null;
 
+        logger.debug("Actualizando odontologo...");
         if(odontologo != null){
             response = new ResponseEntity(odontologoService.actualizar(odontologo), HttpStatus.ACCEPTED);
-        } else response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.NOT_FOUND);
+            logger.info("Odontologo actualizado");
+        } else {
+            response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.NOT_FOUND);
+            logger.error("Error al actualizar odontologo");
+        }
 
         return response;
     }

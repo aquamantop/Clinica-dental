@@ -24,6 +24,10 @@ public class Domicilio {
     @Column
     private String provincia;
 
+    @OneToOne(mappedBy = "domicilio")
+    @JsonIgnore
+    private Paciente paciente;
+
     public Domicilio(String calle, int numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;

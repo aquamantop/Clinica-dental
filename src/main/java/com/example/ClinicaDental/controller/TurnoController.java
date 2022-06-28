@@ -22,14 +22,14 @@ public class TurnoController {
     public ResponseEntity guardar(@RequestBody Turno t) {
         ResponseEntity response = null;
 
-        Turno turno = turnoService.guardar(t);
-
-        if (turno != null) {
-            if(t.getPaciente().getDomicilio() != null){
-                response = new ResponseEntity(turno, HttpStatus.OK);
-            } else response = new ResponseEntity(turno, HttpStatus.OK);
-
-        } else response = new ResponseEntity("No se guardo el turno", HttpStatus.NOT_FOUND);
+        logger.debug("Guardando turno...");
+        if (t != null) {
+            response = new ResponseEntity(turnoService.guardar(t), HttpStatus.OK);
+            logger.info("Turno guardado");
+        } else {
+            response = new ResponseEntity("No se guardo el turno", HttpStatus.FORBIDDEN);
+            logger.error("Error al guardar turno");
+        }
 
         return response;
     }
@@ -38,9 +38,14 @@ public class TurnoController {
     public ResponseEntity<Turno> eliminar(@PathVariable Long id){
         ResponseEntity response = null;
 
+        logger.debug("Eliminando turno...");
         if(turnoService.buscar(id).isPresent()){
             response = new ResponseEntity(turnoService.eliminar(id), HttpStatus.NO_CONTENT);
-        } else response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
+            logger.info("Turno eliminado");
+        } else {
+            response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
+            logger.error("Error al eliminar turno");
+        }
 
         return response;
     }
@@ -49,10 +54,14 @@ public class TurnoController {
     public ResponseEntity buscar(@PathVariable Long id){
         ResponseEntity response = null;
 
+        logger.debug("Buscando turno...");
         if (turnoService.buscar(id).isPresent()) {
-            Turno turno = turnoService.buscar(id).get();
-            response = new ResponseEntity(turno, HttpStatus.OK);
-        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
+            response = new ResponseEntity(turnoService.buscar(id).get(), HttpStatus.OK);
+            logger.info("Turno encontrado");
+        } else {
+            response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
+            logger.error("Error al buscar turno");
+        }
 
         return response;
     }
@@ -60,9 +69,15 @@ public class TurnoController {
     @GetMapping("/listar")
     public ResponseEntity<List<Turno>> listar(){
         ResponseEntity response = null;
+
+        logger.debug("Listando turnos...");
         if (turnoService.listar().size() > 0){
             response = new ResponseEntity(turnoService.listar(), HttpStatus.OK);
-        } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
+            logger.info("Turnos listados");
+        } else {
+            response = new ResponseEntity("No se encontraron turnos", HttpStatus.NOT_FOUND);
+            logger.error("Error al listar turnos");
+        }
 
         return response;
     }
@@ -71,15 +86,14 @@ public class TurnoController {
     public ResponseEntity actualizar(@RequestBody Turno t) {
         ResponseEntity response = null;
 
+        logger.debug("Actualizando turno...");
         if (t != null) {
-            if(t.getPaciente().getDomicilio() != null && t.getPaciente() != null && t.getOdontologo() != null) {
-                turnoService.actualizar(t);
-                response = new ResponseEntity(t, HttpStatus.OK);
-            } else {
-                turnoService.actualizar(t);
-                response = new ResponseEntity(t, HttpStatus.OK);
-            }
-        } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
+            response = new ResponseEntity(turnoService.actualizar(t), HttpStatus.OK);
+            logger.info("Turno actualizado");
+        } else {
+            response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
+            logger.error("Error al actualizar turno");
+        }
 
         return response;
     }
