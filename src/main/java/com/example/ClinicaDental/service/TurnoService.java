@@ -1,5 +1,6 @@
 package com.example.ClinicaDental.service;
 
+import com.example.ClinicaDental.entity.Paciente;
 import com.example.ClinicaDental.entity.Turno;
 import com.example.ClinicaDental.repository.TurnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,19 @@ public class TurnoService {
     }
 
     public Turno actualizar(Turno t) {
-        Turno turno = null;
-        if(buscar(t.getId()).isPresent()){
-            turno = turnoRepository.save(t);
+        Turno turno = buscar(t.getId()).get();
+
+        if(t.getFechaHora() != null){
+            turno.setFechaHora(t.getFechaHora());
         }
+        if(t.getPaciente() != null){
+            turno.setPaciente(t.getPaciente());
+        }
+        if(t.getOdontologo() != null){
+            turno.setOdontologo(t.getOdontologo());
+        }
+
+        turnoRepository.save(turno);
         return turno;
     }
 

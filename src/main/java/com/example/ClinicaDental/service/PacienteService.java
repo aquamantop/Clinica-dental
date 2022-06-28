@@ -41,7 +41,7 @@ public class PacienteService {
         }
         if(p.getDomicilio() != null){
             paciente.setDomicilio(p.getDomicilio());
-        } else paciente.setDomicilio(buscar(p.getId()).get().getDomicilio());
+        }
 
         pacienteRepository.save(paciente);
         return paciente;
