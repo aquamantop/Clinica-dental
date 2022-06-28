@@ -13,19 +13,22 @@ body {
     text-align: center;
     font-size: 3rem;
     text-decoration-line: underline; }
+  body p {
+    text-align: center;
+    margin: 1rem;
+    font-size: 2rem; }
+  body a {
+    text-decoration: none; }
   body main {
     padding: 5rem;
-    font-size: 2rem; }
+    font-size: 2rem;
+    display: grid; }
     body main form {
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
       margin: 0% 25%;
       font-size: 1.5rem; }
-      body main form p {
-        text-align: center;
-        margin: 1rem;
-        font-size: 2rem; }
       body main form input {
         padding: 1rem;
         margin: 2rem 0rem; }
@@ -39,6 +42,18 @@ body {
       body main form #enviar:hover {
         background-color: #47B5FF;
         color: #06283D; }
+    body main #portal {
+      position: fixed;
+      background-color: #47B5FF;
+      color: #06283D;
+      padding: 1rem;
+      top: 2%;
+      left: 2%;
+      font-size: 1.5rem;
+      border-radius: 1rem; }
+    body main #portal:hover {
+      background-color: #06283D;
+      color: #47B5FF; }
     body main #home {
       position: fixed;
       background-color: #47B5FF;
@@ -55,19 +70,33 @@ body {
       margin: 1rem 0rem;
       padding: 1rem;
       font-size: 1rem; }
-  body #home {
+    body main #marginAgregar {
+      margin-top: 5%; }
+    body main .agregar {
+      background-color: #06283D;
+      color: #47B5FF;
+      padding: 1rem;
+      font-size: 1.5rem;
+      border-radius: 1rem; }
+    body main .agregar:hover {
+      background-color: #47B5FF;
+      color: #06283D; }
+  body #mainHome {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    body #home .portales {
-      padding: 2rem 0rem; }
+    body #mainHome .portales {
+      margin: 2rem 0rem; }
+  body #mainOdontologos {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   body footer {
     color: #2F8F9D;
     clear: both;
     text-align: center;
     font-size: 2rem; }
   body footer a {
-    text-decoration: none;
     color: #47B5FF; }
   body footer a:visited {
     color: #06283D; }

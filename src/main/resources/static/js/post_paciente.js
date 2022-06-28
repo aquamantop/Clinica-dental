@@ -60,10 +60,12 @@ window.addEventListener('load', () => {
                 response.json()
             })
             .then(data => {
+                console.log(data)
                 alert("Datos enviados")
                 resetearForm()
             })
             .catch(e => {
+                console.log(e)
                 alert(e)
                 resetearForm()
             })
