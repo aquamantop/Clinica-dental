@@ -1,24 +1,20 @@
 package com.example.ClinicaDental.entity;
 
-import lombok.Getter;
-import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "turnos")
 public class Turno {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne (fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "odontologo_id", referencedColumnName = "id", nullable = false)
     private Odontologo odontologo;
 
-    @ManyToOne (fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "paciente_id", referencedColumnName = "id", nullable = false)
     private Paciente paciente;
 
@@ -33,21 +29,35 @@ public class Turno {
 
     public Turno() {}
 
-    @Override
-    public String toString() {
-        return "--Turno--" +
-                "\nId: " + id +
-                "\nFecha y hora: " + fechaHora +
-                "\n\n" + "\n" + paciente.toString() +
-                "\n\n" + "\n" + odontologo.toString();
+    public Long getId() {
+        return id;
     }
 
-    public String datosTurno() {
-        return "--Turno--" +
-                "\nId: " + id +
-                "\nFecha y hora: " + fechaHora +
-                "\n" + paciente.datosPaciente() +
-                "\n" + odontologo.toString();
+    public void setId(Long id) {
+        this.id = id;
     }
 
+    public Odontologo getOdontologo() {
+        return odontologo;
+    }
+
+    public void setOdontologo(Odontologo odontologo) {
+        this.odontologo = odontologo;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
+    }
 }

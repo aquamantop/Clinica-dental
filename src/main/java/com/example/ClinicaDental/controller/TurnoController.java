@@ -26,7 +26,7 @@ public class TurnoController {
 
         if (turno != null) {
             if(t.getPaciente().getDomicilio() != null){
-                response = new ResponseEntity(turno.toString(), HttpStatus.OK);
+                response = new ResponseEntity(turno, HttpStatus.OK);
             } else response = new ResponseEntity(turno, HttpStatus.OK);
 
         } else response = new ResponseEntity("No se guardo el turno", HttpStatus.NOT_FOUND);
@@ -51,7 +51,7 @@ public class TurnoController {
 
         if (turnoService.buscar(id).isPresent()) {
             Turno turno = turnoService.buscar(id).get();
-            response = new ResponseEntity(turno.toString(), HttpStatus.OK);
+            response = new ResponseEntity(turno, HttpStatus.OK);
         } else response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
 
         return response;
@@ -61,7 +61,7 @@ public class TurnoController {
     public ResponseEntity<List<Turno>> listar(){
         ResponseEntity response = null;
         if (turnoService.listar().size() > 0){
-            response = new ResponseEntity(turnoService.listar().toString(), HttpStatus.OK);
+            response = new ResponseEntity(turnoService.listar(), HttpStatus.OK);
         } else response = new ResponseEntity(HttpStatus.NOT_FOUND);
 
         return response;
@@ -74,7 +74,7 @@ public class TurnoController {
         if (t != null) {
             if(t.getPaciente().getDomicilio() != null && t.getPaciente() != null && t.getOdontologo() != null) {
                 turnoService.actualizar(t);
-                response = new ResponseEntity(t.toString(), HttpStatus.OK);
+                response = new ResponseEntity(t, HttpStatus.OK);
             } else {
                 turnoService.actualizar(t);
                 response = new ResponseEntity(t, HttpStatus.OK);

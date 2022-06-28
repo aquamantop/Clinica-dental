@@ -34,7 +34,7 @@ class ClinicaDentalApplicationTests {
 
         pacienteService.guardar(paciente);
 
-        assertTrue(pacienteService.buscar(1L).isPresent());
+        assertTrue(pacienteService.buscar(1L) != null);
 	}
 
     @Test

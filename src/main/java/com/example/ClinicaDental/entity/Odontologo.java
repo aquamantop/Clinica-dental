@@ -1,19 +1,15 @@
 package com.example.ClinicaDental.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "odontologos")
 public class Odontologo {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -27,7 +23,7 @@ public class Odontologo {
 
     @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
     @JsonIgnore
-    private Set<Turno> turnoss = new HashSet<>();
+    private Set<Turno> turnos = new HashSet<>();
 
     public Odontologo(String apellido, String nombre, int matricula) {
         this.apellido = apellido;
@@ -37,13 +33,44 @@ public class Odontologo {
 
     public Odontologo(){}
 
-    @Override
-    public String toString() {
-        return "--Odontologo--" +
-                "\nId: " + id +
-                "\nApellido: " + apellido +
-                "\nNombre: " + nombre +
-                "\nMatricula: " + matricula;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Integer getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(Integer matricula) {
+        this.matricula = matricula;
+    }
+
+    public Set<Turno> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(Set<Turno> turnos) {
+        this.turnos = turnos;
     }
 
 }

@@ -23,7 +23,7 @@ public class OdontologoController {
         ResponseEntity<Odontologo> response = null;
 
         if(odontologo != null){
-            response = new ResponseEntity(odontologoService.guardar(odontologo).toString(), HttpStatus.CREATED);
+            response = new ResponseEntity(odontologoService.guardar(odontologo), HttpStatus.CREATED);
         } else response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
@@ -57,7 +57,7 @@ public class OdontologoController {
         ResponseEntity response = null;
 
         if(odontologoService.listar().size() > 0){
-            response = new ResponseEntity(odontologoService.listar().toString(), HttpStatus.OK);
+            response = new ResponseEntity(odontologoService.listar(), HttpStatus.OK);
         } else response = new ResponseEntity("No se pudo encontrar odontologos", HttpStatus.NOT_FOUND);
 
         return response;
@@ -68,7 +68,7 @@ public class OdontologoController {
         ResponseEntity response = null;
 
         if(odontologo != null){
-            response = new ResponseEntity(odontologoService.actualizar(odontologo).toString(), HttpStatus.ACCEPTED);
+            response = new ResponseEntity(odontologoService.actualizar(odontologo), HttpStatus.ACCEPTED);
         } else response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.NOT_FOUND);
 
         return response;
