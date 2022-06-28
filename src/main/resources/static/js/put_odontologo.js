@@ -1,25 +1,26 @@
 window.addEventListener('load', function() {
     // Constantes
     const ul = document.querySelector("ul")
+    const editar = document.querySelectorAll(".editar")
     const url = '/odontologos/'
     const nombre = document.querySelector("#nombre")
     const apellido = document.querySelector("#apellido")
     const matricula = document.querySelector("#matricula")
     const volver = document.querySelector("#volver")
     const actualizar = document.querySelector("#actualizar")
-    const form = document.querySelector("#agregarOdont")
+    const form = document.querySelector("#form")
     const agregar = document.querySelector("#agregarOdont")
-    const editar = document.querySelectorAll(".editar")
+    const botones = document.querySelectorAll("button")
 
-    editar.forEach(e => {
+    botones.forEach(e => {
         e.addEventListener('click', () => {
-             console.log(e.innerHTML)
+
             // ID
             let id = e.innerHTML
 
-            document.querySelector("ul").classList.add("hide")
-            document.querySelector("#agregarOdont").classList.add("hide")
-            document.querySelector("#agregarOdont").classList.remove("hide")
+            div.classList.add("hide")
+            agregar.classList.add("hide")
+            form.classList.remove("hide")
 
             volver.addEventListener('click', () =>{
                 ul.classList.remove("hide")
@@ -61,7 +62,5 @@ window.addEventListener('load', function() {
             })
         })
     })
-
-
 
 })
