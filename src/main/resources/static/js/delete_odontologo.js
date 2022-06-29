@@ -1,9 +1,9 @@
-function borrar(id){
+function borrar(id, nombre, apellido){
     // Constantes
     const url = "/odontologos/eliminar/"
     const li = document.querySelector("#linea-"+id)
 
-    let confirmar = confirm("¿Desea eliminar el odontologo con id: " + id + "?")
+    let confirmar = confirm("¿Desea eliminar a " + nombre + " " + apellido + "?\n Con id: " + id)
 
     if(confirmar){
         const settings = {
