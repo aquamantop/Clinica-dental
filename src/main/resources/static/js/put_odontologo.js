@@ -55,7 +55,16 @@ function editar(id) {
         }
         fetch(url + 'actualizar',settings)
         .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            alert("Odontologo actualizado")
+            ul.classList.remove("hide")
+            p.classList.remove("hide")
+            agregar.classList.remove("hide")
+            form.classList.add("hide")
+        })
         .catch(e => console.log(e))
+
     })
 
 }

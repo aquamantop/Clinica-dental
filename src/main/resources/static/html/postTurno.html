@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/346fc6ed98.js" crossorigin="anonymous"></script>
+    <script src="../js/post_turno.js"></script>
+    <title>Clinica Dental</title>
+</head>
+
+<body>
+
+<header>
+    <span id="titulo">Clinica Dental</span>
+    <i id="icono" class="fa-solid fa-tooth"></i>
+</header>
+
+<main>
+    <!-- Formulario -->
+    <form id="form">
+        <p>Agregar Turno</p>
+        <<!-- Paciente -->
+        <label for="paciente">Paciente</label>
+        <select name="paciente" id="paciente" class="turno">
+            <option disabled selected>Seleccionar un paciente</option>
+            <option value="id"> Seleccionar un paciente</option>
+        </select>
+
+        <!-- Odontologo -->
+        <label for="odontologo">Odontologo</label>
+        <select name="odontologo" id="odontologo" class="turno">
+            <option disabled selected>Seleccionar un odontologo</option>
+            <option value="id"> Seleccionar un odontologo</option>
+        </select>
+
+        <!-- Fecha -->
+        <label for="fecha">Fecha</label>
+        <input type="datetime-local" name="fecha" id="fecha" class="turno">
+
+        <!-- Boton -->
+        <button type="submit" id="enviar">Enviar</button>
+    </form>
+
+    <!-- Home -->
+    <a href="/html/home.html"><button id="home">Home</button></a>
+
+    <!-- Portal -->
+    <a href="../html/Odontologos.html"><button id="portal">Portal</button></a>
+</main>
+
+<footer>
+    <div class="attribution">
+        Coded by <a href="https://github.com/aquamantop" target="_blank">Franco Rampazzo</a>.
+    </div>
+</footer>
+
+</body>
+</html>

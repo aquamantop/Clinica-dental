@@ -131,6 +131,16 @@ input {
 .portales {
   margin: 2rem 0rem;
 }
+.portales {
+  color: var(--link);
+}
+.portales:visited {
+  color: var(--link-visitado);
+}
+.portales:hover {
+  color: var(--link-hover);
+}
+
 
 /* Boton home */
 #home {

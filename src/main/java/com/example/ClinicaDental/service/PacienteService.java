@@ -42,9 +42,6 @@ public class PacienteService {
         if(p.getDNI() != null){
             paciente.setDNI(p.getDNI());
         }
-        if(p.getFechaIngreso() != null){
-            paciente.setFechaIngreso(p.getFechaIngreso());
-        }
         if(p.getDomicilio() != null){
             paciente.setDomicilio(p.getDomicilio());
         }
