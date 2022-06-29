@@ -23,6 +23,7 @@ function editar(id) {
         form.classList.add("hide")
     })
 
+    // Rellenar form con datos del odontologo
     fetch(url + 'buscar/' + id)
     .then(response => response.json())
     .then(data => {
@@ -33,11 +34,12 @@ function editar(id) {
     })
     .catch(e => {
         console.log(e)
-        alert(e)
+        alert("Error al cargar odontologo"+e)
     })
 
-    actualizar.addEventListener('click', () => {
-        // PUT
+    // PUT
+    actualizar.addEventListener('click', (e) => {
+        e.preventDefault()
         const formData = {
             id: id,
             nombre: nombre.value,

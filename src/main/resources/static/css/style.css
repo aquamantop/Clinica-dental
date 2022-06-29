@@ -168,6 +168,9 @@ input {
   flex-direction: column;
   align-items: center;
 }
+#mainPortales form {
+    width: 75%
+}
 
 /* Actualizar */
 #actualizar {
@@ -176,7 +179,7 @@ input {
   padding: 1rem;
   font-size: 1.5rem;
   border-radius: 1rem;
-  margin: 1rem 0rem;
+  margin: 1rem 25%;
 }
 #actualizar:hover {
   background-color: var(--link);
@@ -188,6 +191,7 @@ input {
   padding: 1rem;
   font-size: 1.5rem;
   border-radius: 1rem;
+  margin: 1rem 25%;
 }
 #volver:hover {
   background-color: var(--link);
