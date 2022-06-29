@@ -12,8 +12,8 @@ window.addEventListener('load', () => {
         console.log(data)
         data.forEach(e => {
             ul.innerHTML += `<li id="linea-${e.id}">
-                                <button onclick="borrar()" id="${e.id}" class="borrar">X</button>
-                                <button onclick="editar()" class="editar">${e.id}</button>
+                                <button onclick="borrar(${e.id})" class="borrar">X</button>
+                                <button onclick="editar(${e.id})" class="editar">Editar</button>
                                 Odontologo: ${e.nombre} ${e.apellido}
                                 . Matricula: ${e.matricula}.
                              </li>`

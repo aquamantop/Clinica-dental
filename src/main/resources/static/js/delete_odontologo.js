@@ -1,26 +1,18 @@
-function borrar(){
+function borrar(id){
     // Constantes
-    const borrar = document.querySelectorAll(".borrar")
     const url = "/odontologos/eliminar/"
+    const li = document.querySelector("#linea-"+id)
 
-    borrar.forEach(e => {
-        e.addEventListener('click', () => {
-            let id = e.id
+    let confirmar = confirm("¿Desea eliminar el odontologo con id: " + id + "?")
 
-            const li = document.querySelector("#linea-"+id)
-
-            let confirmar = confirm("¿Desea eliminar el odontologo con id: " + id + "?")
-
-            if(confirmar){
-                const settings = {
-                    method: 'DELETE'
-                }
-                fetch(url + id,settings)
-                .then(response => response.json())
-                .catch(e=>console.log(e))
-                li.remove();
-            }
-        })
-    })
+    if(confirmar){
+        const settings = {
+            method: 'DELETE'
+        }
+        fetch(url + id,settings)
+        .then(response => response.json())
+        .catch(e=>console.log(e))
+        li.remove();
+    }
 
 }
