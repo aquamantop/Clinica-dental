@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+function editar() {
     // Constantes
     const ul = document.querySelector("ul")
     const editar = document.querySelectorAll(".editar")
@@ -10,15 +10,14 @@ window.addEventListener('load', function() {
     const actualizar = document.querySelector("#actualizar")
     const form = document.querySelector("#form")
     const agregar = document.querySelector("#agregarOdont")
-    const botones = document.querySelectorAll("button")
 
-    botones.forEach(e => {
+    editar.forEach(e => {
         e.addEventListener('click', () => {
 
             // ID
             let id = e.innerHTML
 
-            div.classList.add("hide")
+            ul.classList.add("hide")
             agregar.classList.add("hide")
             form.classList.remove("hide")
 
@@ -63,4 +62,4 @@ window.addEventListener('load', function() {
         })
     })
 
-})
+}
