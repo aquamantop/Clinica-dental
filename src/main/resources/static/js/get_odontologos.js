@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
             ul.innerHTML += `<li id="linea-${e.id}">
                                 <button onclick="borrar(${e.id}, '${e.nombre}', '${e.apellido}')" class="borrar">X</button>
                                 <button onclick="editar(${e.id})" class="editar">Editar</button>
-                                Odontologo: ${e.nombre} ${e.apellido}. Matricula: ${e.matricula}.
+                                ${e.nombre} ${e.apellido}. Matricula: ${e.matricula}.
                              </li>`
         })
     })
