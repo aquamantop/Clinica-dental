@@ -14,6 +14,8 @@ window.addEventListener('load', () => {
     let d = date.getDate()
     // Mes
     let m = date.getMonth()+1
+    // Minutos
+    let min = date.getMinutes()
     // Hora
     let h = date.getHours()
     // Agregamos un 0 si es un solo digito
@@ -27,6 +29,11 @@ window.addEventListener('load', () => {
             return '0'+m
         } else return d
     }
+    let minuto = () => {
+        if(min < 10){
+            return '0'+min
+        } else return min
+    }
     let hora = () => {
         if(h < 10){
             return '0'+h
@@ -35,7 +42,7 @@ window.addEventListener('load', () => {
 
     // Damos formato
     formato = [date.getFullYear(), mes(), dia()].join('-') +
-    'T' + [hora(),date.getMinutes()].join(':');
+    'T' + [hora(),minuto()].join(':');
     // Insertamos la fecha en el valor y el minimo
     fecha.value = formato
     fecha.min = formato
@@ -48,7 +55,7 @@ window.addEventListener('load', () => {
     .then(data => {
         console.log(data)
         data.forEach(e => {
-            paciente.innerHTML += `<option id="" value="${e.id}">
+            paciente.innerHTML += `<option value="${e.id}">
                                         ${e.nombre} ${e.apellido}. Email: ${e.email}
                                    </option>`
         })

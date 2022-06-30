@@ -1,7 +1,7 @@
 function borrar(id, nombre, apellido){
     // Constantes
     const url = "/pacientes/eliminar/"
-    const li = document.querySelector("#linea-"+id)
+    const fila = document.querySelector("#fila-"+id)
 
     let confirmar = confirm("¿Desea eliminar a " + nombre + " " + apellido + "?\n Con id: " + id)
 
@@ -10,9 +10,9 @@ function borrar(id, nombre, apellido){
             method: 'DELETE'
         }
         fetch(url + id,settings)
-        .then(response => response.json())
+        .then(response => console.log(response.json()))
         .catch(e=>console.log(e))
-        li.remove();
+        fila.remove();
     }
 
 }

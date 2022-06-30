@@ -1,6 +1,6 @@
 function editar(id) {
     // Constantes
-    const ul = document.querySelector("ul")
+    const tabla = document.querySelector("#tablaPacientes")
     const url = '/pacientes/'
     const form = document.querySelector("#form")
     const nombre = document.querySelector("#nombre")
@@ -18,13 +18,13 @@ function editar(id) {
     const agregar = document.querySelector("#btnAgregar")
     const p = document.querySelector("#subTitulo")
 
-    ul.classList.add("hide")
+    tabla.classList.add("hide")
     p.classList.add("hide")
     agregar.classList.add("hide")
     form.classList.remove("hide")
 
     volver.addEventListener('click', () =>{
-        ul.classList.remove("hide")
+        tabla.classList.remove("hide")
         p.classList.remove("hide")
         agregar.classList.remove("hide")
         form.classList.add("hide")
@@ -74,13 +74,14 @@ function editar(id) {
         fetch(url + 'actualizar',settings)
         .then(response => response.json())
         .then(data => {
-                    console.log(data)
-                    alert("Paciente actualizado")
-                    ul.classList.remove("hide")
-                    p.classList.remove("hide")
-                    agregar.classList.remove("hide")
-                    form.classList.add("hide")
-                })
+            console.log(data)
+            alert("Paciente actualizado")
+            tabla.classList.remove("hide")
+            p.classList.remove("hide")
+            agregar.classList.remove("hide")
+            form.classList.add("hide")
+            location.reload()
+        })
         .catch(e => console.log(e))
     })
 

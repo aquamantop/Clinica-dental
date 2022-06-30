@@ -10,7 +10,7 @@ function borrar(id, paciente, odontologo){
             method: 'DELETE'
         }
         fetch(url + id,settings)
-        .then(response => response.json())
+        .then(response => console.log(response.json()))
         .catch(e=>console.log(e))
         fila.remove();
     }

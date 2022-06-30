@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     // Constantes
-    const ul = document.querySelector("ul")
+    const tbody = document.querySelector("#tbody")
     const url = '/pacientes/listar'
 
     // GET
@@ -11,11 +11,17 @@ window.addEventListener('load', () => {
     .then(data => {
         console.log(data)
         data.forEach(e => {
-            ul.innerHTML += `<li id="linea-${e.id}">
-                                <button onclick="borrar(${e.id}, '${e.nombre}', '${e.apellido}')" class="borrar">X</button>
-                                <button onclick="editar(${e.id})" class="editar">Editar</button>
-                                ${e.nombre} ${e.apellido}. Email: ${e.email}. DNI: ${e.dni}
-                             </li>`
+            tbody.innerHTML += `<tr id="fila-${e.id}">
+                                    <th class="datos">
+                                        <button onclick="borrar(${e.id}, '${e.nombre}', '${e.apellido}')" class="borrar">X</button>
+                                        <button onclick="editar(${e.id})" class="editar">Editar</button>
+                                    </th>
+                                    <th class="datos">${e.id}</th>
+                                    <td class="datos">${e.nombre}</td>
+                                    <td class="datos">${e.apellido}</td>
+                                    <td class="datos">${e.email}</td>
+                                    <td class="datos">${e.dni}</td>
+                                </tr>`
         })
     })
     .catch(e=>console.log(e))
