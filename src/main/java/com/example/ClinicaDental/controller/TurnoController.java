@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -24,8 +25,10 @@ public class TurnoController {
 
         logger.debug("Guardando turno...");
         if (t != null) {
-            response = new ResponseEntity(turnoService.guardar(t), HttpStatus.OK);
-            logger.info("Turno guardado");
+            if(t.getFechaHora().isAfter(LocalDateTime.now())){
+                response = new ResponseEntity(turnoService.guardar(t), HttpStatus.OK);
+                logger.info("Turno guardado");
+            } else logger.error("Elegir un fecha posterior a la fecha actual");
         } else {
             response = new ResponseEntity("No se guardo el turno", HttpStatus.FORBIDDEN);
             logger.error("Error al guardar turno");

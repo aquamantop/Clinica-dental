@@ -4,47 +4,60 @@ window.addEventListener('load', () => {
     const paciente = document.querySelector("#paciente")
     const odontologo = document.querySelector("#odontologo")
     const fecha = document.querySelector("#fecha")
-    const regex = /^[0-9]+$/
-    const url = '/odontologos/guardar'
-    const array = []
+    const enviar = document.querySelector("#enviar")
+    const date = new Date()
+    const url = '/turnos/guardar'
 
-    matricula.addEventListener("keydown", (e) => {
-        if (e.code === "Backspace") {
-            array.pop()
-        }
-    })
-    matricula.addEventListener("keypress", (e) => {
-        if (!validarMatricula(e.key)) {
-            e.preventDefault()
-        }
-    })
-    function validarMatricula (cant) {
-        let p = cant.match(regex)
-
-        if (p && array.length < 10) {
-            array.push(cant)
-            return true
-        } else return false
+    // Dia
+    let d = date.getDate()
+    // Mes
+    let m = date.getMonth()+1
+    // Hora
+    let h = date.getHours()
+    // Agregamos un 0 si es un solo digito
+    let dia = () => {
+        if(d < 10){
+            return '0'+d
+        } else return d
     }
+    let mes = () => {
+        if(m < 9){
+            return '0'+m
+        } else return d
+    }
+    let hora = () => {
+        if(h < 10){
+            return '0'+h
+        } else return h
+    }
+
+    // Damos formato
+    formato = [date.getFullYear(), mes(), dia()].join('-') +
+    'T' + [hora(),date.getMinutes()].join(':');
+    // Insertamos la fecha en el valor y el minimo
+    fecha.value = formato
+    fecha.min = formato
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        const formData = {
-            nombre: nombre.value,
-            apellido: apellido.value,
-            matricula: matricula.value,
-        }
-        const settings = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        }
+        let fechaELegida = new Date(fecha.value)
+        let fechaActual = new Date()
 
-        if(paciente.innerHTML != "Seleccionar un paciente"
-            && odontologo.innerHTML != "Seleccionar un paciente"
-            && fecha.value.trim() != ""){
+        if(fechaELegida < fechaActual){
+            alert("Elegir fecha correctamente")
+        } else {
+            const formData = {
+                paciente: nombre.value,
+                odontologo: apellido.value,
+                fecha: matricula.value,
+            }
+            const settings = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            }
             fetch(url, settings)
             .then(response => {
                 response.json()
@@ -59,7 +72,7 @@ window.addEventListener('load', () => {
                 alert(e)
                 resetearForm()
             })
-        } else alert("Completar datos")
+        }
     })
 
     function resetearForm(){
