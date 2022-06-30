@@ -6,7 +6,9 @@ window.addEventListener('load', () => {
     const fecha = document.querySelector("#fecha")
     const enviar = document.querySelector("#enviar")
     const date = new Date()
-    const url = '/turnos/guardar'
+    const urlT = '/turnos/guardar'
+    const urlP = '/pacientes/listar'
+    const urlO = '/odontologos/listar'
 
     // Dia
     let d = date.getDate()
@@ -38,18 +40,53 @@ window.addEventListener('load', () => {
     fecha.value = formato
     fecha.min = formato
 
+    // Listar pacientes
+    fetch(urlP)
+    .then(response => {
+            return response.json()
+    })
+    .then(data => {
+        console.log(data)
+        data.forEach(e => {
+            paciente.innerHTML += `<option id="" value="${e.id}">
+                                        ${e.apellido}, ${e.nombre}.
+                                   </option>`
+        })
+    })
+    .catch(e=>console.log(e))
+
+    // Listar odontologos
+    fetch(urlO)
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+        data.forEach(e => {
+            odontologo.innerHTML += `<option value="${e.id}">
+                                        ${e.nombre} ${e.apellido}. Matricula: ${e.matricula}.
+                                     </option>`
+        })
+    })
+    .catch(e=>console.log(e))
+
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         let fechaELegida = new Date(fecha.value)
         let fechaActual = new Date()
+        let valorFecha = fecha.value
 
         if(fechaELegida < fechaActual){
             alert("Elegir fecha correctamente")
         } else {
             const formData = {
-                paciente: nombre.value,
-                odontologo: apellido.value,
-                fecha: matricula.value,
+                paciente: {
+                    id: paciente.value,
+                },
+                odontologo: {
+                    id: odontologo.value,
+                },
+                fechaHora: fecha.value
             }
             const settings = {
                 method: 'POST',
@@ -58,7 +95,7 @@ window.addEventListener('load', () => {
                 },
                 body: JSON.stringify(formData)
             }
-            fetch(url, settings)
+            fetch(urlT, settings)
             .then(response => {
                 response.json()
             })
@@ -76,12 +113,9 @@ window.addEventListener('load', () => {
     })
 
     function resetearForm(){
-        nombre.value = ""
-        apellido.value = ""
-        matricula.value = ""
-        for (let i = array.length; i > 0; i--) {
-            array.pop();
-          }
+        form.reset()
+        fecha.value = formato
+        fecha.min = formato
     }
 
 })

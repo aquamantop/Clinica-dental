@@ -164,6 +164,18 @@ input {
   padding: 1rem;
   font-size: 1rem;
 }
+/* Estilo de tabla de turnos */
+#tabla {
+  border-collapse: collapse;
+  width: 50%;
+}
+.datos {
+  font-size: 1.5rem;
+}
+.datos, .cabeceras {
+  text-align: center;
+  border: 3px solid var(--link-visitado);
+}
 
 /* Boton agregar */
 #marginAgregar {
