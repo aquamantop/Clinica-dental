@@ -37,12 +37,14 @@ window.addEventListener('load', () => {
         const settings = {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         }
 
-        if(nombre.value.trim() != "" && apellido.value.trim() != "" && matricula.value.trim() != ""){
+        if(paciente.innerHTML != "Seleccionar un paciente"
+            && odontologo.innerHTML != "Seleccionar un paciente"
+            && fecha.value.trim() != ""){
             fetch(url, settings)
             .then(response => {
                 response.json()
