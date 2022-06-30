@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
         console.log(data)
         data.forEach(e => {
             paciente.innerHTML += `<option id="" value="${e.id}">
-                                        ${e.apellido}, ${e.nombre}.
+                                        ${e.nombre} ${e.apellido}. Email: ${e.email}
                                    </option>`
         })
     })
