@@ -1,3 +1,6 @@
+const arrayPacientes = []
+const arrayOdontologos = []
+
 function editar(id) {
     // Constantes
     const tabla = document.querySelector("#tabla")
@@ -33,9 +36,15 @@ function editar(id) {
     .then(data => {
         console.log(data)
         data.forEach(e => {
-            paciente.innerHTML += `<option value="${e.id}">
-                                        ${e.nombre} ${e.apellido}. Email: ${e.email}
-                                   </option>`
+            if(arrayPacientes.includes(e.id)){
+                console.log("Id: " + e.id + " ya cargado en pantalla")
+            } else {
+                paciente.innerHTML += `<option value="${e.id}">
+                                            ${e.nombre} ${e.apellido}. Email: ${e.email}
+                                       </option>`
+                arrayPacientes.push(e.id)
+                console.log(arrayPacientes)
+            }
         })
     })
     .catch(e=>console.log(e))
@@ -48,9 +57,15 @@ function editar(id) {
     .then(data => {
         console.log(data)
         data.forEach(e => {
-            odontologo.innerHTML += `<option value="${e.id}">
-                                        ${e.nombre} ${e.apellido}. Matricula: ${e.matricula}.
-                                     </option>`
+            if(arrayOdontologos.includes(e.id)){
+                console.log("Id: " + e.id + " ya cargado en pantalla")
+            } else {
+                odontologo.innerHTML += `<option value="${e.id}">
+                                            ${e.nombre} ${e.apellido}. Matricula: ${e.matricula}.
+                                         </option>`
+                arrayOdontologos.push(e.id)
+                console.log(arrayOdontologos)
+            }
         })
     })
     .catch(e=>console.log(e))
