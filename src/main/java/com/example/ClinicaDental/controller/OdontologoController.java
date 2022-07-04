@@ -1,6 +1,7 @@
 package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Odontologo;
+import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.service.OdontologoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,19 +36,12 @@ public class OdontologoController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Odontologo> eliminar(@PathVariable Long id){
-        ResponseEntity response = null;
+    public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
         logger.debug("Eliminando odontologo...");
-        if(odontologoService.buscar(id).isPresent()){
-            response = new ResponseEntity(odontologoService.eliminar(id), HttpStatus.NO_CONTENT);
-            logger.info("Odontologo eliminado");
-        } else {
-            response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
-            logger.error("Error al eliminar odontologo");
-        }
+        logger.info("Odontologo eliminado");
+        return ResponseEntity.ok(odontologoService.eliminar(id));
 
-        return response;
     }
 
     @GetMapping("/buscar/{id}")
@@ -55,8 +49,8 @@ public class OdontologoController {
         ResponseEntity response = null;
 
         logger.debug("Buscando odontologo...");
-        if(odontologoService.buscar(id).isPresent()){
-            response = new ResponseEntity(odontologoService.buscar(id).get(), HttpStatus.OK);
+        if(odontologoService.buscar(id) != null){
+            response = new ResponseEntity(odontologoService.buscar(id), HttpStatus.OK);
             logger.info("Odontologo encontrado");
         } else {
             response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.NOT_FOUND);

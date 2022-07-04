@@ -1,6 +1,7 @@
 package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Turno;
+import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.service.TurnoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,19 +39,12 @@ public class TurnoController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Turno> eliminar(@PathVariable Long id){
-        ResponseEntity response = null;
+    public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
         logger.debug("Eliminando turno...");
-        if(turnoService.buscar(id).isPresent()){
-            response = new ResponseEntity(turnoService.eliminar(id), HttpStatus.NO_CONTENT);
-            logger.info("Turno eliminado");
-        } else {
-            response = new ResponseEntity("No se pudo eliminar odontologo", HttpStatus.NOT_FOUND);
-            logger.error("Error al eliminar turno");
-        }
+        logger.info("Turno eliminado");
+        return ResponseEntity.ok(turnoService.eliminar(id));
 
-        return response;
     }
 
     @GetMapping("/buscar/{id}")
@@ -58,8 +52,8 @@ public class TurnoController {
         ResponseEntity response = null;
 
         logger.debug("Buscando turno...");
-        if (turnoService.buscar(id).isPresent()) {
-            response = new ResponseEntity(turnoService.buscar(id).get(), HttpStatus.OK);
+        if (turnoService.buscar(id) != null) {
+            response = new ResponseEntity(turnoService.buscar(id), HttpStatus.OK);
             logger.info("Turno encontrado");
         } else {
             response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);

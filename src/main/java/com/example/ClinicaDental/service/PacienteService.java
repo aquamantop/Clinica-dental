@@ -1,11 +1,11 @@
 package com.example.ClinicaDental.service;
 
+import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -29,7 +29,7 @@ public class PacienteService {
     }
 
     public Paciente actualizar(Paciente p) {
-        Paciente paciente  = buscar(p.getId()).get();
+        Paciente paciente  = buscar(p.getId());
         if(p.getNombre() != null) {
             paciente.setNombre(p.getNombre());
         }
@@ -50,21 +50,21 @@ public class PacienteService {
         return paciente;
     }
 
-    public Optional<Paciente> buscar(Long id){
-        return pacienteRepository.findById(id);
+    public Paciente buscar(Long id){
+        return pacienteRepository.findById(id).orElse(null);
     }
 
-    public Optional<Paciente> buscarPorEmail(String email){
-        return pacienteRepository.buscarEmail(email);
+    public Paciente buscarPorEmail(String email){
+        return pacienteRepository.buscarEmail(email).orElse(null);
     }
 
-    public String eliminar(Long id){
-        String resultado = "";
-        if(pacienteRepository.existsById(id)){
+    public String eliminar(Long id) throws ResourceNotFoundException {
+        if(buscar(id) != null){
             pacienteRepository.deleteById(id);
-            resultado = "Paciente eliminado con id: " + id;
-        } else resultado = "Error al eliminar";
-        return resultado;
+            return "Paciente eliminado con id: " + id;
+        } else {
+            throw new ResourceNotFoundException("Paciente con id " + id + " no encontrado");
+        }
     }
 
 }

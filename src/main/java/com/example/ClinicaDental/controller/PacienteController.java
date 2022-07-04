@@ -1,6 +1,7 @@
 package com.example.ClinicaDental.controller;
 
 import com.example.ClinicaDental.entity.Paciente;
+import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.service.PacienteService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,27 +30,20 @@ public class PacienteController {
             response = new ResponseEntity(pacienteService.guardar(paciente), HttpStatus.OK);
             logger.info("Paciente guardado");
         } else {
-            response = new ResponseEntity("No se pudo guardar paciente",HttpStatus.NOT_FOUND);
-            logger.error("Error al guardar paciente");
+            response = new ResponseEntity("Paciente nulo",HttpStatus.NOT_FOUND);
+            logger.error("Paciente nulo");
         }
 
         return response;
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Paciente> eliminar(@PathVariable Long id){
-        ResponseEntity response = null;
+    public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
         logger.debug("Eliminando paciente...");
-        if(pacienteService.buscar(id) != null){
-            response = new ResponseEntity(pacienteService.eliminar(id), HttpStatus.OK);
-            logger.info("Paciente eliminado");
-        } else {
-            response = new ResponseEntity("No se pudo eliminar paciente", HttpStatus.NOT_FOUND);
-            logger.error("Error al eliminar paciente");
-        }
+        logger.info("Paciente eliminado");
+        return ResponseEntity.ok(pacienteService.eliminar(id));
 
-        return response;
     }
 
     @GetMapping("/buscarEmail/{email}")
@@ -57,8 +51,8 @@ public class PacienteController {
         ResponseEntity response = null;
 
         logger.debug("Buscando paciente por email...");
-        if(pacienteService.buscarPorEmail(email).isPresent()){
-            response = new ResponseEntity(pacienteService.buscarPorEmail(email).get(), HttpStatus.OK);
+        if(pacienteService.buscarPorEmail(email) != null){
+            response = new ResponseEntity(pacienteService.buscarPorEmail(email), HttpStatus.OK);
             logger.info("Paciente encontrado");
         } else {
             response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
@@ -73,8 +67,8 @@ public class PacienteController {
         ResponseEntity response = null;
 
         logger.debug("Buscando paciente por id...");
-        if(pacienteService.buscar(id).isPresent()){
-            response = new ResponseEntity(pacienteService.buscar(id).get(), HttpStatus.OK);
+        if(pacienteService.buscar(id) != null){
+            response = new ResponseEntity(pacienteService.buscar(id), HttpStatus.OK);
             logger.info("Paciente encontrado");
         } else {
             response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);

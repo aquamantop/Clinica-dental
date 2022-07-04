@@ -43,7 +43,7 @@ class ClinicaDentalApplicationTests {
 
         odontologoService.guardar(odontologo);
 
-        assertTrue(odontologoService.buscar(1L).isPresent());
+        assertTrue(odontologoService.buscar(1L) != null);
     }
 
     @Test
@@ -58,7 +58,7 @@ class ClinicaDentalApplicationTests {
 
         turnoService.guardar(turno);
 
-        assertTrue(turnoService.buscar(1L).isPresent());
+        assertTrue(turnoService.buscar(1L) != null);
     }
 
 

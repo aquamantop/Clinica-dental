@@ -1,11 +1,11 @@
 package com.example.ClinicaDental.service;
 
 import com.example.ClinicaDental.entity.Odontologo;
+import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.repository.OdontologoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -23,7 +23,7 @@ public class OdontologoService {
     }
 
     public Odontologo actualizar(Odontologo o) {
-        Odontologo odontologo = buscar(o.getId()).get();
+        Odontologo odontologo = buscar(o.getId());
         if(o.getNombre() != null) {
             odontologo.setNombre(o.getNombre());
         }
@@ -37,17 +37,17 @@ public class OdontologoService {
         return odontologo;
     }
 
-    public String eliminar(Long id){
-        String resultado = "";
-        if(odontologoRepository.existsById(id)){
-            odontologoRepository.deleteById(id);
-            resultado = "Odontologo eliminado con id: " + id;
-        } else resultado = "Error al eliminar";
-        return resultado;
+    public Odontologo buscar(Long id){
+        return odontologoRepository.findById(id).orElse(null);
     }
 
-    public Optional<Odontologo> buscar(Long id){
-        return odontologoRepository.findById(id);
+    public String eliminar(Long id) throws ResourceNotFoundException {
+        if(buscar(id) != null){
+            odontologoRepository.deleteById(id);
+            return "Odontologo eliminado con id: " + id;
+        } else {
+            throw new ResourceNotFoundException("Odontologo con id " + id + " no encontrado");
+        }
     }
 
 }

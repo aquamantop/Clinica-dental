@@ -1,11 +1,11 @@
 package com.example.ClinicaDental.service;
 
 import com.example.ClinicaDental.entity.Turno;
+import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.repository.TurnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -23,7 +23,7 @@ public class TurnoService {
     }
 
     public Turno actualizar(Turno t) {
-        Turno turno = buscar(t.getId()).get();
+        Turno turno = buscar(t.getId());
 
         if(t.getFechaHora() != null){
             turno.setFechaHora(t.getFechaHora());
@@ -39,17 +39,17 @@ public class TurnoService {
         return turno;
     }
 
-    public Optional<Turno> buscar(Long id){
-        return turnoRepository.findById(id);
+    public Turno buscar(Long id){
+        return turnoRepository.findById(id).orElse(null);
     }
 
-    public String eliminar(Long id){
-        String resultado = "";
-        if(turnoRepository.existsById(id)){
+    public String eliminar(Long id) throws ResourceNotFoundException {
+        if(buscar(id) != null){
             turnoRepository.deleteById(id);
-            resultado = "Turno eliminado con id: " + id;
-        } else resultado = "Error al eliminar";
-        return resultado;
+            return "Turno eliminado con id: " + id;
+        } else {
+            throw new ResourceNotFoundException("Turno con id " + id + " no encontrado");
+        }
     }
 
 }
