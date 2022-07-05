@@ -109,10 +109,17 @@ function editar(id) {
             p.classList.remove("hide")
             agregar.classList.remove("hide")
             form.classList.add("hide")
+            vaciarArray(arrayOdontologos)
+            vaciarArray(arrayPacientes)
             location.reload()
         })
         .catch(e => console.log(e))
-
     })
 
+}
+
+function vaciarArray(array){
+    for (let i = array.length; i > 0; i--) {
+        array.pop();
+    }
 }

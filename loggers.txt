@@ -736,3 +736,5 @@
 [2022-07-04 17:33:49] [ INFO ] [OdontologoController:70] Odontologos listados
 [2022-07-04 17:33:49] [ INFO ] [TurnoController:57] Turno encontrado
 [2022-07-04 17:33:49] [ INFO ] [PacienteController:88] Pacientes listados
+[2022-07-04 19:57:23] [ DEBUG] [OdontologoController:67] Listando odontologos...
+[2022-07-04 19:57:23] [ INFO ] [OdontologoController:70] Odontologos listados

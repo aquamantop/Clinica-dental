@@ -86,7 +86,7 @@ window.addEventListener('load', () => {
         provincia.value = ""
         for (let i = array.length; i > 0; i--) {
             array.pop();
-          }
+        }
     }
 
 })
