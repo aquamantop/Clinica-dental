@@ -10,13 +10,17 @@ import java.util.Collections;
 @Entity
 @Table(name = "usuarios")
 public class Usuario implements UserDetails{
+
     @Id
     @SequenceGenerator(name = "usuario_sequence", sequenceName = "usuario_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_sequence")
     private Long id;
 
     @Column
-    private String nombre;
+    private String usuario;
+
+    @Column
+    private String email;
 
     @Column
     private String clave;
@@ -27,8 +31,9 @@ public class Usuario implements UserDetails{
     public Usuario() {
     }
 
-    public Usuario(String nombre, String clave, Rol rol) {
-        this.nombre = nombre;
+    public Usuario(String usuario, String email, String clave, Rol rol) {
+        this.usuario = usuario;
+        this.email = email;
         this.clave = clave;
         this.rol = rol;
     }
@@ -37,12 +42,20 @@ public class Usuario implements UserDetails{
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getClave() {

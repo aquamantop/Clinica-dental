@@ -14,16 +14,17 @@ public class DataLoader implements ApplicationRunner{
     UsuarioRepository usuarioRepository;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password1 = passwordEncoder.encode("clave1");
         String password2 = passwordEncoder.encode("clave2");
 
-        if(usuarioRepository.findByNombre("Admin").isPresent() && usuarioRepository.findByNombre("Usuario").isPresent()){
+        if(usuarioRepository.findByEmail("usuario@gmail.com").isPresent() &&
+                usuarioRepository.findByEmail("admin@gmail.com").isPresent()) {
             System.out.println("Usuario existente");
         } else {
-            usuarioRepository.save(new Usuario("Admin", password1, Rol.ROLE_ADMIN));
-            usuarioRepository.save(new Usuario("Usuario", password2, Rol.ROLE_USER));
+            usuarioRepository.save(new Usuario("Admin", "admin@gmail.com", password1, Rol.ROLE_ADMIN));
+            usuarioRepository.save(new Usuario("Usuario", "usuario@gmail.com", password2, Rol.ROLE_USER));
         }
     }
 
