@@ -28,7 +28,7 @@ public class PacienteController {
         if(paciente != null) {
             paciente.setFechaIngreso(LocalDate.now());
             response = new ResponseEntity(pacienteService.guardar(paciente), HttpStatus.OK);
-            logger.info("Paciente guardado");
+            logger.info("Paciente guardado con id: " + paciente.getId());
         } else {
             response = new ResponseEntity("Paciente nulo",HttpStatus.NOT_FOUND);
             logger.error("Paciente nulo");
@@ -41,7 +41,7 @@ public class PacienteController {
     public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
         logger.debug("Eliminando paciente...");
-        logger.info("Paciente eliminado");
+        logger.info("Paciente eliminado con id: " + id);
         return ResponseEntity.ok(pacienteService.eliminar(id));
 
     }
@@ -53,7 +53,7 @@ public class PacienteController {
         logger.debug("Buscando paciente por email...");
         if(pacienteService.buscarPorEmail(email) != null){
             response = new ResponseEntity(pacienteService.buscarPorEmail(email), HttpStatus.OK);
-            logger.info("Paciente encontrado");
+            logger.info("Paciente encontrado con email: " + email);
         } else {
             response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
             logger.error("Error al buscar paciente por email");
@@ -69,7 +69,7 @@ public class PacienteController {
         logger.debug("Buscando paciente por id...");
         if(pacienteService.buscar(id) != null){
             response = new ResponseEntity(pacienteService.buscar(id), HttpStatus.OK);
-            logger.info("Paciente encontrado");
+            logger.info("Paciente encontrado con id: " + id);
         } else {
             response = new ResponseEntity("No se pudo encontrar paciente", HttpStatus.NOT_FOUND);
             logger.error("Error al buscar paciente por id");
@@ -102,7 +102,7 @@ public class PacienteController {
         if(paciente != null){
             pacienteService.actualizar(paciente);
             response = new ResponseEntity(paciente, HttpStatus.OK);
-            logger.info("Paciente con id: " + paciente.getId() + " actualizado");
+            logger.info("Paciente actualizado con id: " + paciente.getId());
         } else {
             response = new ResponseEntity("No se pudo actualizar paciente", HttpStatus.NOT_FOUND);
             logger.error("Error al actualizar paciente");

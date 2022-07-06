@@ -28,7 +28,7 @@ public class TurnoController {
         if (t != null) {
             if(t.getFechaHora().isAfter(LocalDateTime.now())){
                 response = new ResponseEntity(turnoService.guardar(t), HttpStatus.OK);
-                logger.info("Turno guardado");
+                logger.info("Turno guardado con id: " + t.getId());
             } else logger.error("Elegir un fecha posterior a la fecha actual");
         } else {
             response = new ResponseEntity("No se guardo el turno", HttpStatus.FORBIDDEN);
@@ -42,7 +42,7 @@ public class TurnoController {
     public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
         logger.debug("Eliminando turno...");
-        logger.info("Turno eliminado");
+        logger.info("Turno eliminado con id: " + id);
         return ResponseEntity.ok(turnoService.eliminar(id));
 
     }
@@ -54,7 +54,7 @@ public class TurnoController {
         logger.debug("Buscando turno...");
         if (turnoService.buscar(id) != null) {
             response = new ResponseEntity(turnoService.buscar(id), HttpStatus.OK);
-            logger.info("Turno encontrado");
+            logger.info("Turno encontrado con id: " + id);
         } else {
             response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
             logger.error("Error al buscar turno");
@@ -86,7 +86,7 @@ public class TurnoController {
         logger.debug("Actualizando turno...");
         if (t != null) {
             response = new ResponseEntity(turnoService.actualizar(t), HttpStatus.OK);
-            logger.info("Turno actualizado");
+            logger.info("Turno actualizado con id: " + t.getId());
         } else {
             response = new ResponseEntity("No se encontró el turno", HttpStatus.NOT_FOUND);
             logger.error("Error al actualizar turno");

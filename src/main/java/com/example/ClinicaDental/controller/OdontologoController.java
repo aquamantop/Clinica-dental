@@ -26,7 +26,7 @@ public class OdontologoController {
         logger.debug("Guardando odontologo...");
         if(odontologo != null){
             response = new ResponseEntity(odontologoService.guardar(odontologo), HttpStatus.CREATED);
-            logger.info("Odontologo guardado");
+            logger.info("Odontologo guardado con id: " + odontologo.getId());
         } else {
             response = new ResponseEntity("No se pudo guardar odontologo", HttpStatus.NOT_FOUND);
             logger.error("Error al guardar odontologo");
@@ -39,7 +39,7 @@ public class OdontologoController {
     public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
         logger.debug("Eliminando odontologo...");
-        logger.info("Odontologo eliminado");
+        logger.info("Odontologo eliminado con id: " + id);
         return ResponseEntity.ok(odontologoService.eliminar(id));
 
     }
@@ -51,7 +51,7 @@ public class OdontologoController {
         logger.debug("Buscando odontologo...");
         if(odontologoService.buscar(id) != null){
             response = new ResponseEntity(odontologoService.buscar(id), HttpStatus.OK);
-            logger.info("Odontologo encontrado");
+            logger.info("Odontologo encontrado con id: " + id);
         } else {
             response = new ResponseEntity("No se pudo encontrar odontologo", HttpStatus.NOT_FOUND);
             logger.error("Error al buscar odontologo");
@@ -83,7 +83,7 @@ public class OdontologoController {
         logger.debug("Actualizando odontologo...");
         if(odontologo != null){
             response = new ResponseEntity(odontologoService.actualizar(odontologo), HttpStatus.ACCEPTED);
-            logger.info("Odontologo actualizado");
+            logger.info("Odontologo actualizado con id: " + odontologo.getId());
         } else {
             response = new ResponseEntity("No se pudo actualizar odontologo", HttpStatus.NOT_FOUND);
             logger.error("Error al actualizar odontologo");
