@@ -51,6 +51,10 @@ class ClinicaDentalApplicationTests {
     @Transactional
     @Test
     void testListarOdontologo() {
+        Odontologo odontologo = new Odontologo("Gallardo", "Marcelo", 1);
+
+        assertNotNull(odontologoService.guardar(odontologo));
+
         assertNotNull(odontologoService.listar());
     }
 
