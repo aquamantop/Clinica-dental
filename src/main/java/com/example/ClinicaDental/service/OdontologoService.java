@@ -7,12 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 
 @Service
 public class OdontologoService {
 
     @Autowired
     OdontologoRepository odontologoRepository;
+
+    public static final Logger logger = Logger.getLogger(OdontologoService.class);
 
     public Set<Odontologo> listar() {
         return new HashSet<>(odontologoRepository.findAll());
@@ -42,10 +45,13 @@ public class OdontologoService {
     }
 
     public String eliminar(Long id) throws ResourceNotFoundException {
+        logger.debug("Eliminando odontologo...");
         if(buscar(id) != null){
+            logger.info("Odontologo eliminado con id: " + id);
             odontologoRepository.deleteById(id);
             return "Odontologo eliminado con id: " + id;
         } else {
+            logger.error("Odontologo con id " + id + " no encontrado");
             throw new ResourceNotFoundException("Odontologo con id " + id + " no encontrado");
         }
     }

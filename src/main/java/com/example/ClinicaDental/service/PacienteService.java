@@ -1,5 +1,6 @@
 package com.example.ClinicaDental.service;
 
+import com.example.ClinicaDental.controller.OdontologoController;
 import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
@@ -7,12 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 
 @Service
 public class PacienteService {
 
     @Autowired
     PacienteRepository pacienteRepository;
+
+    public static final Logger logger = Logger.getLogger(PacienteService.class);
 
     public Set<Paciente> listar() {
         return new HashSet<>(pacienteRepository.findAll());
@@ -59,10 +63,13 @@ public class PacienteService {
     }
 
     public String eliminar(Long id) throws ResourceNotFoundException {
+        logger.debug("Eliminando pacinete...");
         if(buscar(id) != null){
+            logger.info("Paciente eliminado con id: " + id);
             pacienteRepository.deleteById(id);
             return "Paciente eliminado con id: " + id;
         } else {
+            logger.error("Paciente con id " + id + " no encontrado");
             throw new ResourceNotFoundException("Paciente con id " + id + " no encontrado");
         }
     }

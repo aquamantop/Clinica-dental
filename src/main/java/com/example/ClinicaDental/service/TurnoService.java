@@ -1,8 +1,10 @@
 package com.example.ClinicaDental.service;
 
+import com.example.ClinicaDental.controller.OdontologoController;
 import com.example.ClinicaDental.entity.Turno;
 import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.repository.TurnoRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.HashSet;
@@ -13,6 +15,8 @@ public class TurnoService {
 
     @Autowired
     TurnoRepository turnoRepository;
+
+    public static final Logger logger = Logger.getLogger(TurnoService.class);
 
     public Set<Turno> listar() {
         return new HashSet<>(turnoRepository.findAll());
@@ -44,10 +48,13 @@ public class TurnoService {
     }
 
     public String eliminar(Long id) throws ResourceNotFoundException {
+        logger.debug("Eliminando turno...");
         if(buscar(id) != null){
             turnoRepository.deleteById(id);
+            logger.info("Turno eliminado con id: " + id);
             return "Turno eliminado con id: " + id;
         } else {
+            logger.error("Turno con id " + id + " no encontrado");
             throw new ResourceNotFoundException("Turno con id " + id + " no encontrado");
         }
     }
