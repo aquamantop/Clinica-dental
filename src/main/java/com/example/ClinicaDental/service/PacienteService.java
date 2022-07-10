@@ -1,6 +1,5 @@
 package com.example.ClinicaDental.service;
 
-import com.example.ClinicaDental.controller.OdontologoController;
 import com.example.ClinicaDental.exceptions.ResourceNotFoundException;
 import com.example.ClinicaDental.repository.PacienteRepository;
 import com.example.ClinicaDental.entity.Paciente;
