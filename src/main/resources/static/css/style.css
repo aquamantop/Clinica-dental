@@ -267,3 +267,15 @@ footer a:hover {
 .hide {
   display: none;
 }
+
+/* Cerrar sesion */
+#cerrarSesion {
+  color: var(--borrar);
+  clear: both;
+  text-align: center;
+  font-size: 2rem;
+  margin: 4rem 0rem 1rem;
+}
+#cerrarSesion:hover {
+  color: var(--letraBorrar);
+}
