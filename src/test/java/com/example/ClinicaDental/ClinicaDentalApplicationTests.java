@@ -34,7 +34,6 @@ class ClinicaDentalApplicationTests {
     Domicilio domicilio = new Domicilio("Arena", 1010, "Buenos Aires", "Argentina");
     Paciente paciente = new Paciente("Messi", "Lionel", "lionel@gmail.com", 1010, LocalDate.of(2020, 10, 10), domicilio);
     Odontologo odontologo = new Odontologo("Gallardo", "Marcelo", 1);
-    Turno turno = new Turno(odontologo, paciente, LocalDateTime.of(2024,01,01,10,10));
 
     @Transactional
 	@Test
@@ -65,7 +64,6 @@ class ClinicaDentalApplicationTests {
         assertNotNull(turnoService.guardar(turno));
         assertNotNull(turnoService.buscar(turno.getId()));
     }
-
 
 
 }
