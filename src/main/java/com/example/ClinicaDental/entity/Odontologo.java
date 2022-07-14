@@ -18,7 +18,7 @@ public class Odontologo {
     @Column
     private String nombre;
 
-    @Column
+    @Column(unique = true)
     private Integer matricula;
 
     @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)

@@ -24,16 +24,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests()
-                .antMatchers("/usuario/**",
-                        "/pacientes/**",
-                        "/odontologos/**",
-                        "/turnos/**").permitAll()
+                .antMatchers("/html/**",
+                        "/js/**",
+                        "/css/**",
+                        "/img/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and().formLogin()
                 .defaultSuccessUrl("/html/home.html", true)
                 .and().logout();
-
     }
 
     @Override

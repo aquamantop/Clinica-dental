@@ -19,10 +19,10 @@ public class Paciente {
     @Column
     private String nombre;
 
-    @Column
+    @Column(unique = true)
     private String email;
 
-    @Column
+    @Column(unique = true)
     private Integer DNI;
 
     @Column
