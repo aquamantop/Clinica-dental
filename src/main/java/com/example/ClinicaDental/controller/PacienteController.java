@@ -15,11 +15,16 @@ import java.util.List;
 @RequestMapping("/pacientes")
 public class PacienteController {
 
+    // Inyectamos dependencia
     @Autowired
     PacienteService pacienteService;
 
+    // instanciamos logger
     public static final Logger logger = Logger.getLogger(PacienteController.class);
 
+    /*** CRUD ***/
+
+    // POST
     @PostMapping("/guardar")
     public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente){
         ResponseEntity response = null;
@@ -37,6 +42,7 @@ public class PacienteController {
         return response;
     }
 
+    // DELETE
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
@@ -44,6 +50,7 @@ public class PacienteController {
 
     }
 
+    // GET por email
     @GetMapping("/buscarEmail/{email}")
     public ResponseEntity<Paciente> buscarPorEmail(@PathVariable String email) {
         ResponseEntity response = null;
@@ -60,6 +67,7 @@ public class PacienteController {
         return response;
     }
 
+    // GET por id
     @GetMapping("/buscar/{id}")
     public ResponseEntity<Paciente> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
@@ -76,6 +84,7 @@ public class PacienteController {
         return response;
     }
 
+    // GET de todos
     @GetMapping("/listar")
     public ResponseEntity<List<Paciente>> listarPacientes() {
         ResponseEntity response = null;
@@ -92,6 +101,7 @@ public class PacienteController {
         return response;
     }
 
+    // PUT
     @PutMapping("/actualizar")
     public ResponseEntity<Paciente> actualizar(@RequestBody Paciente paciente){
         ResponseEntity response = null;

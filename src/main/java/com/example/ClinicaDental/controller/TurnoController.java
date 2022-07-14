@@ -15,11 +15,16 @@ import java.util.List;
 @RequestMapping("/turnos")
 public class TurnoController {
 
+    // Inyectamos dependencia
     @Autowired
     TurnoService turnoService;
 
+    // instanciamos logger
     public static final Logger logger = Logger.getLogger(TurnoController.class);
 
+    /*** CRUD ***/
+
+    // POST
     @PostMapping("/guardar")
     public ResponseEntity guardar(@RequestBody Turno t) {
         ResponseEntity response = null;
@@ -38,6 +43,7 @@ public class TurnoController {
         return response;
     }
 
+    // DELETE
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
@@ -45,6 +51,7 @@ public class TurnoController {
 
     }
 
+    // GET por id
     @GetMapping("/buscar/{id}")
     public ResponseEntity buscar(@PathVariable Long id){
         ResponseEntity response = null;
@@ -61,6 +68,7 @@ public class TurnoController {
         return response;
     }
 
+    // GET de todos
     @GetMapping("/listar")
     public ResponseEntity<List<Turno>> listar(){
         ResponseEntity response = null;
@@ -77,6 +85,7 @@ public class TurnoController {
         return response;
     }
 
+    // PUT
     @PutMapping("/actualizar")
     public ResponseEntity actualizar(@RequestBody Turno t) {
         ResponseEntity response = null;

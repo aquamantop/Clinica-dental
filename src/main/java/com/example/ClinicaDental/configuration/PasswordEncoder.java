@@ -1,4 +1,4 @@
-package com.example.ClinicaDental.login;
+package com.example.ClinicaDental.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 public class PasswordEncoder {
 
+    // creamos el bCryptPasswordEncoder como bean para que sea accesible para otras clases
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();

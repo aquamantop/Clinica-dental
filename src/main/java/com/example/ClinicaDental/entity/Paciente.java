@@ -9,33 +9,34 @@ import java.util.Set;
 @Entity
 @Table(name = "pacientes")
 public class Paciente {
+    // id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // columnas
     @Column
     private String apellido;
-
     @Column
     private String nombre;
-
     @Column(unique = true)
     private String email;
-
     @Column(unique = true)
     private Integer DNI;
-
     @Column
     private LocalDate fechaIngreso;
 
+    // relacion con domicilio
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "domiciolio_id", referencedColumnName = "id")
     private Domicilio domicilio;
 
+    // relacion con turnos
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Turno> turnos = new HashSet<>();
 
+    // constructores
     public Paciente(String apellido, String nombre, String email, Integer DNI, LocalDate fechaIngreso, Domicilio domicilio) {
         this.apellido = apellido;
         this.nombre = nombre;
@@ -44,9 +45,9 @@ public class Paciente {
         this.fechaIngreso = fechaIngreso;
         this.domicilio = domicilio;
     }
-
     public Paciente(){}
 
+    // getters y setters
     public Long getId() {
         return id;
     }

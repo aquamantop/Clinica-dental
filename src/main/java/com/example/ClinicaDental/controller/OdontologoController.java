@@ -14,11 +14,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/odontologos")
 public class OdontologoController {
 
+    // Inyectamos dependencia
     @Autowired
     OdontologoService odontologoService;
 
+    // instanciamos logger
     public static final Logger logger = Logger.getLogger(OdontologoController.class);
 
+    /*** CRUD ***/
+
+    // POST
     @PostMapping("/guardar")
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo){
         ResponseEntity<Odontologo> response = null;
@@ -35,6 +40,7 @@ public class OdontologoController {
         return response;
     }
 
+    // DELETE
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) throws ResourceNotFoundException {
 
@@ -42,6 +48,7 @@ public class OdontologoController {
 
     }
 
+    // GET por id
     @GetMapping("/buscar/{id}")
     public ResponseEntity<Odontologo> buscarID(@PathVariable Long id) {
         ResponseEntity response = null;
@@ -58,6 +65,7 @@ public class OdontologoController {
         return response;
     }
 
+    // GET de todos
     @GetMapping("/listar")
     public ResponseEntity<Odontologo> listarOdontologos() {
         ResponseEntity response = null;
@@ -74,6 +82,7 @@ public class OdontologoController {
         return response;
     }
 
+    // PUT
     @PutMapping("/actualizar")
     public ResponseEntity<Odontologo> actualizar(Model model, @RequestBody Odontologo odontologo){
         ResponseEntity response = null;

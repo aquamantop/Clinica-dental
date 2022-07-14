@@ -12,15 +12,19 @@ import org.apache.log4j.Logger;
 @Service
 public class PacienteService {
 
+    // Inyectamos dependencia
     @Autowired
     PacienteRepository pacienteRepository;
 
+    // instanciamos logger
     public static final Logger logger = Logger.getLogger(PacienteService.class);
 
+    // Metodo buscar todos
     public Set<Paciente> listar() {
         return new HashSet<>(pacienteRepository.findAll());
     }
 
+    // Metodo guardar
     public Paciente guardar(Paciente p){
         if(p.getNombre() != null
             && p.getApellido() != null
@@ -31,6 +35,7 @@ public class PacienteService {
         } else return null;
     }
 
+    // Metodo actualizar
     public Paciente actualizar(Paciente p) {
         Paciente paciente  = buscar(p.getId());
         if(p.getNombre() != null) {
@@ -53,14 +58,17 @@ public class PacienteService {
         return paciente;
     }
 
+    // Metodo bsucar por id
     public Paciente buscar(Long id){
         return pacienteRepository.findById(id).orElse(null);
     }
 
+    // Metodo buscar por email
     public Paciente buscarPorEmail(String email){
         return pacienteRepository.buscarEmail(email).orElse(null);
     }
 
+    // Metodo eliminar
     public String eliminar(Long id) throws ResourceNotFoundException {
         logger.debug("Eliminando pacinete...");
         if(buscar(id) != null){

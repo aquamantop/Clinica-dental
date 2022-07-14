@@ -6,35 +6,36 @@ import javax.persistence.*;
 @Entity
 @Table(name = "domicilios")
 public class Domicilio {
+    // id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // columnas
     @Column
     private String calle;
-
     @Column
     private int numero;
-
     @Column
     private String localidad;
-
     @Column
     private String provincia;
 
+    // relacion con paciente
     @OneToOne(mappedBy = "domicilio")
     @JsonIgnore
     private Paciente paciente;
 
+    // constructores
     public Domicilio(String calle, int numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;
         this.provincia = provincia;
     }
-
     public Domicilio() {}
 
+    // getters y setters
     public Long getId() {
         return id;
     }
