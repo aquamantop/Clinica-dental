@@ -1,6 +1,5 @@
 package com.example.ClinicaDental.entity;
 
-import com.example.ClinicaDental.entity.Rol;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
