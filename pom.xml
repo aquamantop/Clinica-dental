@@ -117,11 +117,6 @@
 				<groupId>com.heroku.sdk</groupId>
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>3.0.3</version>
-				<configuration>
-					<processTypes>
-						<web>java $JAVA_OPTS -Dserver.port=$PORT -jar target/ClinicaDental-0.0.1-SNAPSHOT.jar</web>
-					</processTypes>
-				</configuration>
 			</plugin>
 
 		</plugins>
