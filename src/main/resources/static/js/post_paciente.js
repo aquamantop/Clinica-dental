@@ -63,15 +63,20 @@ window.addEventListener('load', () => {
             })
             .then(data => {
                 console.log(data)
-                alert("Datos enviados")
+                Swal.fire(
+                    'Paciente agregado',
+                    'success'
+                )
                 resetearForm()
             })
             .catch(e => {
                 console.log(e)
-                alert(e)
                 resetearForm()
             })
-        } else alert("Completar datos")
+        } else Swal.fire(
+                    'Completar datos',
+                    'info'
+                )
     })
 
     // Resetear form

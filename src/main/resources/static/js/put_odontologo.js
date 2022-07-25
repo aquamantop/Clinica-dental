@@ -34,7 +34,10 @@ function editar(id) {
     })
     .catch(e => {
         console.log(e)
-        alert("Error al cargar odontologo"+e)
+        Swal.fire(
+            'Odontologo no encontrado',
+            'info'
+        )
     })
 
     // PUT
@@ -57,7 +60,10 @@ function editar(id) {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            alert("Odontologo actualizado")
+            Swal.fire(
+                'Odontologo actualizado',
+                'success'
+            )
             tabla.classList.remove("hide")
             p.classList.remove("hide")
             agregar.classList.remove("hide")

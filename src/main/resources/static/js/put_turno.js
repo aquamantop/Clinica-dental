@@ -81,7 +81,10 @@ function editar(id) {
     })
     .catch(e => {
         console.log(e)
-        alert("Error al cargar turno"+e)
+        Swal.fire(
+            'Turno no encontrado',
+            'info'
+        )
     })
 
     // PUT
@@ -104,7 +107,10 @@ function editar(id) {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            alert("Turno actualizado")
+            Swal.fire(
+                'Turno actualziado',
+                'success'
+            )
             tabla.classList.remove("hide")
             p.classList.remove("hide")
             agregar.classList.remove("hide")

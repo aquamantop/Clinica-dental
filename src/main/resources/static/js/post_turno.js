@@ -84,7 +84,9 @@ window.addEventListener('load', () => {
         let valorFecha = fecha.value
 
         if(fechaELegida < fechaActual){
-            alert("Elegir fecha correctamente")
+            Swal.fire(
+                'Elegir fecha correctamente',
+                'info'
         } else {
             const formData = {
                 paciente: {
@@ -108,12 +110,14 @@ window.addEventListener('load', () => {
             })
             .then(data => {
                 console.log(data)
-                alert("Datos enviados")
+                Swal.fire(
+                    'Turno agregado',
+                    'success'
+                )
                 resetearForm()
             })
             .catch(e => {
                 console.log(e)
-                alert(e)
                 resetearForm()
             })
         }

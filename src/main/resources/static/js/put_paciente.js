@@ -46,7 +46,10 @@ function editar(id) {
     })
     .catch(e => {
         console.log(e)
-        alert("Error al cargar paciente"+e)
+        Swal.fire(
+            'Paciente no encontrado',
+            'info'
+        )
     })
 
     // PUT
@@ -75,7 +78,10 @@ function editar(id) {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            alert("Paciente actualizado")
+            Swal.fire(
+                'Paciente actualziado',
+                'success'
+            )
             tabla.classList.remove("hide")
             p.classList.remove("hide")
             agregar.classList.remove("hide")
