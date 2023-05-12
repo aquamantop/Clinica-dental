@@ -87,6 +87,7 @@ window.addEventListener('load', () => {
             Swal.fire(
                 'Elegir fecha correctamente',
                 'info'
+                )
         } else {
             const formData = {
                 paciente: {
