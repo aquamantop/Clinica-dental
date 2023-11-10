@@ -107,6 +107,7 @@
     </dependencies>
 
 	<build>
+		<finalName>clinica_dental</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
