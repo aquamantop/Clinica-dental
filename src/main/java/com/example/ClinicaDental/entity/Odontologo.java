@@ -8,12 +8,10 @@ import java.util.Set;
 @Entity
 @Table(name = "odontologos")
 public class Odontologo {
-    // id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // columnas
     @Column
     private String apellido;
     @Column
@@ -21,12 +19,10 @@ public class Odontologo {
     @Column(unique = true)
     private Integer matricula;
 
-    // relacion con turnos
     @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Turno> turnos = new HashSet<>();
 
-    // constructores
     public Odontologo(String apellido, String nombre, int matricula) {
         this.apellido = apellido;
         this.nombre = nombre;
@@ -34,7 +30,6 @@ public class Odontologo {
     }
     public Odontologo(){}
 
-    // getters y setters
     public Long getId() {
         return id;
     }

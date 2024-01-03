@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    // GET usuario y admin
     @GetMapping("/usuario")
     public String usuario() {
         return "<h1>Bienvenido usuario</h1>";

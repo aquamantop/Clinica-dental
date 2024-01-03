@@ -12,24 +12,19 @@ import org.apache.log4j.Logger;
 @Service
 public class OdontologoService {
 
-    // Inyectamos dependencia
     @Autowired
     OdontologoRepository odontologoRepository;
 
-    // instanciamos logger
     public static final Logger logger = Logger.getLogger(OdontologoService.class);
 
-    // Metodo buscar todos
     public Set<Odontologo> listar() {
         return new HashSet<>(odontologoRepository.findAll());
     }
 
-    // Metodo guardar
     public Odontologo guardar(Odontologo o){
         return odontologoRepository.save(o);
     }
 
-    // Metodo actualizar
     public Odontologo actualizar(Odontologo o) {
         Odontologo odontologo = buscar(o.getId());
         if(o.getNombre() != null) {
@@ -45,12 +40,10 @@ public class OdontologoService {
         return odontologo;
     }
 
-    // Metodo buscar por id
     public Odontologo buscar(Long id){
         return odontologoRepository.findById(id).orElse(null);
     }
 
-    // Metodo eliminar
     public String eliminar(Long id) throws ResourceNotFoundException {
         logger.debug("Eliminando odontologo...");
         if(buscar(id) != null){

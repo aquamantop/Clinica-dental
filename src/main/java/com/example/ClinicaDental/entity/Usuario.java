@@ -11,22 +11,18 @@ import java.util.Collections;
 @Table(name = "Usuarios")
 public class Usuario implements UserDetails {
 
-    // id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // columnas
     @Column
     private String email;
     @Column
     private String clave;
 
-    // rol
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
-    // constructores
     public Usuario() {
     }
     public Usuario(String email, String clave, Rol rol) {
@@ -36,7 +32,6 @@ public class Usuario implements UserDetails {
     }
 
 
-    // getters y setters
     public Long getId() {
         return id;
     }
@@ -65,14 +60,13 @@ public class Usuario implements UserDetails {
         this.rol = rol;
     }
 
-    /*** Sobreescribir metodos ***/
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority grantedAuthority = new SimpleGrantedAuthority(rol.name());
         return Collections.singleton(grantedAuthority);
     }
 
-    // metodos para obtener email y clave
     @Override
     public String getPassword() {
         return clave;
@@ -82,7 +76,6 @@ public class Usuario implements UserDetails {
         return email;
     }
 
-    // metodos hardcodeados
     @Override
     public boolean isAccountNonExpired() {
         return true;

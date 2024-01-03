@@ -12,24 +12,19 @@ import java.util.Set;
 @Service
 public class TurnoService {
 
-    // Inyectamos dependencia
     @Autowired
     TurnoRepository turnoRepository;
 
-    // instanciamos logger
     public static final Logger logger = Logger.getLogger(TurnoService.class);
 
-    // Metodo buscar todos
     public Set<Turno> listar() {
         return new HashSet<>(turnoRepository.findAll());
     }
 
-    // Metodo guardar
     public Turno guardar(Turno t){
         return turnoRepository.save(t);
     }
 
-    // Metodo actualizar
     public Turno actualizar(Turno t) {
         Turno turno = buscar(t.getId());
 
@@ -47,12 +42,10 @@ public class TurnoService {
         return turno;
     }
 
-    // Metodo buscar por id
     public Turno buscar(Long id){
         return turnoRepository.findById(id).orElse(null);
     }
 
-    // Metodo eliminar por id
     public String eliminar(Long id) throws ResourceNotFoundException {
         logger.debug("Eliminando turno...");
         if(buscar(id) != null){

@@ -6,26 +6,21 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "turnos")
 public class Turno {
-    // id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // relacion con odontologo
     @ManyToOne
     @JoinColumn(name = "odontologo_id", referencedColumnName = "id", nullable = false)
     private Odontologo odontologo;
 
-    // relacion con paciente
     @ManyToOne
     @JoinColumn(name = "paciente_id", referencedColumnName = "id", nullable = false)
     private Paciente paciente;
 
-    // columna
     @Column
     private LocalDateTime fechaHora;
 
-    // constructores
     public Turno(Odontologo odontologo, Paciente paciente, LocalDateTime fechaHora) {
         this.odontologo = odontologo;
         this.paciente = paciente;
@@ -33,7 +28,6 @@ public class Turno {
     }
     public Turno() {}
 
-    // getters y setters
     public Long getId() {
         return id;
     }
